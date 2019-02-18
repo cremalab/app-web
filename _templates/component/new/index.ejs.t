@@ -2,30 +2,30 @@
 to: src/components/<%= name %>/index.tsx
 ---
 <% const nameBase = connected ? name + "Base" : name -%>
-<% if(componentType === "class") { -%>
-import React, { Component } from "react"
+<% if(useState) { -%>
+import React, { useState } from "react"
 <% if(connected) { -%>
 import { connect } from "react-redux"
-import { ReduxMapStateToProps } from "../../types/ReduxMapStateToProps"
+import { MapStateToProps } from "../../types/MapStateToProps"
 <% } -%>
 
-interface Props {}
-interface State {}
+type Props = Readonly<{ children?: React.ReactNode }>
 
-export class <%= nameBase %> extends Component<Props, State> {
-  public static displayName = "<%= name %>"
-  public static defaultProps = {}
-  public state = {}
-  public render() {
-    const { children } = this.props
-    return <div className="<%= name %>">{children}</div>
-  }
+export function <%= nameBase %>({ children }: Props) {
+  const [count, setCount] = useState(0)
+  return (
+    <div className="<%= name %>">
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+      {children}
+    </div>
+  )
 }
 <% } else { -%>
 import React from "react"
 <% if(connected) { -%>
 import { connect } from "react-redux"
-import { ReduxMapStateToProps } from "../../types/ReduxMapStateToProps"
+import { MapStateToProps } from "../../types/MapStateToProps"
 <% } -%>
 
 type Props = Readonly<{ children?: React.ReactNode }>
@@ -38,10 +38,7 @@ export function <%= nameBase %>({ children }: Props) {
 
 interface PropsOuter {}
 
-const mapStateToProps: ReduxMapStateToProps<
-  Props,
-  PropsOuter
-> = (/* state, propsOuter */) => {
+const mapStateToProps: MapStateToProps<Props, PropsOuter> = (/* state, propsOuter */) => {
   return {}
 }
 

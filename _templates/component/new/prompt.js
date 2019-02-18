@@ -1,20 +1,19 @@
 module.exports = [
   {
-    type: "input",
+    message: "Component name:",
     name: "name",
-    message: "What's the name of the component?",
+    type: "input",
   },
   {
-    type: "list",
-    name: "componentType",
-    message: "What kind?",
-    choices: ["function", "class"],
-    default: "function",
-  },
-  {
-    type: "confirm",
-    name: "connected",
-    message: "Is the component connected to Redux?",
     default: "N",
+    message: "Does component use state?",
+    name: "useState",
+    type: "toggle",
+  },
+  {
+    default: "N",
+    message: "Is component connected to redux?",
+    name: "connected",
+    type: "toggle",
   },
 ];
