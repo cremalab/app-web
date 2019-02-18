@@ -8,7 +8,13 @@ import { shallowRender } from "../../utils/shallowRender"
 
 describe("<%= name %>", () => {
   it("renders", () => {
-    const received = shallowRender(<<%= name %>><%= name %></<%= name %>>)
+    // Arrange
+    const valA = <%= name %>
+
+    // Act
+    const received = shallowRender(<<%= name %>>{valA}</<%= name %>>)
+
+    // Assert
     expect(received).toMatchSnapshot()
   })
 })
