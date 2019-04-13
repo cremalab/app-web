@@ -16,4 +16,4 @@ module.exports = [
     name: "connected",
     type: "toggle",
   },
-];
+]

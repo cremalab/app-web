@@ -1,1 +1,1 @@
-export interface State {} // tslint:disable-line
+export interface State {} // eslint-disable-line
