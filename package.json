@@ -48,7 +48,7 @@
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "new:component": "hygen component new",
-    "new:util": "hygen util new",
+    "new:function": "hygen function new",
     "prepush": "npm run test:ci",
     "static": "serve -s build",
     "test:ci": "CI=true npm-run-all test:lint \"test:unit -- -i\" test:playground:build test:visual:ci test:e2e:ci",

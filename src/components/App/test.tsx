@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { App } from "."
-import { shallowRender } from "../../utils/shallowRender"
+import { shallowRender } from "../../functions/shallowRender"
 
 describe("App", () => {
   it("renders", () => {

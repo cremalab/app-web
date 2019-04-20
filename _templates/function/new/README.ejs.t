@@ -1,5 +1,5 @@
 ---
-to: src/utils/<%= name %>/README.md
+to: src/functions/<%= name %>/README.md
 ---
 # <%= name %>
 

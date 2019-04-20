@@ -1,5 +1,5 @@
 ---
-to: src/utils/<%= name %>/index.ts
+to: src/functions/<%= name %>/index.ts
 ---
 <%_ var nameCap = h.inflection.camelize(name, false);_%>
 // Define
