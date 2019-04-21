@@ -1,5 +1,9 @@
 # Crema App - Web 🌐
 
+[![Build Status](https://travis-ci.com/cremalab/crema-app-web.svg?branch=develop)](https://travis-ci.com/cremalab/crema-app-web)
+[![codecov](https://codecov.io/gh/cremalab/crema-app-web/branch/develop/graph/badge.svg)](https://codecov.io/gh/cremalab/crema-app-web)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This project includes configuration and tooling that conforms to Crema's baseline best-practices for a Web Application. 
 
 **🧰 Tools Used**
