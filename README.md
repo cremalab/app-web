@@ -38,19 +38,19 @@ This project includes configuration and tooling that conforms to Crema's baselin
 
 Run the following scripts with `npm run <SCRIPT_HERE>`:
 
-- `start` start app
-- `new:component`: generate a new component
-- `new:utility`: generate a new util(ity)
-- `test:analyze`: run bundle analyzer
-- `test:e2e`: run end-to-end tests
-- `test:lint:fix`: run linter and fix if possible
-- `test:lint`: run linter
-- `test:playground`: run component playground (storybook)
-- `test:unit:coverage`: run unit tests with coverage
-- `test:unit`: run unit tests
-- `test:visual:approve`: approve visual changes
-- `test:visual:update`: update or create visual references
-- `test:visual`: run visual tests (loki)
+- `start` - start app
+- `new:component` - generate a new component
+- `new:utility` - generate a new util(ity)
+- `test:analyze` - run bundle analyzer
+- `test:e2e` - run end-to-end tests
+- `test:lint:fix` - run linter and fix if possible
+- `test:lint` - run linter
+- `test:playground` - run component playground (storybook)
+- `test:unit:coverage` - run unit tests with coverage
+- `test:unit` - run unit tests
+- `test:visual:approve` - approve visual changes
+- `test:visual:update` - update or create visual references
+- `test:visual` - run visual tests (loki)
 
 >These scripts are located in `package.json` and do not represent the entirety of available scripts, but are the most commonly used.
 
