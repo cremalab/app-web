@@ -6,6 +6,10 @@
 
 Brief description of what this PR does, and why it is needed.
 
+### Acceptance Criteria
+
+- [ ] CRITERION_HERE
+
 ### Demo
 
 <table>
@@ -13,22 +17,23 @@ Brief description of what this PR does, and why it is needed.
 <tr>
 <td>
 
-BEFORE HERE
+![](BEFORE_IMAGE_URL_HERE)
 
 </td>
 <td>
 
-AFTER HERE
+![](AFTER_IMAGE_URL_HERE)
 
 </td>
 </tr>
 </table>
 
-## Review Checklist
+## Reviewers' Checklist (go ahead, check 'em)
 
 - [ ] Merge destination is correct
 - [ ] Tests cases have been added where appropriate (Jest, Loki, Cypress)
 - [ ] Code is correct as understood and conforms to quality standards
+- [ ] Acceptance criteria have been met
 
 ## Testing Instructions
 
