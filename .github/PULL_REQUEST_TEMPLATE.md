@@ -28,7 +28,7 @@ Brief description of what this PR does, and why it is needed.
 </tr>
 </table>
 
-## Review Checklist
+## Reviewers' Checklist (go ahead, check 'em)
 
 - [ ] Merge destination is correct
 - [ ] Tests cases have been added where appropriate (Jest, Loki, Cypress)
