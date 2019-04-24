@@ -22,18 +22,18 @@ This project includes configuration and tooling that conforms to Crema's baselin
 
 1. [Install Node/NPM](https://nodejs.org/en/)
 2. [Install NVM](https://github.com/creationix/nvm#installation-and-update) (Node Version Manager)
-3. `nvm install lts/* && nvm use`
+3. `nvm install 'lts/*' && nvm use`
 4. `npm i` (install project dependencies)
 5. [Install the ESLint plugin for ~~your editor~~ VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 6. Enable "Auto-Fix on Save" in `settings.json`: 
 ```
 {
-  "eslint.autoFixOnSave`: true,
-  "eslint.validate`: [
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
-    { "language`: "typescript", "autoFix`: true },
-    { "language`: "typescriptreact", "autoFix`: true }
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
   ]
 }
 ```
@@ -102,7 +102,7 @@ src
 - Use the code generators:
   - `npm run new:component`
   - `npm run new:util`
-  - When prompted for a name, prefer `camelCase`
+  - When prompted for a name, prefer `camelCase` for utils and `CamelCase` for components
 - Fill out the `README.md` to describe what your code does
 - Run your unit tests `npm run test:unit` while working to see immediate feedback
 - If you get stuck at any point, just log an issue and we'll figure it out together 👭.
