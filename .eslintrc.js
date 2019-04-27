@@ -22,6 +22,7 @@ module.exports = {
     "prettier/prettier": "error",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/explicit-function-return-type": "off", // TS can infer this
+    "@typescript-eslint/no-empty-interface": "off" // This is nice for Tagged Unions (e.g. None)
   },
   settings:  {
     react:  {
