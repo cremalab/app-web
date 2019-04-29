@@ -1,12 +1,10 @@
 # match
 
-## Overview
-
 Returns a function that allows for exhaustive matching on `Tagged<A>` (e.g. `Maybe<A>`).
 
-### Example Usage
+## Example Usage
 
-#### Exhaustive Matching
+### Exhaustive Matching
 
 Sometimes we want to ensure we handle _every_ possible tagged member explicitly.
 
@@ -39,7 +37,7 @@ const user2 = None // we got nothing
 const result2 = matchUser(user2) // result is "No user here"
 ```
 
-#### Non-Exhaustive Matching with `caseDefault`
+### Non-Exhaustive Matching with `caseDefault`
 
 Sometimes we only want to handle _some_ tagged members explicitly and just set a default for the rest of them (think of a Redux reducer function).
 
@@ -50,9 +48,9 @@ import { User } from "../../types/User"
 
 // Define Tags
 export enum ActionTag {
-  Add = "Add"
-  Remove = "Remove"
-  Update = "Update"
+  Add = "Add",
+  Remove = "Remove",
+  Update = "Update",
 }
 
 // Define and action for adding a user

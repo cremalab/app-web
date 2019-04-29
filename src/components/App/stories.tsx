@@ -1,5 +1,7 @@
 import { storiesOf } from "@storybook/react"
 import React from "react"
-import { App } from "."
+import { Base as App } from "."
 
-storiesOf("App", module).add("default", () => <App />)
+storiesOf("App", module).add("default", () => (
+  <App todos={[]} addTodo={() => undefined} />
+))

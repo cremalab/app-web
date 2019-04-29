@@ -9,7 +9,7 @@ describe("match", () => {
   describe("with all cases", () => {
     // Arrange
     const matchUser = match<Maybe<User>, string>({
-      [MaybeTag.None]: x => x.tag,
+      [MaybeTag.None]: x => x.type,
       [MaybeTag.Some]: x => x.data.name,
     })
 
@@ -45,6 +45,47 @@ describe("match", () => {
 
       // Assert
       expect(matchUserWithDefault(user)).toEqual("This user doesn't exist")
+    })
+  })
+
+  describe("massive misuse", () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const matchUnsafe = match as (...args: any[]) => any
+
+    it("wrong types 1", () => {
+      // Arrange
+      const value = undefined
+      // Act
+      const match = matchUnsafe(undefined, undefined)
+      // Assert
+      expect(match(value)).toEqual(undefined)
+    })
+
+    it("wrong types 2", () => {
+      // Arrange
+      const value = undefined
+      // Act
+      const match = matchUnsafe({}, undefined)
+      // Assert
+      expect(match(value)).toEqual(undefined)
+    })
+
+    it("wrong types 3", () => {
+      // Arrange
+      const value = 1
+      // Act
+      const match = matchUnsafe(1, 1)
+      // Assert
+      expect(match(value)).toEqual(undefined)
+    })
+
+    it("wrong types 4", () => {
+      // Arrange
+      const value = {}
+      // Act
+      const match = matchUnsafe(() => 2)
+      // Assert
+      expect(match(value)).toEqual(undefined)
     })
   })
 })

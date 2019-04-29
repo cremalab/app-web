@@ -1,8 +1,10 @@
 import { Tagged } from "../../types/Tagged"
 
-type Cases<A extends Tagged<B>, R, B extends PropertyKey = PropertyKey> = {
-  [K in A["tag"]]: A extends Tagged<K> ? (x: Tagged<K> & A) => R : never
-}
+export type Cases<
+  A extends Tagged<B>,
+  R,
+  B extends PropertyKey = PropertyKey
+> = { [K in A["type"]]: A extends Tagged<K> ? (x: Tagged<K> & A) => R : never }
 
 export function match<
   TaggedUnion extends Tagged<Tag>,
@@ -24,10 +26,14 @@ export function match<
   TaggedUnion extends Tagged<Tag>,
   Return,
   Tag extends PropertyKey = PropertyKey,
-  DefaultValue extends () => Return = () => Return
->(cases: Partial<Cases<TaggedUnion, Return, Tag>>, caseDefault?: DefaultValue) {
+  CaseDefault extends () => Return = () => Return
+>(cases: Partial<Cases<TaggedUnion, Return, Tag>>, caseDefault?: CaseDefault) {
   return (v?: TaggedUnion): unknown => {
-    const c = v ? cases[v.tag] : undefined
-    return c && v ? c(v) : caseDefault ? caseDefault() : undefined
+    const c = v ? cases[v.type] : undefined
+    return c && v
+      ? c(v)
+      : caseDefault && typeof caseDefault === "function"
+      ? caseDefault()
+      : undefined
   }
 }

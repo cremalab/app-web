@@ -1,32 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App mapStateToProps maps state.todos to todos prop 1`] = `
+Object {
+  "todos": Array [
+    Object {
+      "complete": false,
+      "id": "1",
+      "title": "Test Todo",
+    },
+  ],
+}
+`;
+
 exports[`App renders expected structure 1`] = `
-<div
-  className="App"
->
-  <header
-    className="App-header"
+<div>
+  <div
+    class="App"
   >
-    <img
-      alt="logo"
-      className="App-logo"
-      src="logo.svg"
-    />
-    <p>
-      Edit 
-      <code>
-        src/App.tsx
-      </code>
-       and save to reload.
-    </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+    <header
+      class="App-header"
     >
-      Learn React
-    </a>
-  </header>
+      <img
+        alt="logo"
+        class="App-logo"
+        src="logo.svg"
+      />
+      <p>
+        Edit 
+        <code>
+          src/App.tsx
+        </code>
+         and save to reload.
+      </p>
+      <a
+        class="App-link"
+        href="https://reactjs.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Learn React
+      </a>
+      <p>
+        Todos: 
+        0
+      </p>
+      <button>
+        Add Todo
+      </button>
+      <ul />
+    </header>
+  </div>
+</div>
+`;
+
+exports[`App renders todos 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <header
+      class="App-header"
+    >
+      <img
+        alt="logo"
+        class="App-logo"
+        src="logo.svg"
+      />
+      <p>
+        Edit 
+        <code>
+          src/App.tsx
+        </code>
+         and save to reload.
+      </p>
+      <a
+        class="App-link"
+        href="https://reactjs.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Learn React
+      </a>
+      <p>
+        Todos: 
+        2
+      </p>
+      <button>
+        Add Todo
+      </button>
+      <ul>
+        <li>
+          Test Todo 1
+           | 
+          Incomplete
+        </li>
+        <li>
+          Test Todo 2
+           | 
+          Complete
+        </li>
+      </ul>
+    </header>
+  </div>
 </div>
 `;

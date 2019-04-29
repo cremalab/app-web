@@ -9,7 +9,7 @@ import { shallowRender } from "../../utils/shallowRender"
 describe("<%= name %>", () => {
   it("renders", () => {
     // Arrange
-    const valA = <%= name %>
+    const valA = "<%= name %>"
 
     // Act
     const received = shallowRender(<<%= name %>>{valA}</<%= name %>>)

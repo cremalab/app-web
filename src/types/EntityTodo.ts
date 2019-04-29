@@ -1,5 +1,5 @@
 import { Entity } from "./Entity"
-import { Thing } from "./Thing"
+import { Todo } from "./Todo"
 
 /**
  * EntityThing - Entity and Thing
@@ -7,4 +7,4 @@ import { Thing } from "./Thing"
  * Must have id, height, width properties defined
  */
 
-export interface EntityThing extends Entity, Thing {}
+export interface EntityTodo extends Entity, Todo {}

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducerTodos handles actionTodoAdd 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "complete": true,
+      "id": "1",
+      "title": "Test Todo",
+    },
+  },
+  "result": Array [
+    "1",
+  ],
+}
+`;

@@ -1,3 +1,3 @@
-export interface Tagged<Tag> {
-  tag: Tag
+export interface Tagged<Tag = PropertyKey> {
+  type: Tag
 }
