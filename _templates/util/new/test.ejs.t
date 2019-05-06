@@ -4,7 +4,7 @@ to: src/utils/<%= name %>/test.ts
 import { <%= name %> } from "."
 
 describe("<%= name %>", () => {
-  it("works", () => {
+  it("<%- h.changeCase.lowerCaseFirst(description) %>", () => {
     // Arrange
     const valA = 1
 

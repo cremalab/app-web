@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stateCollectionEntityUpdate updates \`Entity<A>\` in \`StateCollection<Entity<A>>\` 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "complete": true,
+      "id": "1",
+      "title": "Test Todo",
+    },
+    "2": Object {
+      "complete": false,
+      "id": "2",
+      "title": "Test Todo",
+    },
+  },
+  "result": Array [
+    "1",
+    "2",
+  ],
+}
+`;

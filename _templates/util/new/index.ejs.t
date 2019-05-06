@@ -1,9 +1,10 @@
 ---
 to: src/utils/<%= name %>/index.ts
 ---
-<%_ var nameCap = h.inflection.camelize(name, false);_%>
-// Define
-type <%= nameCap %> = <A>(a: A) => A
+/**
+ * `<%= name %>`
+ * ------------------
+ * <%- h.changeCase.upperCaseFirst(description) %>
+ **/
 
-// Implement
-export const <%= name %>: <%= nameCap %> = x => x
+export const <%= name %> = <A>(x: A): A => x

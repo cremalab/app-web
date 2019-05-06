@@ -2,9 +2,9 @@ import { Entity } from "./Entity"
 import { Todo } from "./Todo"
 
 /**
- * EntityThing - Entity and Thing
+ * EntityTodo - Entity & Todo
  * ------------------------------------------------
- * Must have id, height, width properties defined
+ * A Todo with an ID
  */
 
 export interface EntityTodo extends Entity, Todo {}

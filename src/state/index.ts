@@ -1,13 +1,6 @@
-import { combineReducers, createStore, applyMiddleware, compose } from "redux"
+import { createStore, applyMiddleware, compose } from "redux"
 import thunk from "redux-thunk"
-import { State } from "../types/State"
-import { reducerTodos } from "./reducers/reducerTodos"
-
-export const reducer = combineReducers<State>({
-  todos: reducerTodos,
-})
-
-export const stateInitial = reducer(undefined, { type: "NOOP" })
+import { reducer } from "./reducers"
 
 const composeEnhancers =
   process.env.NODE_ENV !== "production"

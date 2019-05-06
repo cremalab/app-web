@@ -1,7 +1,12 @@
 module.exports = [
   {
-    message: "What's the name of the utility?",
+    message: "Name of utility:",
     name: "name",
+    type: "input",
+  },
+  {
+    message: "What does it do?",
+    name: "description",
     type: "input",
   },
 ]

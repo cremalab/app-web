@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stateCollectionEntityRemove removes \`Entity<A>\` from \`StateCollection<Entity<A>>\` 1`] = `
+Object {
+  "entities": Object {
+    "2": Object {
+      "complete": false,
+      "id": "2",
+      "title": "Test Todo",
+    },
+  },
+  "result": Array [
+    "2",
+  ],
+}
+`;
