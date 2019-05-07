@@ -1,6 +1,6 @@
-# `<App />`
+# `<Home />`
 
-This is the base `App` component provided by [Create React App](https://facebook.github.io/create-react-app/). We've wrapped it up in our prescribed component directory structure which includes:
+This is the base `Home` component provided by [Create React App](https://facebook.github.io/create-react-app/). We've wrapped it up in our prescribed component directory structure which includes:
 
 - `index.css`: component styles
 - `index.tsx`: component code
@@ -11,9 +11,9 @@ This is the base `App` component provided by [Create React App](https://facebook
 
 ## Example
 
-![App](./screenshots/reference/App_320x480.png)
+![Home](./screenshots/reference/Home_320x480.png)
 
-> Image location: [`screenshots/reference/App_320x480.png`](./screenshots/reference/App_320x480.png)
+> Image location: [`screenshots/reference/Home_320x480.png`](./screenshots/reference/Home_320x480.png)
 > 
 > To regenerate: 
 > `npm run test:visual:update`

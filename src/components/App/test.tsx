@@ -14,4 +14,9 @@ describe("App", () => {
     const received = shallowRender(<App />)
     expect(received).toMatchSnapshot()
   })
+
+  it("renders an unanimated component", () => {
+    const received = shallowRender(<App notAnimated />)
+    expect(received).toMatchSnapshot()
+  })
 })

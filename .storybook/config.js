@@ -1,5 +1,4 @@
 import { configure } from "@storybook/react"
-import "loki/configure-react"
 
 const req = require.context("../src", true, /stories\.(jsx|tsx)$/)
 

@@ -66,5 +66,9 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/test",
+    "wdio-specs.ts"
   ]
 }

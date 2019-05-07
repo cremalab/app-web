@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/classnames": "^2.2.7",
+    "classnames": "^2.2.6",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.0"
@@ -14,8 +16,11 @@
     "@storybook/addons": "^5.0.6",
     "@storybook/cli": "^5.0.6",
     "@storybook/react": "^5.0.6",
+    "@types/chai": "^4.1.7",
+    "@types/ip": "^1.1.0",
     "@types/jest": "^24.0.0",
-    "@types/node": "10.12.21",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.2",
     "@types/react-redux": "^7.0.1",
@@ -24,23 +29,30 @@
     "@types/storybook__react": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^1.6.0",
     "@typescript-eslint/parser": "^1.6.0",
-    "cypress": "^3.1.5",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "fibers": "^3.1.1",
     "husky": "^1.3.1",
     "hygen": "^2.1.1",
-    "loki": "^0.14.2",
+    "ip": "^1.1.5",
+    "jest-matchers": "^20.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
     "react-scripts": "2.1.3",
     "react-test-renderer": "^16.8.2",
+    "rimraf": "^2.6.3",
     "serve": "^10.1.2",
     "source-map-explorer": "^1.6.0",
     "start-server-and-test": "^1.7.11",
+    "ts-node": "^8.0.2",
     "typescript": "3.3.1",
-    "wait-on": "^3.2.0"
+    "wait-on": "^3.2.0",
+    "wdio-cli": "0.0.5",
+    "wdio-mocha-framework": "^0.6.4",
+    "wdio-selenium-standalone-service": "^0.0.12",
+    "wdio-visual-regression-service": "^0.9.0",
+    "webdriverio": "^4.13.0"
   },
   "scripts": {
     "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
@@ -49,25 +61,26 @@
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "new:component": "hygen component new",
     "new:util": "hygen util new",
-    "prepush": "npm run test:ci",
+    "prepush": "npm run selenium-docker-start && npm run test:ci",
     "static": "serve -s build",
-    "test:ci": "CI=true npm-run-all test:lint \"test:unit -- -i\" test:playground:build test:visual:ci test:e2e:ci",
-    "test:e2e": "cypress run",
-    "test:e2e:ci": "start-server-and-test start:ci http://localhost:5000 test:e2e",
+    "test:ci": "CI=true npm-run-all output-stories test:lint \"test:unit -- -i\" test:playground:build test:visual:ci",
     "test:lint": "eslint -c ./.eslintrc.js 'src/**/*.{ts,tsx}'",
     "test:lint:fix": "npm run test:lint -- --fix",
-    "test:playground": "NODE_ENV=loki BABEL_ENV=development start-storybook -p 9009 -s public",
+    "test:playground": "NODE_ENV=test BABEL_ENV=development start-storybook -p 9009 -s public",
     "test:playground:build": "build-storybook",
+    "test:playground:ci": "STORYBOOK_CI=true start-storybook -p 5000 -s public --ci",
     "test:unit": "npm test -- --env=jsdom",
     "test:unit:coverage": "npm run test:unit -- --coverage",
     "test:unit:coverage:ci": "npm run test:unit:coverage && codecov",
     "test:unit:coverage:watch": "npm run test:unit:coverage -- --watch",
-    "test:visual": "CI=true loki --port 9009",
-    "test:visual:ci": "loki --reactUri file:./storybook-static",
-    "test:visual:approve": "npm run test:visual -- approve",
-    "test:visual:update": "npm run test:visual -- update",
+    "test:visual": "npm run output-stories && npm run selenium-docker-start && start-server-and-test test:playground:ci http://localhost:5000 wdio",
+    "test:visual:ci": "CI=true npm run test:visual",
+    "test:visual:update": "rimraf src/components/**/screenshots/ && npm run test:visual",
     "test:analyze": "npm-run-all build && source-map-explorer build/static/js/main.*",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "output-stories": "ts-node --project tsconfig.wdio.json ./bin/output-stories.ts",
+    "wdio": "wdio wdio.conf.js",
+    "selenium-docker-start": "node ./bin/start-docker.js"
   },
   "husky": {
     "hooks": {
@@ -82,24 +95,12 @@
       "!src/serviceWorker.ts",
       "!src/**/(test).{ts,tsx}",
       "!**/*.d.ts",
+      "!wdio-specs.ts",
       "src/**/*.{ts,tsx}"
     ]
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "loki": {
-    "requireReference": true,
-    "configurations": {
-      "chrome": {
-        "target": "chrome.docker",
-        "width": 800,
-        "height": 800,
-        "deviceScaleFactor": 1,
-        "mobile": false,
-        "fitWindow": false
-      }
-    }
   },
   "browserslist": [
     ">0.2%",

@@ -1,6 +1,11 @@
 language: node_js
-node_js:
- - "node"
+dist: trusty
+addons:
+  chrome: stable
+services:
+  - docker
+before_install:
+  - docker run -d -p 4444:4444 vvoyer/selenium-standalone
 install:
   - npm ci
   - npm install -g codecov

@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  env: {
-    "cypress/globals": true
+  globals: {
+    browser: "readable"
   },
   extends: [
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
@@ -15,13 +15,14 @@ module.exports = {
   },
   plugins: [
     "@typescript-eslint", 
-    "react",
-    "cypress"
+    "react"
   ],
   rules: {
+    "no-useless-constructor": "off",
     "prettier/prettier": "error",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/explicit-function-return-type": "off", // TS can infer this
+    "@typescript-eslint/no-useless-constructor": "error"
   },
   settings:  {
     react:  {

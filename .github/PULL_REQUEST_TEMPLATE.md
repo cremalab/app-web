@@ -1,44 +1,46 @@
-## Reference
+## Description for [TASK_ID](TASK_URL)
 
-[TASK_ID](TASK_URL)
+DESCRIPTION_HERE
 
-## Overview
-
-Brief description of what this PR does, and why it is needed.
-
-### Acceptance Criteria
-
-- [ ] CRITERION_HERE
-
-### Demo
+### 🖼 Demo Images
 
 <table>
 <tr><th>Before</th><th>After</th></tr>
 <tr>
 <td>
 
-![](BEFORE_IMAGE_URL_HERE)
+![](https://github.com/cremalab/<REPO_NAME>/blob/<BASE_BRANCH>/src/components/<COMPONENT_NAME>/screenshots/reference/document_320x480.png?raw=true)
 
 </td>
 <td>
 
-![](AFTER_IMAGE_URL_HERE)
+![](https://github.com/cremalab/<REPO_NAME>/blob/<FULL_COMMIT_SHA>/src/components/<COMPONENT_NAME>/screenshots/reference/document_320x480.png?raw=true)
 
 </td>
 </tr>
 </table>
 
-## Reviewers' Checklist (go ahead, check 'em)
+> Test images work nicely for this (table is optional)
 
-- [ ] Merge destination is correct
-- [ ] Tests cases have been added where appropriate (Jest, Loki, Cypress)
-- [ ] Code is correct as understood and conforms to quality standards
-- [ ] Acceptance criteria have been met
+### 📋 Acceptance Criteria
 
-## Testing Instructions
+- [ ] CRITERION_HERE
+
+> Checked off by the PR assignee(s)
+
+### 👩‍🔬 Test Instructions
 
 1. How to test this PR
 2. Prefer bulleted description
 3. Start after checking out this branch
 4. Include any setup required, such as bundling scripts, restarting services, etc.
 5. Include test case, and expected output
+
+## 🔎 Review Checklist
+
+- [ ] Merge destination is correct
+- [ ] Code is correct as understood and conforms to quality standards
+- [ ] Tests have been added where appropriate (unit, visual, end-to-end)
+- [ ] Acceptance Criteria have been met
+
+> Checked off by the PR reviewers

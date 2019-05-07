@@ -7,10 +7,9 @@ OVERVIEW_HERE
 
 ## Example
 
-![<%= name %>](../../../.loki/reference/chrome_<%= name %>_default.png)
+![<%= name %>](./screenshots/reference/<%= name %>_320x480.png)
 
-> Image location: [`.loki/reference/chrome_<%= name %>_default.png`](../../../.loki/reference/chrome_<%= name %>_default.png)
+> Image location: [`screenshots/reference/<%= name %>_320x480.png`](./screenshots/reference/<%= name %>_320x480.png)
 > 
-> To regenerate: 
-> 1. `npm run test:playground` (skip if running)
-> 1. `npm run test:visual:update -- --storiesFilter="^<%= name %> default\$"`
+> To regenerate
+> `npm run test:visual:update`

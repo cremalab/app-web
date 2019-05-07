@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "scripthost",
+      "es6"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "webdriver": ["src/types/*"]
+    }
+  },
+  "include": [
+    "./wdio-specs.ts"
+  ],
+  "exclude": ["node_modules", "src/types"]
+}
+  
