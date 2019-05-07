@@ -1,26 +1,30 @@
 import React from "react"
-import logo from "../../assets/logo.svg"
 import "./index.css"
 
-type Props = Readonly<{ children?: React.ReactNode }>
+import { LoginWithFormik } from "../../components/Login"
+import { createStyles, withStyles } from "@material-ui/core"
 
-export function App(_: Props) {
+interface StyleProps {
+  classes: {
+    root: string
+  }
+}
+
+const style = createStyles({
+  root: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+})
+
+export const App = withStyles(style)((props: StyleProps) => {
+  const { classes } = props
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <LoginWithFormik />
     </div>
   )
-}
+})
