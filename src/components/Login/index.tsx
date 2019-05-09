@@ -25,14 +25,8 @@ export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
   } = props
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Grid
-        container
-        spacing={8}
-        className={classes.errors}
-        direction="column"
-        justify="center"
-      >
+    <form onSubmit={handleSubmit} className={classes.form}>
+      <Grid container spacing={8} className={classes.grid} direction="column">
         <Grid item>
           <TextField
             name="login"
@@ -74,12 +68,20 @@ export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
 
 interface StyleProps {
   classes: {
-    errors: string
+    grid: string
+    form: string
   }
 }
 
 const styles = createStyles({
-  errors: {
+  form: {
+    display: "flex",
+    minHeight: "100vh",
+  },
+  grid: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
     color: "red",
   },
 })
