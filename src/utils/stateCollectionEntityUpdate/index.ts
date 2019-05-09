@@ -19,21 +19,12 @@ export const stateCollectionEntityUpdate = <
     (a, b) =>
       b === payload.id
         ? {
+            ...a,
             entities: {
               ...a.entities,
               [b]: { ...state.entities[b], ...payload.properties },
             },
-            result: [...a.result, b],
           }
-        : {
-            entities: {
-              ...a.entities,
-              [b]: state.entities[b],
-            },
-            result: [...a.result, b],
-          },
-    {
-      entities: {},
-      result: [],
-    },
+        : a,
+    state,
   )
