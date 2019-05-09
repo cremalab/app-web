@@ -72,8 +72,6 @@ export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
   )
 }
 
-FormComp.displayName = "LoginForm"
-
 interface StyleProps {
   classes: {
     errors: string
@@ -112,3 +110,5 @@ export const Login = withFormik<MyFormProps, FormValues>({
     setSubmitting(false)
   },
 })(LoginForm)
+
+Login.displayName = "Login"
