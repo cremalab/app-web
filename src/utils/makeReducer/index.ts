@@ -1,6 +1,7 @@
-import { match, Cases } from "../match"
 import { Tagged } from "../../types/Tagged"
 import { Reducer } from "redux"
+import { matchOr } from "../matchOr"
+import { Cases } from "../../types/Cases"
 
 export type MakeReducerCases<S, A extends Tagged> = (
   state: S,
@@ -12,5 +13,5 @@ export const makeReducer = <S, A extends Tagged>(
   initialState: S,
 ): Reducer<S, A> => (state = initialState, action) => {
   const cases = makeReducerCases(state, initialState)
-  return match<A, S>(cases, () => state)(action)
+  return matchOr<A, S>(cases, state, action)
 }

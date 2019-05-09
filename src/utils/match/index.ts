@@ -1,39 +1,29 @@
+import { Cases } from "../../types/Cases"
 import { Tagged } from "../../types/Tagged"
 
-export type Cases<
-  A extends Tagged<B>,
-  R,
-  B extends PropertyKey = PropertyKey
-> = { [K in A["type"]]: A extends Tagged<K> ? (x: Tagged<K> & A) => R : never }
+// tslint:disable: jsdoc-format
+/**
+ * match
+ * ---
+ * Takes a `Cases` object, and the value to match against. Returns value from each case.
+ *
+ * Example:
+ ```
+const user = None
+match<Maybe<User>, string>(
+  {
+    [MaybeTag.Some]: x => x.data.name,
+    [MaybeTag.None]: () => "This user doesn't exist" 
+  },
+  user
+) // "This user doesn't exist"
+```
+ */
 
 export function match<
   TaggedUnion extends Tagged<Tag>,
   Return,
   Tag extends PropertyKey = PropertyKey
->(cases: Cases<TaggedUnion, Return, Tag>): (v: TaggedUnion) => Return
-
-export function match<
-  TaggedUnion extends Tagged<Tag>,
-  Return,
-  Tag extends PropertyKey = PropertyKey,
-  CaseDefault extends () => Return = () => Return
->(
-  cases: Partial<Cases<TaggedUnion, Return, Tag>>,
-  caseDefault: CaseDefault,
-): (v?: TaggedUnion) => Return
-
-export function match<
-  TaggedUnion extends Tagged<Tag>,
-  Return,
-  Tag extends PropertyKey = PropertyKey,
-  CaseDefault extends () => Return = () => Return
->(cases: Partial<Cases<TaggedUnion, Return, Tag>>, caseDefault?: CaseDefault) {
-  return (v?: TaggedUnion): unknown => {
-    const c = v ? cases[v.type] : undefined
-    return c && v
-      ? c(v)
-      : caseDefault && typeof caseDefault === "function"
-      ? caseDefault()
-      : undefined
-  }
+>(cases: Cases<TaggedUnion, Return, Tag>, value: TaggedUnion): Return {
+  return cases[value.type](value)
 }
