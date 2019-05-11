@@ -21,9 +21,9 @@ match<Maybe<User>, string>(
  */
 
 export function match<
-  TaggedUnion extends Tagged<Tag>,
+  TaggedUnion extends Tagged<Tag, unknown>,
   Return,
   Tag extends PropertyKey = PropertyKey
 >(cases: Cases<TaggedUnion, Return, Tag>, value: TaggedUnion): Return {
-  return cases[value.type](value)
+  return cases[value.tag](value.data)
 }

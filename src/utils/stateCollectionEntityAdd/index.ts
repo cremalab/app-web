@@ -10,7 +10,7 @@ import { Action } from "../../types/Action"
 
 export const stateCollectionEntityAdd = <A extends Entity>(
   state: StateCollection<A>,
-) => ({ payload }: Action<A>): StateCollection<A> => ({
+) => ({ payload }: Action<any, A>): StateCollection<A> => ({
   entities: { ...state.entities, [payload.id]: payload },
   result: [...state.result, payload.id],
 })

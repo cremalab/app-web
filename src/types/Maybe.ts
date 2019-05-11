@@ -5,14 +5,9 @@ export enum MaybeTag {
   Some = "Some",
 }
 
-interface None extends Tagged<MaybeTag.None> {}
-
-interface Some<A> extends Tagged<MaybeTag.Some> {
-  data: A
-}
-
+interface None extends Tagged<MaybeTag.None, undefined> {}
+interface Some<A> extends Tagged<MaybeTag.Some, A> {}
 export type Maybe<A> = None | Some<A>
 
-// Constructors
-export const None: None = { type: MaybeTag.None }
-export const Some = <A>(x: A): Some<A> => ({ type: MaybeTag.Some, data: x })
+export const None = Tagged(MaybeTag.None, undefined)
+export const Some = <A>(a: A) => Tagged(MaybeTag.Some, a)

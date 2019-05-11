@@ -12,7 +12,7 @@ enum ActionType {
 describe("makeActionCreator", () => {
   it("returns action creator where argument is passed as action payload", () => {
     // Arrange
-    const actionItemAdd = makeActionCreator<User, unknown[], ActionType>(
+    const actionItemAdd = makeActionCreator<ActionType.UserAdd, [User], User>(
       ActionType.UserAdd,
     )
 

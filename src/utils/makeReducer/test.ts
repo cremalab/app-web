@@ -1,5 +1,7 @@
 import { makeReducer, MakeReducerCases } from "."
-import { Tagged } from "../../types/Tagged"
+import { makeActionCreator } from "../makeActionCreator"
+import { TaggedActionOfActionCreator } from "../../types/TaggedActionOfActionCreator"
+import { Action } from "../../types/Action"
 
 interface User {
   name: string
@@ -11,29 +13,24 @@ enum ActionType {
   Update = "Update",
 }
 
-interface ActionUserAdd extends Tagged<ActionType.Add> {
-  payload: User
-}
+const actionUserAdd = makeActionCreator(ActionType.Add, (x: User) => x)
+type ActionUserAdd = TaggedActionOfActionCreator<typeof actionUserAdd>
 
-const ActionUserAdd = (payload: User): ActionUserAdd => ({
-  type: ActionType.Add,
-  payload,
-})
+const actionUserRemove = makeActionCreator(
+  ActionType.Remove,
+  (id: string) => id,
+)
+type ActionUserRemove = TaggedActionOfActionCreator<typeof actionUserRemove>
 
-interface ActionUserRemove extends Tagged<ActionType.Remove> {
-  payload: string
-}
+const actionUserUpdate = makeActionCreator(ActionType.Update)
 
-interface ActionUserUpdate extends Tagged<ActionType.Update> {}
-const ActionUserUpdate = (): ActionUserUpdate => ({ type: ActionType.Update })
-
-type Action = ActionUserAdd | ActionUserRemove
+type TaggedAction = ActionUserAdd | ActionUserRemove
 type State = ReadonlyArray<User>
 
 describe("makeReducer makes reducer that", () => {
   // Arrange
   const initialState: State = []
-  const makeReducerCases: MakeReducerCases<State, Action> = s => ({
+  const makeReducerCases: MakeReducerCases<State, TaggedAction> = s => ({
     [ActionType.Add]: ({ payload }) => [...s, payload],
     [ActionType.Remove]: ({ payload }) => s.filter(x => x.name !== payload),
   })
@@ -41,7 +38,7 @@ describe("makeReducer makes reducer that", () => {
 
   it("returns next state when applied to previous state and action", () => {
     // Act
-    const received = reducerUser([], ActionUserAdd({ name: "Jeff" }))
+    const received = reducerUser([], actionUserAdd({ name: "Jeff" }))
 
     // Assert
     expect(received).toEqual([{ name: "Jeff" }])
@@ -49,7 +46,10 @@ describe("makeReducer makes reducer that", () => {
 
   it("returns previous state when applied to non-matching action", () => {
     // Act
-    const received = reducerUser([], (ActionUserUpdate() as unknown) as Action)
+    const received = reducerUser([], (actionUserUpdate() as unknown) as Action<
+      any,
+      any
+    >)
 
     // Assert
     expect(received).toEqual([])
@@ -59,7 +59,7 @@ describe("makeReducer makes reducer that", () => {
     // Act
     const received = reducerUser(
       undefined,
-      (ActionUserUpdate() as unknown) as Action,
+      (actionUserUpdate() as unknown) as Action<any, any>,
     )
 
     // Assert
@@ -68,7 +68,7 @@ describe("makeReducer makes reducer that", () => {
 
   it("returns next state when applied to undefined and matching action", () => {
     // Act
-    const received = reducerUser(undefined, ActionUserAdd({ name: "Jeff" }))
+    const received = reducerUser(undefined, actionUserAdd({ name: "Jeff" }))
 
     // Assert
     expect(received).toEqual([{ name: "Jeff" }])

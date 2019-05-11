@@ -10,7 +10,7 @@ import { match } from "../match"
 export const maybeUnwrap = <A>(a: Maybe<A>, b: A): A =>
   match<Maybe<A>, A>(
     {
-      [MaybeTag.Some]: x => x.data,
+      [MaybeTag.Some]: x => x,
       [MaybeTag.None]: () => b,
     },
     a,

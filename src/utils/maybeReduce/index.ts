@@ -10,7 +10,7 @@ import { match } from "../match"
 export const maybeReduce = <A, B>(a: (e: A) => B, b: B, c: Maybe<A>) =>
   match<Maybe<A>, B>(
     {
-      [MaybeTag.Some]: x => a(x.data),
+      [MaybeTag.Some]: a,
       [MaybeTag.None]: () => b,
     },
     c,

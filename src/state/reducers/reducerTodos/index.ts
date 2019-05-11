@@ -1,6 +1,6 @@
-import { ActionTodoAdd } from "../../actions/actionTodoAdd"
-import { ActionTodoRemove } from "../../actions/actionTodoRemove"
-import { ActionTodoUpdate } from "../../actions/actionTodoUpdate"
+import { TaggedActionTodoAdd } from "../../actions/actionTodoAdd"
+import { TaggedActionTodoRemove } from "../../actions/actionTodoRemove"
+import { TaggedActionTodoUpdate } from "../../actions/actionTodoUpdate"
 import { ActionType } from "../../../types/ActionType"
 import { State } from "../../../types/State"
 import { makeReducer } from "../../../utils/makeReducer"
@@ -8,9 +8,12 @@ import { stateCollectionEntityAdd } from "../../../utils/stateCollectionEntityAd
 import { stateCollectionEntityRemove } from "../../../utils/stateCollectionEntityRemove"
 import { stateCollectionEntityUpdate } from "../../../utils/stateCollectionEntityUpdate"
 
-type Action = ActionTodoAdd | ActionTodoRemove | ActionTodoUpdate
+type TaggedAction =
+  | TaggedActionTodoAdd
+  | TaggedActionTodoRemove
+  | TaggedActionTodoUpdate
 
-export const reducerTodos = makeReducer<State["todos"], Action>(
+export const reducerTodos = makeReducer<State["todos"], TaggedAction>(
   state => ({
     [ActionType.TodoAdd]: stateCollectionEntityAdd(state),
     [ActionType.TodoRemove]: stateCollectionEntityRemove(state),

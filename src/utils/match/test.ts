@@ -12,8 +12,8 @@ describe("match", () => {
     // Act
     const received = match<Maybe<User>, string>(
       {
-        [MaybeTag.None]: x => x.type,
-        [MaybeTag.Some]: x => x.data.name,
+        [MaybeTag.None]: () => "yo",
+        [MaybeTag.Some]: x => x.name,
       },
       user,
     )

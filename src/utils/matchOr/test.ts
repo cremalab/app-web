@@ -12,7 +12,7 @@ describe("matchOr", () => {
     // Act
     const received = matchOr<Maybe<User>, string>(
       {
-        [MaybeTag.Some]: x => x.data.name,
+        [MaybeTag.Some]: x => x.name,
       },
       "This user doesn't exist",
       user,
@@ -27,7 +27,7 @@ describe("matchOr", () => {
     // Act
     const received = matchOr<Maybe<User>, string>(
       {
-        [MaybeTag.Some]: x => x.data.name,
+        [MaybeTag.Some]: x => x.name,
       },
       "This user doesn't exist",
       user,

@@ -13,13 +13,13 @@ export type MakePayload<Args extends any[], Payload> = (
 ) => Payload
 
 export const makeActionCreator = <
-  Payload = null,
-  Args extends any[] = [Payload],
-  Type extends ActionType = ActionType
+  Type extends PropertyKey = ActionType,
+  Args extends any[] = [],
+  Payload = null
 >(
   type: Type,
   makePayload: MakePayload<Args, Payload> = (...x) => x[0],
-) => (...args: Args): Action<Payload, Type> => ({
+) => (...args: Args): Action<Type, Payload> => ({
   type,
   payload: makePayload(...args),
 })

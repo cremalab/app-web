@@ -14,7 +14,7 @@ export const stateCollectionEntityUpdate = <
   State extends StateCollection<A>
 >(
   state: State,
-) => ({ payload }: Action<Update<A>>) =>
+) => ({ payload }: Action<any, Update<A>>) =>
   state.result.reduce<StateCollection<A>>(
     (a, b) =>
       b === payload.id

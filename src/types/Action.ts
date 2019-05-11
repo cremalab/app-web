@@ -1,7 +1,6 @@
-import { Tagged } from "./Tagged"
-import { ActionType } from "./ActionType"
+import { Action } from "redux"
 
-export interface Action<Payload = null, Type extends PropertyKey = ActionType>
-  extends Tagged<Type> {
+export interface Action<Type extends PropertyKey, Payload>
+  extends Action<Type> {
   payload: Payload
 }

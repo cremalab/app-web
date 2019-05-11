@@ -2,6 +2,7 @@ import { ActionType } from "../../types/ActionType"
 import { makeActionCreator } from "../../utils/makeActionCreator"
 import { EntityTodo } from "../../types/EntityTodo"
 import { Update } from "../../types/Update"
+import { TaggedActionOfActionCreator } from "../../types/TaggedActionOfActionCreator"
 
 export const actionTodoUpdate = makeActionCreator(
   ActionType.TodoUpdate,
@@ -14,4 +15,6 @@ export const actionTodoUpdate = makeActionCreator(
   }),
 )
 
-export type ActionTodoUpdate = ReturnType<typeof actionTodoUpdate>
+export type TaggedActionTodoUpdate = TaggedActionOfActionCreator<
+  typeof actionTodoUpdate
+>

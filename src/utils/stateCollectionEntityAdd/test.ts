@@ -11,8 +11,7 @@ describe("stateCollectionEntityAdd", () => {
       result: [],
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const action: Action<EntityTodo, any> = {
+    const action: Action<unknown, EntityTodo> = {
       type: "ANY",
       payload: { id: "1", title: "Test Todo", complete: false },
     }

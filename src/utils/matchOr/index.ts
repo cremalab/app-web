@@ -23,7 +23,7 @@ matchOr<Maybe<User>, string>(
  */
 
 export function matchOr<
-  TaggedUnion extends Tagged<Tag>,
+  TaggedUnion extends Tagged<Tag, unknown>,
   Return,
   Tag extends PropertyKey = PropertyKey,
   CaseDefault extends Return = Return
@@ -32,6 +32,6 @@ export function matchOr<
   caseDefault: CaseDefault,
   value: TaggedUnion,
 ) {
-  const c = cases[value.type]
-  return c ? c(value) : caseDefault
+  const c = cases[value.tag]
+  return c ? c(value.data) : caseDefault
 }

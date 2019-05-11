@@ -13,7 +13,7 @@ export const stateCollectionEntityRemove = <
   State extends StateCollection<A>
 >(
   state: State,
-) => ({ payload }: Action<A["id"]>) =>
+) => ({ payload }: Action<any, A["id"]>) =>
   state.result.reduce<StateCollection<A>>(
     (a, b) =>
       b !== payload
