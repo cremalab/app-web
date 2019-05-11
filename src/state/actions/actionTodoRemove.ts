@@ -1,9 +1,9 @@
 import { ActionType } from "../../types/ActionType"
-import { makeActionCreator } from "../../utils/makeActionCreator"
+import { actionCreator } from "../../utils/actionCreator"
 import { EntityTodo } from "../../types/EntityTodo"
 import { TaggedActionOfActionCreator } from "../../types/TaggedActionOfActionCreator"
 
-export const actionTodoRemove = makeActionCreator(
+export const actionTodoRemove = actionCreator(
   ActionType.TodoRemove,
   (a: EntityTodo["id"]) => a,
 )

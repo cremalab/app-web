@@ -1,4 +1,4 @@
-import { makeActionCreator, MakePayload } from "."
+import { actionCreator } from "."
 
 export interface User {
   name: string
@@ -9,10 +9,10 @@ enum ActionType {
   Sum = "Sum",
 }
 
-describe("makeActionCreator", () => {
+describe("actionCreator", () => {
   it("returns action creator where argument is passed as action payload", () => {
     // Arrange
-    const actionItemAdd = makeActionCreator<ActionType.UserAdd, [User], User>(
+    const actionItemAdd = actionCreator<ActionType.UserAdd, [User], User>(
       ActionType.UserAdd,
     )
 
@@ -25,8 +25,8 @@ describe("makeActionCreator", () => {
 
   it("returns action creator where arguments are converted to payload", () => {
     // Arrange
-    const sum: MakePayload<[number, number], number> = (a, b) => a + b
-    const actionSum = makeActionCreator(ActionType.Sum, sum)
+    const sum = (a: number, b: number) => a + b
+    const actionSum = actionCreator(ActionType.Sum, sum)
 
     // Act
     const action = actionSum(2, 3)

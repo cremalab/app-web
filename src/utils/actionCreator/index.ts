@@ -3,22 +3,18 @@ import { Action } from "../../types/Action"
 import { ActionType } from "../../types/ActionType"
 
 /**
- * `makeActionCreator`
+ * `actionCreator`
  * ---------------------------------------------
- * Makes a Redux "Action Creator" function
+ * Returns a redux action creator
  */
 
-export type MakePayload<Args extends any[], Payload> = (
-  ...args: Args
-) => Payload
-
-export const makeActionCreator = <
+export const actionCreator = <
   Type extends PropertyKey = ActionType,
   Args extends any[] = [],
-  Payload = null
+  Payload = undefined
 >(
   type: Type,
-  makePayload: MakePayload<Args, Payload> = (...x) => x[0],
+  makePayload: (...args: Args) => Payload = (...x) => x[0],
 ) => (...args: Args): Action<Type, Payload> => ({
   type,
   payload: makePayload(...args),

@@ -1,5 +1,5 @@
-import { Maybe, MaybeTag } from "../../types/Maybe"
-import { match } from "../match"
+import { Maybe } from "../../types/Maybe"
+import { maybeReduce } from "../maybeReduce"
 
 /**
  * maybeUnwrap
@@ -8,10 +8,4 @@ import { match } from "../match"
  */
 
 export const maybeUnwrap = <A>(a: Maybe<A>, b: A): A =>
-  match<Maybe<A>, A>(
-    {
-      [MaybeTag.Some]: x => x,
-      [MaybeTag.None]: () => b,
-    },
-    a,
-  )
+  maybeReduce(x => x, b, a)

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actionCreator returns action creator where argument is passed as action payload 1`] = `
+Object {
+  "payload": Object {
+    "name": "Jeff",
+  },
+  "type": "UserAdd",
+}
+`;
+
+exports[`actionCreator returns action creator where arguments are converted to payload 1`] = `
+Object {
+  "payload": 5,
+  "type": "Sum",
+}
+`;

@@ -1,5 +1,6 @@
-import { makeReducer, MakeReducerCases } from "."
-import { makeActionCreator } from "../makeActionCreator"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { reducer, ReducerCases } from "."
+import { actionCreator } from "../actionCreator"
 import { TaggedActionOfActionCreator } from "../../types/TaggedActionOfActionCreator"
 import { Action } from "../../types/Action"
 
@@ -13,16 +14,13 @@ enum ActionType {
   Update = "Update",
 }
 
-const actionUserAdd = makeActionCreator(ActionType.Add, (x: User) => x)
+const actionUserAdd = actionCreator(ActionType.Add, (x: User) => x)
 type ActionUserAdd = TaggedActionOfActionCreator<typeof actionUserAdd>
 
-const actionUserRemove = makeActionCreator(
-  ActionType.Remove,
-  (id: string) => id,
-)
+const actionUserRemove = actionCreator(ActionType.Remove, (id: string) => id)
 type ActionUserRemove = TaggedActionOfActionCreator<typeof actionUserRemove>
 
-const actionUserUpdate = makeActionCreator(ActionType.Update)
+const actionUserUpdate = actionCreator(ActionType.Update)
 
 type TaggedAction = ActionUserAdd | ActionUserRemove
 type State = ReadonlyArray<User>
@@ -30,11 +28,11 @@ type State = ReadonlyArray<User>
 describe("makeReducer makes reducer that", () => {
   // Arrange
   const initialState: State = []
-  const makeReducerCases: MakeReducerCases<State, TaggedAction> = s => ({
+  const makeReducerCases: ReducerCases<State, TaggedAction> = s => ({
     [ActionType.Add]: ({ payload }) => [...s, payload],
     [ActionType.Remove]: ({ payload }) => s.filter(x => x.name !== payload),
   })
-  const reducerUser = makeReducer(makeReducerCases, initialState)
+  const reducerUser = reducer(makeReducerCases, initialState)
 
   it("returns next state when applied to previous state and action", () => {
     // Act

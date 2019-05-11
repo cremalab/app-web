@@ -1,12 +1,12 @@
-import { maybeWrap } from "."
+import { maybe } from "."
 import { None, Some } from "../../types/Maybe"
 
-describe("maybeWrap", () => {
+describe("maybe", () => {
   it("returns Maybe<A> for non-Nil value", () => {
     // Arrange
     const valA = 2
     // Act
-    const received = maybeWrap(valA)
+    const received = maybe(valA)
     // Assert
     expect(received).toEqual(Some(2))
   })
@@ -15,7 +15,7 @@ describe("maybeWrap", () => {
     // Arrange
     const valA: number[] = []
     // Act
-    const received = maybeWrap(valA.find(x => x === 2))
+    const received = maybe(valA.find(x => x === 2))
     // Assert
     expect(received).toEqual(None)
   })
@@ -24,7 +24,7 @@ describe("maybeWrap", () => {
     // Arrange
     const valA = null
     // Act
-    const received = maybeWrap(valA)
+    const received = maybe(valA)
     // Assert
     expect(received).toEqual(None)
   })

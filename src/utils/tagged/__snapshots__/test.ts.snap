@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tagged returns a \`Tagged<Tag, Data>\` 1`] = `
+Object {
+  "data": undefined,
+  "tag": "SOME_TAG",
+}
+`;

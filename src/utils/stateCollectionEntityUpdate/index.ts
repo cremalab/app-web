@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Entity } from "../../types/Entity"
 import { StateCollection } from "../../types/StateCollection"
 import { Action } from "../../types/Action"
-import { Update } from "../../types/Update"
+import { UpdateEntity } from "../../types/Update"
 
 /**
  * `stateCollectionEntityUpdate`
@@ -14,7 +15,7 @@ export const stateCollectionEntityUpdate = <
   State extends StateCollection<A>
 >(
   state: State,
-) => ({ payload }: Action<any, Update<A>>) =>
+) => ({ payload }: Action<any, UpdateEntity<A>>) =>
   state.result.reduce<StateCollection<A>>(
     (a, b) =>
       b === payload.id

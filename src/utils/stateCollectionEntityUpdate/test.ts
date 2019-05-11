@@ -2,7 +2,7 @@ import { stateCollectionEntityUpdate } from "."
 import { EntityTodo } from "../../types/EntityTodo"
 import { StateCollection } from "../../types/StateCollection"
 import { Action } from "../../types/Action"
-import { Update } from "../../types/Update"
+import { UpdateEntity } from "../../types/Update"
 
 describe("stateCollectionEntityUpdate", () => {
   it("updates `Entity<A>` in `StateCollection<Entity<A>>`", () => {
@@ -16,7 +16,7 @@ describe("stateCollectionEntityUpdate", () => {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const action: Action<unknown, Update<EntityTodo>> = {
+    const action: Action<any, UpdateEntity<EntityTodo>> = {
       type: "ANY",
       payload: { id: "1", properties: { complete: true } },
     }

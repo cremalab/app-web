@@ -78,13 +78,14 @@
   },
   "jest": {
     "collectCoverageFrom": [
+      "!**/*.d.ts",
       "!node_modules",
       "!src/**/(stories).{ts,tsx}",
+      "!src/**/(test).{ts,tsx}",
       "!src/index.tsx",
       "!src/serviceWorker.ts",
-      "!src/**/(test).{ts,tsx}",
       "!src/state/index.ts",
-      "!**/*.d.ts",
+      "!src/types/**/*.ts",
       "src/**/*.{ts,tsx}"
     ]
   },

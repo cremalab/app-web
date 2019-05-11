@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Entity } from "../../types/Entity"
 import { StateCollection } from "../../types/StateCollection"
 import { Action } from "../../types/Action"

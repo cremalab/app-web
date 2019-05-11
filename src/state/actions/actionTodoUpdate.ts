@@ -1,15 +1,15 @@
 import { ActionType } from "../../types/ActionType"
-import { makeActionCreator } from "../../utils/makeActionCreator"
+import { actionCreator } from "../../utils/actionCreator"
 import { EntityTodo } from "../../types/EntityTodo"
-import { Update } from "../../types/Update"
+import { UpdateEntity } from "../../types/Update"
 import { TaggedActionOfActionCreator } from "../../types/TaggedActionOfActionCreator"
 
-export const actionTodoUpdate = makeActionCreator(
+export const actionTodoUpdate = actionCreator(
   ActionType.TodoUpdate,
   (
-    id: Update<EntityTodo>["id"],
-    properties: Update<EntityTodo>["properties"],
-  ): Update<EntityTodo> => ({
+    id: UpdateEntity<EntityTodo>["id"],
+    properties: UpdateEntity<EntityTodo>["properties"],
+  ): UpdateEntity<EntityTodo> => ({
     id,
     properties,
   }),

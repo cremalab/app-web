@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Action } from "./Action"
 import { TaggedAction } from "./TaggedAction"
 

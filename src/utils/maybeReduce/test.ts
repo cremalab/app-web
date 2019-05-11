@@ -1,21 +1,21 @@
 import { maybeReduce } from "."
-import { maybeWrap } from "../maybeWrap"
+import { maybe } from "../maybe"
 
 describe("maybeReduce", () => {
   it("handles Some", () => {
     // Arrange
-    const maybe = maybeWrap(2)
+    const maybeNumber = maybe(2)
     // Act
-    const received = maybeReduce(() => "yep", "nope", maybe)
+    const received = maybeReduce(() => "yep", "nope", maybeNumber)
     // Assert
     expect(received).toEqual("yep")
   })
 
   it("handles None", () => {
     // Arrange
-    const maybe = maybeWrap(undefined)
+    const maybeNumber = maybe<number>()
     // Act
-    const received = maybeReduce(() => "yep", "nope", maybe)
+    const received = maybeReduce(() => "yep", "nope", maybeNumber)
     // Assert
     expect(received).toEqual("nope")
   })
