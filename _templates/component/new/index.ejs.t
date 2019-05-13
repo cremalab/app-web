@@ -9,15 +9,15 @@ import { connect } from "react-redux"
 import { MapStateToProps } from "../../types/MapStateToProps"
 <% } -%>
 
-type Props = Readonly<{ children?: React.ReactNode }>
+type Props = Readonly<{ name?: string }>
 
-export function <%= nameBase %>({ children }: Props) {
+export function <%= nameBase %>({ name }: Props) {
   const [count, setCount] = useState(0)
   return (
     <div className="<%= name %>">
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
-      {children}
+      {name}
     </div>
   )
 }
