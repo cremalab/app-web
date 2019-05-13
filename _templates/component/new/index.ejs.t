@@ -28,10 +28,10 @@ import { connect } from "react-redux"
 import { MapStateToProps } from "../../types/MapStateToProps"
 <% } -%>
 
-type Props = Readonly<{ children?: React.ReactNode }>
+type Props = Readonly<{ name?: string }>
 
-export function <%= nameBase %>({ children }: Props) {
-  return <div className="<%= name %>">{children}</div>
+export function <%= nameBase %>({ name }: Props) {
+  return <div className="<%= name %>">{name}</div>
 }
 <% } -%>
 <% if(connected) { -%>
