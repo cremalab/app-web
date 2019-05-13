@@ -12,7 +12,7 @@ import { Tagged } from "../../types/Tagged"
 const user = None
 matchOr<Maybe<User>, string>(
   {
-    [MaybeTag.Some]: x => x.data.name,
+    [MaybeTag.Some]: x => x.name,
     // [MaybeTag.None]: () => "This user doesn't exist" 
     // 👆 partial because `Cases` lacks `None`
   },

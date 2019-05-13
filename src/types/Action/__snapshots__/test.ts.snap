@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Action returns an \`Action<Type, Payload>\` 1`] = `
+Object {
+  "payload": 2,
+  "type": "SOME_TYPE",
+}
+`;

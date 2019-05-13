@@ -2,7 +2,10 @@
 
 exports[`tagged returns a \`Tagged<Tag, Data>\` 1`] = `
 Object {
-  "data": undefined,
+  "data": Object {
+    "id": "2",
+    "name": "Jeff",
+  },
   "tag": "SOME_TAG",
 }
 `;

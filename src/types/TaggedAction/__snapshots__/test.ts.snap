@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaggedAction returns a \`TaggedAction<Action<Type, Payload>>\` 1`] = `
+Object {
+  "data": Object {
+    "payload": 5,
+    "type": "TEST_TYPE",
+  },
+  "tag": "TEST_TYPE",
+}
+`;

@@ -1,5 +1,5 @@
 import { match } from "."
-import { Maybe, MaybeTag, Some } from "../../types/Maybe"
+import { Maybe } from "../../types/Maybe"
 
 interface User {
   name: string
@@ -8,12 +8,12 @@ interface User {
 describe("match", () => {
   it("matches a Tagged member", () => {
     // Arrange
-    const user = Some({ name: "Rob" })
+    const user = Maybe.Some({ name: "Rob" })
     // Act
     const received = match<Maybe<User>, string>(
       {
-        [MaybeTag.None]: () => "yo",
-        [MaybeTag.Some]: x => x.name,
+        [Maybe.Tag.Some]: x => x.name,
+        [Maybe.Tag.None]: () => "yo",
       },
       user,
     )

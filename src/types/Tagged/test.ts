@@ -1,12 +1,13 @@
-import { tagged } from "."
+import { Tagged } from "."
 
 describe("tagged", () => {
   it("returns a `Tagged<Tag, Data>`", () => {
     // Arrange
-    const valA = "SOME_TAG"
+    const tag = "SOME_TAG"
+    const data = { id: "2", name: "Jeff" }
 
     // Act
-    const received = tagged(valA, undefined)
+    const received = Tagged(tag, data)
 
     // Assert
     expect(received).toMatchSnapshot()

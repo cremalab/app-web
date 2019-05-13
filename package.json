@@ -85,7 +85,6 @@
       "!src/index.tsx",
       "!src/serviceWorker.ts",
       "!src/state/index.ts",
-      "!src/types/**/*.ts",
       "src/**/*.{ts,tsx}"
     ]
   },
