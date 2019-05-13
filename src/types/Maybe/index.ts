@@ -1,9 +1,9 @@
 import { Tagged } from "../Tagged"
 import { match } from "../../utils/match"
 
-export enum Tag {
-  None,
-  Some,
+enum Tag {
+  None = "None",
+  Some = "Some",
 }
 
 interface Some<A> extends Tagged<Tag.Some, A> {}
