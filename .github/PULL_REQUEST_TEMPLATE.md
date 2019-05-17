@@ -4,29 +4,30 @@ DESCRIPTION_HERE
 
 ### 🖼 Demo Images
 
+> Test images work nicely for this (table is optional)
+
 <table>
 <tr><th>Before</th><th>After</th></tr>
 <tr>
 <td>
 
-![](https://github.com/cremalab/<REPO_NAME>/blob/<BASE_BRANCH>/src/components/<COMPONENT_NAME>/screenshots/reference/document_320x480.png?raw=true)
+![](https://github.com/cremalab/<REPO_NAME>/blob/<BASE_BRANCH>/src/components/<COMPONENT_NAME>/screenshots/reference/document_480x320.png?raw=true)
 
 </td>
 <td>
 
-![](https://github.com/cremalab/<REPO_NAME>/blob/<FULL_COMMIT_SHA>/src/components/<COMPONENT_NAME>/screenshots/reference/document_320x480.png?raw=true)
+![](https://github.com/cremalab/<REPO_NAME>/blob/<FULL_COMMIT_SHA>/src/components/<COMPONENT_NAME>/screenshots/reference/document_480x320.png?raw=true)
 
 </td>
 </tr>
 </table>
 
-> Test images work nicely for this (table is optional)
-
 ### 📋 Acceptance Criteria
+
+> Checked off by the PR **Assignee(s)**
 
 - [ ] CRITERION_HERE
 
-> Checked off by the PR assignee(s)
 
 ### 👩‍🔬 Test Instructions
 
@@ -36,11 +37,36 @@ DESCRIPTION_HERE
 4. Include any setup required, such as bundling scripts, restarting services, etc.
 5. Include test case, and expected output
 
-## 🔎 Review Checklist
+## 🔎 Reviewer Checklist
+
+> Checked off by the PR **Reviewers**
+
+### Required
+
+> These always need to be checked
 
 - [ ] Merge destination is correct
 - [ ] Code is correct as understood and conforms to quality standards
 - [ ] Tests have been added where appropriate (unit, visual, end-to-end)
 - [ ] Acceptance Criteria have been met
 
-> Checked off by the PR reviewers
+### Additional
+
+> Delete if unneeded
+
+- [ ] Code has been tested and confirmed locally
+
+---
+
+>### Roles & Responsibilities
+>
+>#### 👨‍💻 Assignee
+>
+>- Initiator of this PR (be sure to set in GitHub UI)
+>- Addresses feedback and change requests
+>- Merges PR once approved (usually deletes branch unless `develop` or `release`)
+>
+>#### 👩‍💻 Reviewer
+>
+>- Invited to review PR by **Assignee** (via GitHub UI)
+>- Is expected to complete a review and address followup
