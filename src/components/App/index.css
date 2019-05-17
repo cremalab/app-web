@@ -7,7 +7,7 @@
   height: 40vmin;
 }
 
-.App-logo--notAnimated {
+.App-logo.-notAnimated {
   animation: none;
 }
 

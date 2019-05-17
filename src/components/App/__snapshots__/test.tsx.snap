@@ -9,7 +9,7 @@ exports[`App renders an unanimated component 1`] = `
   >
     <img
       alt="logo"
-      className="App-logo App-logo--notAnimated"
+      className="App-logo -notAnimated"
       src="logo.svg"
     />
     <p>

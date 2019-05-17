@@ -11,9 +11,9 @@ This is the base `Home` component provided by [Create React App](https://faceboo
 
 ## Example
 
-![Home](./screenshots/reference/Home_320x480.png)
+![Home](./screenshots/reference/Home_480x320.png)
 
-> Image location: [`screenshots/reference/Home_320x480.png`](./screenshots/reference/Home_320x480.png)
+> Image location: [`screenshots/reference/Home_480x320.png`](./screenshots/reference/Home_480x320.png)
 > 
 > To regenerate: 
 > `npm run test:visual:update`

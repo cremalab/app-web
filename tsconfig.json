@@ -65,10 +65,6 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "include": [
-    "src"
-  ],
-  "exclude": [
-    "src/test",
-    "wdio-specs.ts"
+    "src", "wdio-specs.ts", "wdio.conf.ts"
   ]
 }

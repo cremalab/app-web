@@ -1,6 +1,5 @@
 import React from "react"
 import logo from "../../assets/logo.svg"
-import classnames from "classnames"
 import "./index.css"
 
 type Props = Readonly<{
@@ -8,15 +7,16 @@ type Props = Readonly<{
   notAnimated?: boolean
 }>
 
-export function App(props: Props) {
-  const logoClasses = classnames("App-logo", {
-    "App-logo--notAnimated": props.notAnimated,
-  })
-
+export function App({ notAnimated }: Props) {
+  const classNameNotAnimated = notAnimated ? " -notAnimated" : ""
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className={logoClasses} alt="logo" />
+        <img
+          src={logo}
+          className={"App-logo" + classNameNotAnimated}
+          alt="logo"
+        />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/classnames": "^2.2.7",
-    "classnames": "^2.2.6",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.0"
@@ -17,6 +15,7 @@
     "@storybook/cli": "^5.0.6",
     "@storybook/react": "^5.0.6",
     "@types/chai": "^4.1.7",
+    "@types/glob": "^7.1.1",
     "@types/ip": "^1.1.0",
     "@types/jest": "^24.0.0",
     "@types/mocha": "^5.2.6",
@@ -61,9 +60,9 @@
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test",
     "new:component": "hygen component new",
     "new:util": "hygen util new",
-    "prepush": "npm run selenium-docker-start && npm run test:ci",
+    "prepush": "npm run private:selenium-docker-start && npm run test:ci",
     "static": "serve -s build",
-    "test:ci": "CI=true npm-run-all output-stories test:lint \"test:unit -- -i\" test:playground:build test:visual:ci",
+    "test:ci": "CI=true npm-run-all test:lint \"test:unit -- -i\" test:playground:build test:visual:ci",
     "test:lint": "eslint -c ./.eslintrc.js 'src/**/*.{ts,tsx}'",
     "test:lint:fix": "npm run test:lint -- --fix",
     "test:playground": "NODE_ENV=test BABEL_ENV=development start-storybook -p 9009 -s public",
@@ -73,14 +72,13 @@
     "test:unit:coverage": "npm run test:unit -- --coverage",
     "test:unit:coverage:ci": "npm run test:unit:coverage && codecov",
     "test:unit:coverage:watch": "npm run test:unit:coverage -- --watch",
-    "test:visual": "npm run output-stories && npm run selenium-docker-start && start-server-and-test test:playground:ci http://localhost:5000 wdio",
+    "test:visual": "start-server-and-test test:playground:ci http://localhost:5000 private:wdio",
     "test:visual:ci": "CI=true npm run test:visual",
     "test:visual:update": "rimraf src/components/**/screenshots/ && npm run test:visual",
     "test:analyze": "npm-run-all build && source-map-explorer build/static/js/main.*",
     "build-storybook": "build-storybook -s public",
-    "output-stories": "ts-node --project tsconfig.wdio.json ./bin/output-stories.ts",
-    "wdio": "wdio wdio.conf.js",
-    "selenium-docker-start": "node ./bin/start-docker.js"
+    "private:wdio": "wdio wdio.conf.js",
+    "private:selenium-docker-start": "node ./bin/start-docker.js"
   },
   "husky": {
     "hooks": {

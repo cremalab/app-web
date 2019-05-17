@@ -11,9 +11,9 @@ This is the base `App` component provided by [Create React App](https://facebook
 
 ## Example
 
-![App](./screenshots/reference/App_320x480.png)
+![App](./screenshots/reference/App_480x320.png)
 
-> Image location: [`screenshots/reference/App_320x480.png`](./screenshots/reference/App_320x480.png)
+> Image location: [`screenshots/reference/App_480x320.png`](./screenshots/reference/App_480x320.png)
 > 
 > To regenerate: 
 > `npm run test:visual:update`
