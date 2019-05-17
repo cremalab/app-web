@@ -4,6 +4,8 @@ DESCRIPTION_HERE
 
 ### 🖼 Demo Images
 
+> Test images work nicely for this (table is optional)
+
 <table>
 <tr><th>Before</th><th>After</th></tr>
 <tr>
@@ -19,8 +21,6 @@ DESCRIPTION_HERE
 </td>
 </tr>
 </table>
-
-> Test images work nicely for this (table is optional)
 
 ### 📋 Acceptance Criteria
 
@@ -58,15 +58,15 @@ DESCRIPTION_HERE
 
 ---
 
-### Roles & Responsibilities
-
-#### Assignee 
-
-- Initiator of this PR (be sure to set in GitHub UI)
-- Addresses feedback and change requests
-- Merges PR once approved (usually deletes branch unless `develop` or `release`)
-
-#### Reviewer 
-
-- Invited to review PR by **Assignee** (via GitHub UI)
-- Is expected to complete a review and address followup
+>### Roles & Responsibilities
+>
+>#### 👨‍💻 Assignee
+>
+>- Initiator of this PR (be sure to set in GitHub UI)
+>- Addresses feedback and change requests
+>- Merges PR once approved (usually deletes branch unless `develop` or `release`)
+>
+>#### 👩‍💻 Reviewer
+>
+>- Invited to review PR by **Assignee** (via GitHub UI)
+>- Is expected to complete a review and address followup
