@@ -38,7 +38,9 @@ export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
             variant="outlined"
           />
         </Grid>
-        <ErrorMessage name="login" />
+        <Grid item>
+          <ErrorMessage name="login" />
+        </Grid>
         <Grid item>
           <TextField
             name="password"
@@ -50,7 +52,10 @@ export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
             variant="outlined"
           />
         </Grid>
-        <ErrorMessage name="password" />
+
+        <Grid item>
+          <ErrorMessage name="password" />
+        </Grid>
         <Grid item>
           <Button
             type="submit"
