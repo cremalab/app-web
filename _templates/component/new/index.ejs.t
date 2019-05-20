@@ -9,7 +9,7 @@ import { connect } from "react-redux"
 import { MapStateToProps } from "../../types/MapStateToProps"
 <% } -%>
 
-type Props = Readonly<{ name?: string }>
+type Props = Readonly<{ name: string }>
 
 export function <%= nameBase %>({ name }: Props) {
   const [count, setCount] = useState(0)
@@ -28,7 +28,7 @@ import { connect } from "react-redux"
 import { MapStateToProps } from "../../types/MapStateToProps"
 <% } -%>
 
-type Props = Readonly<{ name?: string }>
+type Props = Readonly<{ name: string }>
 
 export function <%= nameBase %>({ name }: Props) {
   return <div className="<%= name %>">{name}</div>

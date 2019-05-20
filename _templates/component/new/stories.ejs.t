@@ -9,4 +9,4 @@ import { <%= connected ? `${nameBase} as ${name}` : name %> } from "."
 
 storiesOf("<%= name %>", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <<%= name %>><%= name %></<%= name %>>)
+  .add("default", () => <<%= name %> name="test" />)
