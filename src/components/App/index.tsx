@@ -18,7 +18,7 @@ export function App({ notAnimated }: Props) {
           alt="logo"
         />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <code>src/App.tsx</code> and save to reloaklsJdfklsadjd.
         </p>
         <a
           className="App-link"
