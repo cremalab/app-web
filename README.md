@@ -44,7 +44,7 @@ Run the following scripts with `npm run <SCRIPT_HERE>`:
 
 - `start` - start app
 - `new:component` - generate a new component
-- `new:utility` - generate a new util(ity)
+- `new:util` - generate a new util(ity)
 - `test:analyze` - run bundle analyzer
 - `test:e2e` - run end-to-end tests
 - `test:lint:fix` - run linter and fix if possible
