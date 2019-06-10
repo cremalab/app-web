@@ -1,45 +1,48 @@
 import React from "react"
-import {
-  TextField,
-  Grid,
-  Button,
-  withStyles,
-  createStyles,
-} from "@material-ui/core"
+import { TextField, Grid, Button, createStyles } from "@material-ui/core"
 import { ErrorMessage, FormikProps, withFormik, FormikValues } from "formik"
 import * as yup from "yup"
+import axios from "axios"
+import { setAuthorization } from "../../utils/setAuthorization"
+import { withRouter, RouteComponentProps } from "react-router-dom"
+
+const styles = createStyles({
+  form: {
+    display: "flex",
+    minHeight: "100vh",
+  },
+  grid: {
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
+    color: "red",
+  },
+})
 
 interface FormValues {
-  login: string
+  email: string
   password: string
 }
 
-export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
-  const {
-    values,
-    handleChange,
-    handleBlur,
-    isSubmitting,
-    handleSubmit,
-    classes,
-  } = props
+export const FormComp = (props: FormikProps<FormValues>) => {
+  const { values, handleChange, handleBlur, isSubmitting, handleSubmit } = props
 
   return (
-    <form onSubmit={handleSubmit} className={classes.form}>
-      <Grid container spacing={8} className={classes.grid} direction="column">
+    <form onSubmit={handleSubmit} style={styles.form}>
+      <Grid container spacing={8} style={styles.grid} direction="column">
         <Grid item>
           <TextField
-            name="login"
-            placeholder="Username"
-            type="text"
+            name="email"
+            placeholder="Email"
+            type="email"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.login}
+            value={values.email}
             variant="outlined"
           />
         </Grid>
         <Grid item>
-          <ErrorMessage name="login" />
+          <ErrorMessage name="email" />
         </Grid>
         <Grid item>
           <TextField
@@ -71,51 +74,52 @@ export const FormComp = (props: StyleProps & FormikProps<FormValues>) => {
   )
 }
 
-interface StyleProps {
-  classes: {
-    grid: string
-    form: string
-  }
-}
-
-const styles = createStyles({
-  form: {
-    display: "flex",
-    minHeight: "100vh",
-  },
-  grid: {
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
-    color: "red",
-  },
-})
-
-export const LoginForm = withStyles(styles)(FormComp)
+//export const LoginForm = withStyles(styles)(FormComp)
 
 //TODO: Research purpose of this interface
-interface MyFormProps {
-  initlogin?: ""
+interface MyFormProps extends RouteComponentProps {
+  initPassword?: ""
+  initEmail?: ""
 }
 
-export const Login = withFormik<MyFormProps, FormValues>({
+export const LoginComponent = withFormik<MyFormProps, FormValues>({
   mapPropsToValues: props => ({
-    login: props.initlogin || "",
-    password: "",
+    email: props.initEmail || "",
+    password: props.initPassword || "",
   }),
 
   validationSchema: yup.object().shape({
-    login: yup.string().required("You must enter a login"),
-
+    email: yup
+      .string()
+      .required("You must enter an email")
+      .email(),
     password: yup.string().required("You must enter a  password"),
   }),
 
-  handleSubmit({ login, password }: FormikValues, { setSubmitting }) {
-    console.log(login)
-    alert(JSON.stringify({ login, password }, null, 2))
-    //Potential asynchronous code here
-    setSubmitting(false)
+  handleSubmit(
+    { email, password }: FormikValues,
+    { setSubmitting, props, resetForm },
+  ) {
+    axios
+      .post("http://localhost:5000/auth/login", {
+        email,
+        password,
+      })
+      .then(res => {
+        localStorage.setItem("jwtToken", res.data.token)
+        setAuthorization(res.data.token)
+        alert(JSON.stringify(res.data.message, null, 2))
+        setSubmitting(false)
+        props.history.push("/home")
+      })
+      .catch(err => {
+        alert(JSON.stringify(err.response.data.message, null, 2))
+        resetForm()
+        setSubmitting(false)
+      })
   },
-})(LoginForm)
+})(FormComp)
+
+export const Login = withRouter(LoginComponent)
 
 Login.displayName = "Login"
