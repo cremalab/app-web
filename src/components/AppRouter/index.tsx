@@ -7,8 +7,8 @@ import { Navigation } from "../Navigation"
 export const AppRouter = () => {
   return (
     <div>
-      <Navigation />
       <Router>
+        <Navigation />
         <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />
       </Router>

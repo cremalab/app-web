@@ -101,7 +101,7 @@ export const LoginComponent = withFormik<MyFormProps, FormValues>({
     { setSubmitting, props, resetForm },
   ) {
     axios
-      .post("http://localhost:5000/auth/login", {
+      .post("http://localhost:5001/auth/login", {
         email,
         password,
       })
@@ -112,7 +112,7 @@ export const LoginComponent = withFormik<MyFormProps, FormValues>({
         setSubmitting(false)
         props.history.push("/home")
       })
-      .catch(err => {
+      .catch((err: { response: { data: { message: string } } }) => {
         alert(JSON.stringify(err.response.data.message, null, 2))
         resetForm()
         setSubmitting(false)
