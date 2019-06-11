@@ -24,7 +24,7 @@ interface FormValues {
   password: string
 }
 
-export const FormComp = (props: FormikProps<FormValues>) => {
+const FormComp = (props: FormikProps<FormValues>) => {
   const { values, handleChange, handleBlur, isSubmitting, handleSubmit } = props
 
   return (
@@ -74,15 +74,13 @@ export const FormComp = (props: FormikProps<FormValues>) => {
   )
 }
 
-//export const LoginForm = withStyles(styles)(FormComp)
-
 //TODO: Research purpose of this interface
 interface MyFormProps extends RouteComponentProps {
   initPassword?: ""
   initEmail?: ""
 }
 
-export const LoginComponent = withFormik<MyFormProps, FormValues>({
+const LoginComponent = withFormik<MyFormProps, FormValues>({
   mapPropsToValues: props => ({
     email: props.initEmail || "",
     password: props.initPassword || "",
