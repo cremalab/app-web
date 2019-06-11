@@ -2,8 +2,8 @@
 
 exports[`AppRouter renders 1`] = `
 <div>
-  <Navigation />
   <BrowserRouter>
+    <Navigation />
     <Route
       component={[Function]}
       exact={true}

@@ -2,6 +2,6 @@
 
 exports[`App renders expected structure 1`] = `
 <div>
-  App
+  <AppRouter />
 </div>
 `;

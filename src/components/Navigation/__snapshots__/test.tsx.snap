@@ -2,20 +2,18 @@
 
 exports[`Navigation renders 1`] = `
 <div>
-  <BrowserRouter>
-    <NavLink
-      exact={true}
-      to="/login"
-    >
-      Login
-    </NavLink>
-    <br />
-    <NavLink
-      exact={true}
-      to="/home"
-    >
-      Home
-    </NavLink>
-  </BrowserRouter>
+  <NavLink
+    exact={true}
+    to="/login"
+  >
+    Login
+  </NavLink>
+  <br />
+  <NavLink
+    exact={true}
+    to="/home"
+  >
+    Home
+  </NavLink>
 </div>
 `;
