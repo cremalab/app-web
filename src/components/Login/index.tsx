@@ -74,16 +74,10 @@ const FormComp = (props: FormikProps<FormValues>) => {
   )
 }
 
-//TODO: Research purpose of this interface
-interface MyFormProps extends RouteComponentProps {
-  initPassword?: ""
-  initEmail?: ""
-}
-
-const LoginComponent = withFormik<MyFormProps, FormValues>({
-  mapPropsToValues: props => ({
-    email: props.initEmail || "",
-    password: props.initPassword || "",
+const LoginComponent = withFormik<RouteComponentProps, FormValues>({
+  mapPropsToValues: () => ({
+    email: "",
+    password: "",
   }),
 
   validationSchema: yup.object().shape({
@@ -104,14 +98,16 @@ const LoginComponent = withFormik<MyFormProps, FormValues>({
         password,
       })
       .then(res => {
-        localStorage.setItem("jwtToken", res.data.token)
-        setAuthorization(res.data.token)
-        alert(JSON.stringify(res.data.message, null, 2))
+        const token = res.data.token
+        if (token) {
+          localStorage.setItem("jwtToken", token)
+          setAuthorization(token)
+        }
         setSubmitting(false)
         props.history.push("/home")
       })
       .catch((err: { response: { data: { message: string } } }) => {
-        alert(JSON.stringify(err.response.data.message, null, 2))
+        console.log(err.response.data.message)
         resetForm()
         setSubmitting(false)
       })
