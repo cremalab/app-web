@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders 1`] = `
+<div>
+  <NavLink
+    exact={true}
+    to="/login"
+  >
+    Login
+  </NavLink>
+  <br />
+  <NavLink
+    exact={true}
+    to="/home"
+  >
+    Home
+  </NavLink>
+</div>
+`;

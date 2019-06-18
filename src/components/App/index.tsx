@@ -1,7 +1,6 @@
 import React from "react"
-
-import { Login } from "../../components/Login"
+import { AppRouter } from "../AppRouter"
 
 export const App = () => {
-  return <Login />
+  return <AppRouter />
 }
