@@ -5,4 +5,4 @@ import { Home } from "."
 
 storiesOf("Home", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <Home>Home</Home>)
+  .add("default", () => <Home />)

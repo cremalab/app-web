@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppRouter renders 1`] = `
-<div>
-  <BrowserRouter>
-    <Navigation />
+<BrowserRouter>
+  <Navigation />
+  <Switch>
     <Route
       component={[Function]}
       exact={true}
@@ -14,6 +14,6 @@ exports[`AppRouter renders 1`] = `
       exact={true}
       path="/home"
     />
-  </BrowserRouter>
-</div>
+  </Switch>
+</BrowserRouter>
 `;

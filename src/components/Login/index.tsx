@@ -22,55 +22,57 @@ const styles = createStyles({
 interface FormValues {
   email: string
   password: string
+  showSnack: boolean
 }
 
 const FormComp = (props: FormikProps<FormValues>) => {
   const { values, handleChange, handleBlur, isSubmitting, handleSubmit } = props
-
   return (
-    <form onSubmit={handleSubmit} style={styles.form}>
-      <Grid container spacing={8} style={styles.grid} direction="column">
-        <Grid item>
-          <TextField
-            name="email"
-            placeholder="Email"
-            type="email"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.email}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item>
-          <ErrorMessage name="email" />
-        </Grid>
-        <Grid item>
-          <TextField
-            name="password"
-            placeholder="Password"
-            type="text"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.password}
-            variant="outlined"
-          />
-        </Grid>
+    <div>
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <Grid container spacing={8} style={styles.grid} direction="column">
+          <Grid item>
+            <TextField
+              name="email"
+              placeholder="Email"
+              type="email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item>
+            <ErrorMessage name="email" />
+          </Grid>
+          <Grid item>
+            <TextField
+              name="password"
+              placeholder="Password"
+              type="text"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.password}
+              variant="outlined"
+            />
+          </Grid>
 
-        <Grid item>
-          <ErrorMessage name="password" />
+          <Grid item>
+            <ErrorMessage name="password" />
+          </Grid>
+          <Grid item>
+            <Button
+              type="submit"
+              variant="contained"
+              size="small"
+              disabled={isSubmitting}
+            >
+              Login
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item>
-          <Button
-            type="submit"
-            variant="contained"
-            size="small"
-            disabled={isSubmitting}
-          >
-            Login
-          </Button>
-        </Grid>
-      </Grid>
-    </form>
+      </form>
+    </div>
   )
 }
 
@@ -78,6 +80,7 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
   mapPropsToValues: () => ({
     email: "",
     password: "",
+    showSnack: false,
   }),
 
   validationSchema: yup.object().shape({
@@ -93,7 +96,7 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
     { setSubmitting, props, resetForm },
   ) {
     axios
-      .post("http://localhost:5001/auth/login", {
+      .post("http://localhost:5002/auth/login", {
         email,
         password,
       })
@@ -102,11 +105,18 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
         if (token) {
           localStorage.setItem("jwtToken", token)
           setAuthorization(token)
+          props.history.push(`/home/${res.data.userId}`)
+          //tell user that they logged in successfully
         }
         setSubmitting(false)
-        props.history.push("/home")
       })
       .catch((err: { response: { data: { message: string } } }) => {
+        // tell user that they failed to login
+        if (err.response.data === undefined) {
+          alert(JSON.stringify("Check to make sure your server is running"))
+          props.history.push("/home/")
+        }
+        alert(JSON.stringify(err.response.data.message))
         console.log(err.response.data.message)
         resetForm()
         setSubmitting(false)
