@@ -5,6 +5,7 @@ import * as yup from "yup"
 import axios from "axios"
 import { setAuthorization } from "../../utils/setAuthorization"
 import { withRouter, RouteComponentProps } from "react-router-dom"
+import { PORT } from "../AppRouter"
 
 const styles = createStyles({
   form: {
@@ -26,10 +27,18 @@ interface FormValues {
 }
 
 const FormComp = (props: FormikProps<FormValues>) => {
-  const { values, handleChange, handleBlur, isSubmitting, handleSubmit } = props
+  const {
+    values,
+    handleChange,
+    handleBlur,
+    isSubmitting,
+    handleSubmit,
+    status,
+  } = props
   return (
     <div>
       <form onSubmit={handleSubmit} style={styles.form}>
+        {status}
         <Grid container spacing={8} style={styles.grid} direction="column">
           <Grid item>
             <TextField
@@ -93,10 +102,11 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
 
   handleSubmit(
     { email, password }: FormikValues,
-    { setSubmitting, props, resetForm },
+    { setSubmitting, props, resetForm, setStatus },
   ) {
+    setStatus(null)
     axios
-      .post("http://localhost:5002/auth/login", {
+      .post(`http://localhost:${PORT}/auth/login`, {
         email,
         password,
       })
@@ -112,14 +122,15 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
       })
       .catch((err: { response: { data: { message: string } } }) => {
         // tell user that they failed to login
-        if (err.response.data === undefined) {
-          alert(JSON.stringify("Check to make sure your server is running"))
-          props.history.push("/home/")
+        if (!err.response) {
+          resetForm()
+          setStatus(`Check to make sure your server is running on PORT ${PORT}`)
+        } else {
+          resetForm()
+          console.log(err.response.data.message)
+          setStatus(err.response.data.message)
+          setSubmitting(false)
         }
-        alert(JSON.stringify(err.response.data.message))
-        console.log(err.response.data.message)
-        resetForm()
-        setSubmitting(false)
       })
   },
 })(FormComp)

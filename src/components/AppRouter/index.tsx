@@ -1,18 +1,21 @@
 import React from "react"
-import { Home } from "../Home"
 import { Login } from "../Login"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import { AuthRoutes } from "../AuthRoutes"
 import { Navigation } from "../Navigation"
+import dotenv from "dotenv"
+
+dotenv.config()
+export const HOST = process.env.REACT_APP_APIPORT_HOST
+export const PORT = process.env.REACT_APP_APIPORT
 
 export const AppRouter = () => {
   return (
     <Router>
       <Navigation />
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/search" component={Home} />
-      </Switch>
+      <Route exact path="/login" component={Login} />
+      <Route path="/" component={AuthRoutes} />
     </Router>
   )
 }

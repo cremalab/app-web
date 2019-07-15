@@ -11,10 +11,10 @@ function Links(props: LinkTabProps) {
   return (
     <div>
       <Tab
-        component="a"
         onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-          props.history.push(props.href)
           event.preventDefault()
+
+          return props.history.push(props.href)
         }}
         {...props}
       />
@@ -25,7 +25,7 @@ const LinkTab = withRouter(Links)
 
 export const Navigation = () => {
   // const classes = useStyles()
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = React.useState()
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
     setValue(newValue)
@@ -35,13 +35,10 @@ export const Navigation = () => {
     <div>
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} onChange={handleChange}>
-          <LinkTab label="home" href="/home" />
+          <LinkTab label="home" href="/auth/home/1" />
           <LinkTab label="login" href="/login" />
         </Tabs>
       </AppBar>
-      {value === 0}
-      {value === 1}
-      {value === 2}
     </div>
   )
 }

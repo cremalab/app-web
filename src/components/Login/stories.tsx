@@ -8,6 +8,7 @@ storiesOf("Login", module)
   .addDecorator(decoratorCentered)
   .add("default", () => (
     <Router>
+      {" "}
       <Login />
     </Router>
   ))

@@ -13,6 +13,10 @@ import {
 const styles = createStyles({
   card: {
     maxWidth: 345,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    marginButton: 10,
   },
   media: {
     height: 200,
@@ -35,7 +39,7 @@ interface Props {
   }
 }
 
-export function BgCardBase(props: Props) {
+export function BgCard(props: Props) {
   const { boardgames } = props
   return (
     <Card style={styles.card}>
@@ -50,7 +54,7 @@ export function BgCardBase(props: Props) {
             {boardgames.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {boardgames.description}
+            {boardgames.description.substring(0, 200) + "..."}
           </Typography>
         </CardContent>
       </CardActionArea>

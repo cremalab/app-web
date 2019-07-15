@@ -1,9 +1,8 @@
 import { storiesOf } from "@storybook/react"
 import React from "react"
 import { decoratorCentered } from "../../utils/decoratorCentered"
-import { BgCard } from "."
-import { catan } from "./test"
+import { Search } from "."
 
-storiesOf("BgCard", module)
+storiesOf("Search", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <BgCard boardgames={catan} />)
+  .add("default", () => <Search>Search</Search>)
