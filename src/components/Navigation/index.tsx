@@ -35,7 +35,7 @@ export const Navigation = () => {
     <div>
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} onChange={handleChange}>
-          <LinkTab label="home" href="/auth/home/1" />
+          <LinkTab label="home" href="/home/1" />
           <LinkTab label="login" href="/login" />
         </Tabs>
       </AppBar>
