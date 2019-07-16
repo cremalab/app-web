@@ -19,7 +19,6 @@ const styles = createStyles({
     marginButton: 10,
   },
   media: {
-    display: "flex",
     height: 230,
     width: 240,
     flexGrow: 1,
