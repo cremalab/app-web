@@ -36,6 +36,7 @@ export const Navigation = () => {
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} onChange={handleChange}>
           <LinkTab label="home" href="/home/1" />
+          <LinkTab label="Search Collection" href="/search" />
           <LinkTab label="login" href="/login" />
         </Tabs>
       </AppBar>

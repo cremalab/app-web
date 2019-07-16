@@ -5,4 +5,4 @@ import { Search } from "."
 
 storiesOf("Search", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <Search>Search</Search>)
+  .add("default", () => <Search />)

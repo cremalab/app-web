@@ -4,9 +4,7 @@ import { Login } from "../Login"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { AuthRoutes } from "../AuthRoutes"
 import { Navigation } from "../Navigation"
-import dotenv from "dotenv"
 
-dotenv.config()
 export const HOST = process.env.REACT_APP_APIPORT_HOST
 export const PORT = process.env.REACT_APP_APIPORT
 
