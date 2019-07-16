@@ -19,8 +19,10 @@ const styles = createStyles({
     marginButton: 10,
   },
   media: {
-    height: 200,
-    width: 150,
+    display: "flex",
+    height: 230,
+    width: 240,
+    flexGrow: 1,
   },
 })
 
@@ -41,6 +43,17 @@ interface Props {
 
 export function BgCard(props: Props) {
   const { boardgames } = props
+  const img = new Image()
+  img.onload = () => {
+    const imgWidth = img.width
+    const imgHeight = img.height
+    return { imgWidth, imgHeight }
+  }
+
+  if (boardgames.img) {
+    img.src = boardgames.img
+  }
+
   return (
     <Card style={styles.card}>
       <CardActionArea>
