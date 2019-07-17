@@ -2,13 +2,10 @@ import { boardgames } from "."
 
 describe("boardgames", () => {
   it("works", () => {
-    // Arrange
-    const valA = 1
-
     // Act
-    const received = boardgames(valA)
+    const received = boardgames
 
     // Assert
-    expect(received).toEqual(1)
+    expect(received)
   })
 })
