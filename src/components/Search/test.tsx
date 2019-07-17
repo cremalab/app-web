@@ -5,10 +5,10 @@ import { shallowRender } from "../../utils/shallowRender"
 describe("Search", () => {
   it("renders", () => {
     // Arrange
-    const valA = Search
+    //const valA = Search
 
     // Act
-    const received = shallowRender(<Search>{valA}</Search>)
+    const received = shallowRender(<Search />)
 
     // Assert
     expect(received).toMatchSnapshot()

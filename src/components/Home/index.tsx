@@ -1,15 +1,15 @@
 import React from "react"
-import axios from "axios"
 import { BgCard } from "../BgCard"
 import { createStyles, Typography } from "@material-ui/core"
 import { User } from "../../types"
 import { setAuthorization } from "../../utils/setAuthorization"
+import axios, { AxiosResponse } from "axios"
 import { PORT } from "../AppRouter"
-
+//import bgAPI from "../../utils/bgAPI"
 const styles = createStyles({
   container: {
     display: "flex",
-    justifyContent: "center",
+    alignItems: "center",
     flexDirection: "column",
     minHeight: "100vh",
   },
@@ -22,6 +22,7 @@ const styles = createStyles({
 
 interface Props {
   id?: string
+  request?: () => Promise<AxiosResponse<Data>>
 }
 
 interface State {
@@ -30,18 +31,17 @@ interface State {
 }
 
 interface Boardgames {
-  brdGameId?: number
+  brdGameId: number
   name: string
-  numOfPlayers: string
-  playTime?: number
-  complexity?: number
+  minPlayers: string
+  maxPlayers?: string
   description: string
   category?: string
-  artist?: string
-  designer?: string
+  minAge: string
+  thumbnail?: string
   img?: string
 }
-interface Data {
+export interface Data {
   result: Boardgames[]
 }
 export class Home extends React.Component<Props, State> {
@@ -52,15 +52,27 @@ export class Home extends React.Component<Props, State> {
 
   public componentDidMount() {
     setAuthorization(localStorage.jwtToken)
-    axios
-      .get<Data>(`http://localhost:${PORT}/auth/home/${this.props.id}`)
-      .then(res => {
-        console.log("Axios =======>", res.data.result)
-        this.setState({ boardgames: res.data.result })
-      })
-      .catch(error => {
-        console.log("Error ", error)
-      })
+    if (this.props.request) {
+      this.props
+        .request()
+        .then(res => {
+          console.log("Axios =======>", res.data.result)
+          this.setState({ boardgames: res.data.result })
+        })
+        .catch(error => {
+          console.log("Error ", error)
+        })
+    } else {
+      axios
+        .get<Data>(`http://localhost:${PORT}/auth/home/${this.props.id}`)
+        .then(res => {
+          console.log("Axios =======>", res.data.result)
+          this.setState({ boardgames: res.data.result })
+        })
+        .catch(error => {
+          console.log("Error ", error)
+        })
+    }
   }
   public renderBgCards(boardgames: Boardgames[]) {
     if (boardgames.length > 0) {
@@ -68,7 +80,11 @@ export class Home extends React.Component<Props, State> {
         return <BgCard boardgames={boardgame} />
       })
     } else {
-      return
+      return (
+        <Typography variant="display2" align="center">
+          Oh No! You have no boardgames in your collection
+        </Typography>
+      )
     }
   }
   public render() {

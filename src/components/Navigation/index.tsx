@@ -13,8 +13,8 @@ function Links(props: LinkTabProps) {
       <Tab
         onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
           event.preventDefault()
-
-          return props.history.push(props.href)
+          console.log(props.href)
+          props.history.push(props.href)
         }}
         {...props}
       />
@@ -35,7 +35,7 @@ export const Navigation = () => {
     <div>
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} onChange={handleChange}>
-          <LinkTab label="home" href="/home/1" />
+          <LinkTab label="home" href="/home/:id" />
           <LinkTab label="Search Collection" href="/search" />
           <LinkTab label="login" href="/login" />
         </Tabs>

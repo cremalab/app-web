@@ -27,15 +27,14 @@ const styles = createStyles({
 
 interface Props {
   boardgames: {
-    brdGameId?: number
+    brdGameId: number
     name: string
-    numOfPlayers: string
-    playTime?: number
-    complexity?: number
+    minPlayers: string
+    maxPlayers?: string
     description: string
     category?: string
-    artist?: string
-    designer?: string
+    minAge: string
+    thumbnail?: string
     img?: string
   }
 }
@@ -58,7 +57,7 @@ export function BgCard(props: Props) {
       <CardActionArea>
         <CardMedia
           style={styles.media}
-          image={boardgames.img}
+          image={boardgames.img ? boardgames.img : "No Image"}
           title={boardgames.name}
         />
         <CardContent>

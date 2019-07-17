@@ -12,4 +12,5 @@ describe("Home", () => {
     // Assert
     expect(received).toMatchSnapshot()
   })
+  //test for <Home id=1>
 })

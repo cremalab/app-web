@@ -9,6 +9,6 @@ storiesOf("Login", module)
   .add("default", () => (
     <Router>
       {" "}
-      <Login />
+      <Login />{" "}
     </Router>
   ))

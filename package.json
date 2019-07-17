@@ -5,11 +5,13 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@types/axios": "^0.14.0",
+    "@types/jsonwebtoken": "^8.3.2",
     "@types/react-router-dom": "^4.3.3",
     "@types/redux-actions": "^2.6.1",
     "@types/yup": "^0.26.13",
     "axios": "^0.19.0",
     "formik": "^1.5.4",
+    "jsonwebtoken": "^8.5.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.0",

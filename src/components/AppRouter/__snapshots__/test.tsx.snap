@@ -1,19 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppRouter renders 1`] = `
-<BrowserRouter>
-  <Navigation />
-  <Switch>
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/login"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/home"
-    />
-  </Switch>
-</BrowserRouter>
+<div>
+  <BrowserRouter>
+    <Navigation />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        path="/"
+      />
+    </Switch>
+  </BrowserRouter>
+</div>
 `;
