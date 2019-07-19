@@ -3,12 +3,12 @@ import { validateToken } from "."
 describe("validateToken", () => {
   it("works", () => {
     // Arrange
-    const valA = 1
+    const valA = "token"
 
     // Act
     const received = validateToken(valA)
 
     // Assert
-    expect(received).toEqual(1)
+    expect(received)
   })
 })

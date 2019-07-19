@@ -7,6 +7,7 @@ exports[`Navigation renders 1`] = `
   >
     <WithStyles(Tabs)
       onChange={[Function]}
+      value={2}
       variant="fullWidth"
     >
       <withRouter(Links)
