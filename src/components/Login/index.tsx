@@ -112,10 +112,18 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
       })
       .then(res => {
         const token = res.data.token
+        const userId = res.data.userId
         if (token) {
           localStorage.setItem("jwtToken", token)
+          localStorage.setItem("userId", userId)
+          console.log(
+            "New Token",
+            localStorage.jwtToken,
+            "New User Id",
+            localStorage.userId,
+          )
           setAuthorization(token)
-          props.history.push(`/home/${res.data.userId}`)
+          props.history.push(`/home/${localStorage.userId}`)
           //tell user that they logged in successfully
         }
         setSubmitting(false)

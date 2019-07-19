@@ -5,32 +5,37 @@ import { RouteComponentProps, withRouter } from "react-router-dom"
 interface LinkTabProps extends RouteComponentProps {
   label?: string
   href: string
+  value?: number
 }
-
-function Links(props: LinkTabProps) {
-  return (
-    <div>
-      <Tab
-        onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-          event.preventDefault()
-          console.log(props.href)
-          props.history.push(props.href)
-        }}
-        {...props}
-      />
-    </div>
-  )
-}
-const LinkTab = withRouter(Links)
 
 export const Navigation = () => {
   // const classes = useStyles()
-  const [value, setValue] = React.useState()
+  const [value = 2, setValue] = React.useState()
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
     setValue(newValue)
     return event
   }
+  function Links(props: LinkTabProps) {
+    return (
+      <div>
+        <Tab
+          onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+            event.preventDefault()
+            if (localStorage.userId && props.href === "/home/:id") {
+              props.history.push(`/home/${localStorage.userId}`)
+            } else {
+              props.history.push(props.href)
+            }
+            return event
+          }}
+          {...props}
+        />
+      </div>
+    )
+  }
+  const LinkTab = withRouter(Links)
+
   return (
     <div>
       <AppBar position="static">

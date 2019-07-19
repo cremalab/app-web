@@ -64,7 +64,7 @@ export class Home extends React.Component<Props, State> {
         })
     } else {
       axios
-        .get<Data>(`http://localhost:${PORT}/auth/home/${this.props.id}`)
+        .get<Data>(`http://localhost:${PORT}/auth/home/${localStorage.userId}`)
         .then(res => {
           console.log("Axios =======>", res.data.result)
           this.setState({ boardgames: res.data.result })
