@@ -2,8 +2,9 @@ import { storiesOf } from "@storybook/react"
 import React from "react"
 import { decoratorCentered } from "../../utils/decoratorCentered"
 import { BgCard } from "."
+import catan from "../../assets/testImgs/catan.jpg"
 
-const catan = {
+const catanBG = {
   brdGameId: 1,
   name: "Catan",
 
@@ -19,8 +20,7 @@ const catan = {
 
   minAge: "10",
 
-  img:
-    "https://cf.geekdo-images.com/thumb/img/g8LvJsd2oLAub6AEKN_Xpdoi8Sw=/fit-in/200x150/pic2419375.jpg",
+  img: catan,
   thumbnail: "Klaus Teuber",
 
   createdAt: "Monday",
@@ -30,4 +30,4 @@ const catan = {
 
 storiesOf("BgCard", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <BgCard boardgames={catan} />)
+  .add("default", () => <BgCard boardgames={catanBG} />)

@@ -14,7 +14,7 @@ const home = ({ match }: RouteComponentProps<OtherProps>) => {
 export function AuthRoutes() {
   return localStorage.jwtToken ? (
     <Switch>
-      <Route path="/home/:id" render={home} />
+      <Route path={["/home/:id", "/"]} render={home} />
       <Route path="/search" component={Search} />
     </Switch>
   ) : (
