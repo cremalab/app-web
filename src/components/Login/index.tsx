@@ -116,15 +116,8 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
         if (token) {
           localStorage.setItem("jwtToken", token)
           localStorage.setItem("userId", userId)
-          console.log(
-            "New Token",
-            localStorage.jwtToken,
-            "New User Id",
-            localStorage.userId,
-          )
           setAuthorization(token)
           props.history.push(`/home/${localStorage.userId}`)
-          //tell user that they logged in successfully
         }
         setSubmitting(false)
       })
@@ -135,7 +128,6 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
           setStatus(`Check to make sure your server is running on PORT ${PORT}`)
         } else {
           resetForm()
-          console.log(err.response.data.message)
           setStatus(err.response.data.message)
           setSubmitting(false)
         }

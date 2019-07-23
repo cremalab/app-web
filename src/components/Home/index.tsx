@@ -56,7 +56,6 @@ export class Home extends React.Component<Props, State> {
       this.props
         .request()
         .then(res => {
-          console.log("Axios =======>", res.data.result)
           this.setState({ boardgames: res.data.result })
         })
         .catch(error => {
@@ -66,7 +65,6 @@ export class Home extends React.Component<Props, State> {
       axios
         .get<Data>(`http://localhost:${PORT}/auth/home/${localStorage.userId}`)
         .then(res => {
-          console.log("Axios =======>", res.data.result)
           this.setState({ boardgames: res.data.result })
         })
         .catch(error => {
@@ -77,7 +75,7 @@ export class Home extends React.Component<Props, State> {
   public renderBgCards(boardgames: Boardgames[]) {
     if (boardgames.length > 0) {
       return boardgames.map(boardgame => {
-        return <BgCard boardgames={boardgame} />
+        return <BgCard boardgames={boardgame} key={boardgame.brdGameId} />
       })
     } else {
       return (

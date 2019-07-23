@@ -37,6 +37,7 @@ interface Props {
     thumbnail?: string
     img?: string
   }
+  key: number
 }
 
 export function BgCard(props: Props) {

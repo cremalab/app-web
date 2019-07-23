@@ -30,4 +30,4 @@ const catanBG = {
 
 storiesOf("BgCard", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <BgCard boardgames={catanBG} />)
+  .add("default", () => <BgCard boardgames={catanBG} key={catanBG.brdGameId} />)

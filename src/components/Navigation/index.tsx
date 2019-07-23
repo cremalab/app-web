@@ -1,7 +1,7 @@
 import React from "react"
 import { Tabs, Tab, AppBar } from "@material-ui/core"
 import { RouteComponentProps, withRouter } from "react-router-dom"
-
+import { validateToken } from "../../utils/validateToken"
 interface LinkTabProps extends RouteComponentProps {
   label?: string
   href: string
@@ -16,13 +16,16 @@ export const Navigation = () => {
     setValue(newValue)
     return event
   }
-  function Links(props: LinkTabProps) {
+  function links(props: LinkTabProps) {
     return (
       <div>
         <Tab
           onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
             event.preventDefault()
-            if (localStorage.userId && props.href === "/home/:id") {
+            if (
+              validateToken(localStorage.jwtToken) &&
+              props.href === "/home/:id"
+            ) {
               props.history.push(`/home/${localStorage.userId}`)
             } else {
               props.history.push(props.href)
@@ -34,7 +37,7 @@ export const Navigation = () => {
       </div>
     )
   }
-  const LinkTab = withRouter(Links)
+  const LinkTab = withRouter(links)
 
   return (
     <div>
