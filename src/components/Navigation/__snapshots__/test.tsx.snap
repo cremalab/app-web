@@ -10,15 +10,15 @@ exports[`Navigation renders 1`] = `
       value={2}
       variant="fullWidth"
     >
-      <withRouter(Links)
+      <withRouter(links)
         href="/home/:id"
         label="home"
       />
-      <withRouter(Links)
+      <withRouter(links)
         href="/search"
         label="Search Collection"
       />
-      <withRouter(Links)
+      <withRouter(links)
         href="/login"
         label="login"
       />

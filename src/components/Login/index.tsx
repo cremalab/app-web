@@ -5,7 +5,7 @@ import * as yup from "yup"
 import axios from "axios"
 import { setAuthorization } from "../../utils/setAuthorization"
 import { withRouter, RouteComponentProps } from "react-router-dom"
-import { PORT } from "../AppRouter"
+import { HOST, PORT } from "../AppRouter"
 
 const styles = createStyles({
   form: {
@@ -106,7 +106,7 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
   ) {
     setStatus(null)
     axios
-      .post(`http://localhost:${PORT}/auth/login`, {
+      .post(`${HOST}:${PORT}/auth/login`, {
         email,
         password,
       })

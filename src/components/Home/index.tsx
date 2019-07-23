@@ -4,8 +4,8 @@ import { createStyles, Typography } from "@material-ui/core"
 import { User } from "../../types"
 import { setAuthorization } from "../../utils/setAuthorization"
 import axios, { AxiosResponse } from "axios"
-import { PORT } from "../AppRouter"
-//import bgAPI from "../../utils/bgAPI"
+
+import { PORT, HOST } from "../AppRouter"
 const styles = createStyles({
   container: {
     display: "flex",
@@ -63,7 +63,7 @@ export class Home extends React.Component<Props, State> {
         })
     } else {
       axios
-        .get<Data>(`http://localhost:${PORT}/auth/home/${localStorage.userId}`)
+        .get<Data>(`${HOST}:${PORT}/auth/home/${localStorage.userId}`)
         .then(res => {
           this.setState({ boardgames: res.data.result })
         })
