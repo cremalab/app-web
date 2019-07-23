@@ -4,8 +4,8 @@ import { createStyles, Typography } from "@material-ui/core"
 import { User } from "../../types"
 import { setAuthorization } from "../../utils/setAuthorization"
 import axios, { AxiosResponse } from "axios"
-
 import { PORT, HOST } from "../AppRouter"
+
 const styles = createStyles({
   container: {
     display: "flex",
