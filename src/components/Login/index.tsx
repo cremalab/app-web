@@ -48,7 +48,7 @@ const FormComp = (props: FormikProps<FormValues>) => {
           <TextField
             name="password"
             placeholder="Password"
-            type="text"
+            type="password"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
