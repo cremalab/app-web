@@ -2,17 +2,36 @@
 
 exports[`Home renders 1`] = `
 <div
-  className="Home"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "100vh",
+    }
+  }
 >
-  <p>
-    You clicked 
-    0
-     times
-  </p>
-  <button
-    onClick={[Function]}
+  <WithStyles(Typography)
+    align="center"
+    variant="display2"
   >
-    Click me
-  </button>
+    Welcome!
+  </WithStyles(Typography)>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <WithStyles(Typography)
+      align="center"
+      variant="display2"
+    >
+      Oh No! You have no boardgames in your collection
+    </WithStyles(Typography)>
+  </div>
 </div>
 `;

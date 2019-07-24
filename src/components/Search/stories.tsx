@@ -1,8 +1,8 @@
 import { storiesOf } from "@storybook/react"
 import React from "react"
 import { decoratorCentered } from "../../utils/decoratorCentered"
-import { AppRouter } from "."
+import { Search } from "."
 
-storiesOf("AppRouter", module)
+storiesOf("Search", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <AppRouter />)
+  .add("default", () => <Search />)

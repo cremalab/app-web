@@ -4,16 +4,17 @@ exports[`AppRouter renders 1`] = `
 <div>
   <BrowserRouter>
     <Navigation />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/login"
-    />
-    <Route
-      component={[Function]}
-      exact={true}
-      path="/home"
-    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        path="/"
+      />
+    </Switch>
   </BrowserRouter>
 </div>
 `;
