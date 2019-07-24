@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders 1`] = `
+<div
+  className="Search"
+>
+  Search Component
+</div>
+`;

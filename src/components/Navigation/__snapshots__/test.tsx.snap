@@ -2,18 +2,27 @@
 
 exports[`Navigation renders 1`] = `
 <div>
-  <NavLink
-    exact={true}
-    to="/login"
+  <WithStyles(AppBar)
+    position="static"
   >
-    Login
-  </NavLink>
-  <br />
-  <NavLink
-    exact={true}
-    to="/home"
-  >
-    Home
-  </NavLink>
+    <WithStyles(Tabs)
+      onChange={[Function]}
+      value={2}
+      variant="fullWidth"
+    >
+      <withRouter(links)
+        href="/home/:id"
+        label="home"
+      />
+      <withRouter(links)
+        href="/search"
+        label="Search Collection"
+      />
+      <withRouter(links)
+        href="/login"
+        label="login"
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
 </div>
 `;
