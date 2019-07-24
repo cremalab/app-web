@@ -2,21 +2,30 @@ import React from "react"
 import { Tabs, Tab, AppBar } from "@material-ui/core"
 import { RouteComponentProps, withRouter } from "react-router-dom"
 import { validateToken } from "../../utils/validateToken"
+
 interface LinkTabProps extends RouteComponentProps {
   label?: string
   href: string
-  value?: number
+  value: string
 }
 
 export const Navigation = () => {
   // const classes = useStyles()
-  const [value = 2, setValue] = React.useState()
+  const [value, setValue] = React.useState()
+
+  // function updateIndicator(href: string) {
+  //   setValue(href)
+  // }
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
     setValue(newValue)
     return event
   }
   function links(props: LinkTabProps) {
+    const currentValue = props.location.pathname.includes("/home")
+      ? "home/:id"
+      : props.location.pathname
+    setValue(currentValue)
     return (
       <div>
         <Tab
@@ -43,9 +52,10 @@ export const Navigation = () => {
     <div>
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} onChange={handleChange}>
-          <LinkTab label="home" href="/home/:id" />
-          <LinkTab label="Search Collection" href="/search" />
-          <LinkTab label="login" href="/login" />
+          <LinkTab label="home" href="/home/:id" value="home/:id" />
+
+          <LinkTab label="Search Collection" href="/search" value="/search" />
+          <LinkTab label="login" href="/login" value="/login" />
         </Tabs>
       </AppBar>
     </div>
