@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddGame renders 1`] = `
+<div>
+  <SearchBar
+    onsubmit={[Function]}
+  />
+  <h2>
+    Found: 
+    0
+     Games
+  </h2>
+  <ResultList
+    items={Array []}
+  />
+</div>
+`;
