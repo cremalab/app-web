@@ -3,7 +3,8 @@ import { Home } from "../Home"
 import { Search } from "../Search"
 import { Route, RouteComponentProps, Redirect, Switch } from "react-router-dom"
 import { validateToken } from "../../utils/validateToken"
-import { SearchBar } from "../SearchBar"
+//import { SearchBar } from "../SearchBar"
+import { AddGame } from "../AddGame"
 
 interface OtherProps {
   id: string
@@ -21,7 +22,7 @@ export function AuthRoutes() {
   return validateToken(localStorage.jwtToken) ? (
     <Switch>
       <Route exact path="/search" component={Search} />
-      <Route exact path="/addgame" render={SearchBar} />
+      <Route exact path="/addgame" component={AddGame} />
       <Route exact path={["/home/:id", "/"]} render={home} />
     </Switch>
   ) : (

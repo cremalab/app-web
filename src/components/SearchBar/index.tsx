@@ -1,50 +1,81 @@
 import React from "react"
-import { Formik, FormikActions, ErrorMessage } from "formik"
+import { Formik, ErrorMessage } from "formik"
 import { TextField, Button, createStyles } from "@material-ui/core"
+import * as yup from "yup"
+import { SearchSubmit, searchSubmit } from "../../utils/searchSubmit"
 
-const styles = createStyles({})
-
-type OnSubmit = (
-  values: {
-    search: string
+const styles = createStyles({
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  formikActions: FormikActions<{
-    search: string
-  }>,
-) => void
+  searchConatiner: {
+    display: "flex",
+    justifyContent: "center",
+    width: "75%",
+    marginTop: "3%",
+  },
+  searchBar: {
+    width: "75%",
+  },
+  button: {},
 
-export function SearchBar() {
-  const onsubmitForm: OnSubmit = (values, actions) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2))
-      actions.setSubmitting(false)
-    }, 1000)
-  }
+  error: {
+    marginTop: "3%",
+    color: "red",
+  },
+})
+
+interface Prop {
+  onsubmit?: SearchSubmit
+}
+
+export const SearchBar = (props: Prop) => {
+  const validationSchema = yup.object().shape({
+    search: yup
+      .string()
+      .required("Please enter the name of the boardgame you want to add"),
+  })
+
   return (
-    <Formik
-      initialValues={{ search: "" }}
-      onSubmit={onsubmitForm}
-      render={props => (
-        <form onSubmit={props.handleSubmit}>
-          <ErrorMessage name="search" />
-          <TextField
-            type="text"
-            placeholder="Search for a new game"
-            onChange={props.handleChange}
-            onBlur={props.handleBlur}
-            value={props.values.search}
-            name="search"
-            variant="outlined"
-          />
-          <Button
-            type="submit"
-            variant="contained"
-            disabled={props.isSubmitting}
-          >
-            Submit
-          </Button>
-        </form>
-      )}
-    />
+    <div>
+      <Formik
+        initialValues={{ search: "" }}
+        onSubmit={props.onsubmit ? props.onsubmit : searchSubmit}
+        validationSchema={validationSchema}
+        render={props => (
+          <div>
+            <form onSubmit={props.handleSubmit} style={styles.form}>
+              <div style={styles.error}>
+                {props.status}
+                <ErrorMessage name="search" />
+              </div>
+              <div style={styles.searchConatiner}>
+                <TextField
+                  type="text"
+                  placeholder="Search for a new game"
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.search}
+                  name="search"
+                  variant="outlined"
+                  style={styles.searchBar}
+                />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  disabled={props.isSubmitting}
+                  style={styles.button}
+                >
+                  Submit
+                </Button>
+              </div>
+            </form>
+          </div>
+        )}
+      />
+    </div>
   )
 }
