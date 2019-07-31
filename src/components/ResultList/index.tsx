@@ -32,7 +32,7 @@ interface Props {
 
 export const ResultList = (props: Props) => {
   const [page, setPage] = React.useState(0)
-  const [rowsPerPage, setRowsPerPage] = React.useState(20)
+  const [rowsPerPage, setRowsPerPage] = React.useState(5)
   const { items } = props
   // If search result comes back as one result or none there may be an error!
   const length = items.length ? items.length : 1
@@ -87,7 +87,7 @@ export const ResultList = (props: Props) => {
           <TableFooter>
             <TableRow>
               <TablePagination
-                rowsPerPageOptions={[5, 10, 20]}
+                rowsPerPageOptions={[5, 10, 25]}
                 colSpan={3}
                 count={length}
                 rowsPerPage={rowsPerPage}

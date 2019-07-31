@@ -44,7 +44,7 @@ export class AddGame extends React.Component {
       if (data.items.item) {
         const results: Item[] = data.items.item.length
           ? data.items.item.map((game: Item) => game)
-          : data.items.item
+          : [data.items.item]
         setStatus("Done! Check console for results")
         setSubmitting(false)
         const length = results.length ? results.length : 1
