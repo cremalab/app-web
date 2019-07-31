@@ -50,6 +50,7 @@ export class AddGame extends React.Component {
         this.setState({ items: results })
       } else {
         setStatus(`No results found containing the name "${search}"`)
+        this.setState({ items: defaultState.items })
         setSubmitting(false)
       }
     } else {
