@@ -47,13 +47,6 @@ export class AddGame extends React.Component {
           : [data.items.item]
         setStatus("Done! Check console for results")
         setSubmitting(false)
-        const length = results.length ? results.length : 1
-        console.log(
-          "Result====> SearchSubmit Utility...Length:",
-          length,
-          " Result!",
-          results,
-        )
         this.setState({ items: results })
       } else {
         setStatus(`No results found containing the name "${search}"`)

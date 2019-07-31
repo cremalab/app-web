@@ -10,12 +10,7 @@ interface LinkTabProps extends RouteComponentProps {
 }
 
 export const Navigation = () => {
-  // const classes = useStyles()
   const [value, setValue] = React.useState()
-
-  // function updateIndicator(href: string) {
-  //   setValue(href)
-  // }
 
   function handleChange(event: React.ChangeEvent<{}>, newValue: number) {
     setValue(newValue)
