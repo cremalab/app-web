@@ -9,6 +9,10 @@ interface OtherProps {
 }
 
 const home = ({ match }: RouteComponentProps<OtherProps>) => {
+  const home = `/home/${localStorage.userId}`
+  if (match.params.id !== localStorage.userId) {
+    return <Redirect to={home} />
+  }
   return <Home id={match.params.id} />
 }
 

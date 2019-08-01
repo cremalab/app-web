@@ -7,20 +7,22 @@ exports[`Navigation renders 1`] = `
   >
     <WithStyles(Tabs)
       onChange={[Function]}
-      value={2}
       variant="fullWidth"
     >
       <withRouter(links)
         href="/home/:id"
         label="home"
+        value="home/:id"
       />
       <withRouter(links)
         href="/search"
         label="Search Collection"
+        value="/search"
       />
       <withRouter(links)
         href="/login"
         label="login"
+        value="/login"
       />
     </WithStyles(Tabs)>
   </WithStyles(AppBar)>
