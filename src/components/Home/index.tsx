@@ -3,8 +3,8 @@ import { BgCard } from "../BgCard"
 import { createStyles, Typography } from "@material-ui/core"
 import { User } from "../../types"
 import { setAuthorization } from "../../utils/setAuthorization"
-import axios, { AxiosResponse } from "axios"
-import { PORT, HOST } from "../AppRouter"
+import { AxiosResponse } from "axios"
+import myAPI from "../../api/myAPI"
 
 const styles = createStyles({
   container: {
@@ -62,8 +62,8 @@ export class Home extends React.Component<Props, State> {
           console.log("Error ", error)
         })
     } else {
-      axios
-        .get<Data>(`${HOST}:${PORT}/auth/home/${localStorage.userId}`)
+      myAPI
+        .get<Data>(`/auth/home/${localStorage.userId}`)
         .then(res => {
           this.setState({ boardgames: res.data.result })
         })

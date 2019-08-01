@@ -2,10 +2,10 @@ import React from "react"
 import { TextField, Grid, Button, createStyles } from "@material-ui/core"
 import { ErrorMessage, FormikProps, withFormik, FormikValues } from "formik"
 import * as yup from "yup"
-import axios from "axios"
 import { setAuthorization } from "../../utils/setAuthorization"
 import { withRouter, RouteComponentProps } from "react-router-dom"
-import { HOST, PORT } from "../AppRouter"
+import { PORT } from "../AppRouter"
+import myAPI from "../../api/myAPI"
 
 const styles = createStyles({
   form: {
@@ -105,8 +105,8 @@ const LoginComponent = withFormik<RouteComponentProps, FormValues>({
     { setSubmitting, props, resetForm, setStatus },
   ) {
     setStatus(null)
-    axios
-      .post(`${HOST}:${PORT}/auth/login`, {
+    myAPI
+      .post(`/auth/login`, {
         email,
         password,
       })

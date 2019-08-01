@@ -3,7 +3,6 @@ import { Home } from "../Home"
 import { Search } from "../Search"
 import { Route, RouteComponentProps, Redirect, Switch } from "react-router-dom"
 import { validateToken } from "../../utils/validateToken"
-//import { SearchBar } from "../SearchBar"
 import { AddGame } from "../AddGame"
 
 interface OtherProps {

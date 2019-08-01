@@ -5,16 +5,10 @@ import { Item, options } from "../../utils/searchSubmit"
 import { FormikActions } from "formik"
 import { validateToken } from "../../utils/validateToken"
 import xml, { ElementCompact } from "xml-js"
-import Axios from "axios"
-
+import bggAPI from "../../api/bggAPI"
 interface State {
   items: Item[]
 }
-
-export type SearchSubmit = (
-  values: { search: string },
-  actions: FormikActions<{ search: string }>,
-) => Promise<void | Item[] | undefined>
 
 const defaultState: State = {
   items: [],
@@ -36,9 +30,12 @@ export class AddGame extends React.Component {
     setStatus(null)
     //Set up await syntax
     if (validateToken(localStorage.jwtToken)) {
-      const result = await Axios.get(
-        `http://localhost:8080/https://www.boardgamegeek.com/xmlapi2/search?query=${search}&type=boardgame`,
-      )
+      const result = await bggAPI.get(`/search`, {
+        params: {
+          query: search,
+          type: "boardgame",
+        },
+      })
       const data: ElementCompact = xml.xml2js(result.data, options)
 
       if (data.items.item) {
@@ -56,7 +53,6 @@ export class AddGame extends React.Component {
     } else {
       setStatus("Please login to add a game to your collection")
       setSubmitting(false)
-      // props.history.push("/login")
     }
   }
 

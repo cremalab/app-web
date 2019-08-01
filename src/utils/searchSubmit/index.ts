@@ -1,7 +1,7 @@
 import { FormikActions } from "formik"
-import Axios from "axios"
 import { validateToken } from "../validateToken"
 import xml, { ElementCompact } from "xml-js"
+import bggAPI from "../../api/bggAPI"
 
 // Define
 
@@ -64,34 +64,30 @@ export async function searchSubmit(
   setStatus(null)
   //Set up await syntax
   if (validateToken(localStorage.jwtToken)) {
-    const result = await Axios.get(
-      `http://localhost:8080/https://www.boardgamegeek.com/xmlapi2/search?query=${search}&type=boardgame`,
-    )
+    const result = await bggAPI.get(`/search`, {
+      params: {
+        query: search,
+        type: "boardgame",
+      },
+    })
     const data: ElementCompact = xml.xml2js(result.data, options)
 
     if (data.items.item) {
       const results: Item[] = data.items.item.length
         ? data.items.item.map((game: Item) => game)
-        : data.items.item
+        : [data.items.item]
       setStatus("Done! Check console for results")
       setSubmitting(false)
-      const length = results.length ? results.length : 1
-      console.log(
-        "Result====> SearchSubmit Utility...Length:",
-        length,
-        " Result!",
-        results,
-      )
       return results
     } else {
       setStatus(`No results found containing the name "${search}"`)
       setSubmitting(false)
-      return null
+      return undefined
     }
   } else {
     setStatus("Please login to add a game to your collection")
     setSubmitting(false)
     // props.history.push("/login")
-    return null
+    return undefined
   }
 }
