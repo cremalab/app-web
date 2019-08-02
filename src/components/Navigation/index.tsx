@@ -50,7 +50,6 @@ export const Navigation = () => {
           <LinkTab label="home" href="/home/:id" value="home/:id" />
           <LinkTab label="Add a game" href="/addgame" value="/addgame" />
           <LinkTab label="Search Collection" href="/search" value="/search" />
-          <LinkTab label="login" href="/login" value="/login" />
         </Tabs>
       </AppBar>
     </div>
