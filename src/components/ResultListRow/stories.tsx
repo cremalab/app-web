@@ -5,4 +5,6 @@ import { ResultListRow } from "."
 
 storiesOf("ResultListRow", module)
   .addDecorator(decoratorCentered)
-  .add("default", () => <ResultListRow>ResultListRow</ResultListRow>)
+  .add("default", () => (
+    <ResultListRow name="Uno" year="2019" bgGeekID="9494783404" />
+  ))

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultListRow renders 1`] = `
+<WithStyles(TableRow)>
+  <WithStyles(TableCell)
+    component="th"
+    scope="row"
+  >
+    Uno
+  </WithStyles(TableCell)>
+  <WithStyles(TableCell)
+    align="right"
+  >
+    2019
+  </WithStyles(TableCell)>
+  <WithStyles(TableCell)
+    align="right"
+  >
+    <WithStyles(Button)
+      disabled={false}
+      onClick={[Function]}
+    >
+      Add
+    </WithStyles(Button)>
+  </WithStyles(TableCell)>
+</WithStyles(TableRow)>
+`;

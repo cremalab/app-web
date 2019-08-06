@@ -16,75 +16,62 @@ exports[`ResultList renders 1`] = `
       }
     }
   >
-    <WithStyles(Table)
-      style={
-        Object {
-          "minWidth": 500,
-        }
-      }
-    >
-      <WithStyles(TableBody)>
-        <WithStyles(TableRow)>
-          <WithStyles(TableCell)
-            component="th"
-            scope="row"
-          >
-             
-          </WithStyles(TableCell)>
-          <WithStyles(TableCell)
-            align="right"
-          >
-             
-          </WithStyles(TableCell)>
-          <WithStyles(TableCell)
-            align="right"
-          >
-            <WithStyles(Button)>
-              Add!
-            </WithStyles(Button)>
-          </WithStyles(TableCell)>
-        </WithStyles(TableRow)>
-        <WithStyles(TableRow)
-          style={
-            Object {
-              "height": 192,
-            }
+    <form>
+      <WithStyles(Table)
+        style={
+          Object {
+            "minWidth": 500,
           }
-        >
-          <WithStyles(TableCell)
-            colSpan={6}
+        }
+      >
+        <WithStyles(TableBody)>
+          <ResultListRow
+            bgGeekID=" "
+            name=" "
+            year=" "
           />
-        </WithStyles(TableRow)>
-      </WithStyles(TableBody)>
-      <WithStyles(TableFooter)>
-        <WithStyles(TableRow)>
-          <WithStyles(TablePagination)
-            ActionsComponent={[Function]}
-            SelectProps={
+          <WithStyles(TableRow)
+            style={
               Object {
-                "inputProps": Object {
-                  "aria-label": "rows per page",
-                },
-                "native": true,
+                "height": 192,
               }
             }
-            colSpan={3}
-            count={1}
-            onChangePage={[Function]}
-            onChangeRowsPerPage={[Function]}
-            page={0}
-            rowsPerPage={5}
-            rowsPerPageOptions={
-              Array [
-                5,
-                10,
-                25,
-              ]
-            }
-          />
-        </WithStyles(TableRow)>
-      </WithStyles(TableFooter)>
-    </WithStyles(Table)>
+          >
+            <WithStyles(TableCell)
+              colSpan={6}
+            />
+          </WithStyles(TableRow)>
+        </WithStyles(TableBody)>
+        <WithStyles(TableFooter)>
+          <WithStyles(TableRow)>
+            <WithStyles(TablePagination)
+              ActionsComponent={[Function]}
+              SelectProps={
+                Object {
+                  "inputProps": Object {
+                    "aria-label": "rows per page",
+                  },
+                  "native": true,
+                }
+              }
+              colSpan={3}
+              count={1}
+              onChangePage={[Function]}
+              onChangeRowsPerPage={[Function]}
+              page={0}
+              rowsPerPage={5}
+              rowsPerPageOptions={
+                Array [
+                  5,
+                  10,
+                  25,
+                ]
+              }
+            />
+          </WithStyles(TableRow)>
+        </WithStyles(TableFooter)>
+      </WithStyles(Table)>
+    </form>
   </div>
 </WithStyles(Paper)>
 `;
