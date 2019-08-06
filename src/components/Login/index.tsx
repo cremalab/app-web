@@ -87,17 +87,19 @@ const FormComp = (props: FormikProps<FormValues>) => {
           <div style={styles.error}>
             <ErrorMessage name="email" />
           </div>
-          <TextField
-            name="password"
-            placeholder="Password"
-            type="text"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.password}
-            variant="standard"
-            style={styles.textfield}
-          />
-          <div style={styles.error}>
+          <div>
+            <TextField
+              name="password"
+              placeholder="Password"
+              type="password"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.password}
+              variant="outlined"
+            />
+          </div>
+
+          <div>
             <ErrorMessage name="password" />
           </div>
           <div>
