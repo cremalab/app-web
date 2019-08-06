@@ -7,12 +7,11 @@ import {
   TableCell,
   TableFooter,
   TablePagination,
-  Button,
   createStyles,
 } from "@material-ui/core"
 import TablePaginationActions from "@material-ui/core/TablePagination/TablePaginationActions"
 import { Item } from "../../utils/searchSubmit"
-import myAPI from "../../api/myAPI"
+import { ResultListRow } from "../ResultListRow"
 
 const styles = createStyles({
   root: {
@@ -35,7 +34,6 @@ export const ResultList = (props: Props) => {
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(5)
   const { items } = props
-  const [added, setAdded] = React.useState(false)
 
   const length = items.length ? items.length : 1
   const emptyRows =
@@ -64,42 +62,19 @@ export const ResultList = (props: Props) => {
             <TableBody>
               {items
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((item: Item, index) => {
+                .map((item: Item) => {
                   const name = item.name._attributes.value
                   const year = item.yearpublished
                     ? item.yearpublished._attributes.value
                     : "N/A"
                   const bgGeekID = item._attributes.id
                   return (
-                    <TableRow key={index}>
-                      <TableCell component="th" scope="row">
-                        {name}
-                      </TableCell>
-                      <TableCell align="right">{year}</TableCell>
-                      <TableCell align="right">
-                        <Button
-                          onClick={() => {
-                            console.log("Button was clicked!", bgGeekID)
-                            myAPI
-                              .post("/auth/addgame", {
-                                userId: localStorage.userId,
-                                bgGeekID,
-                              })
-                              .then(res => {
-                                console.log(res)
-                                //setAdded(true)
-                                setAdded(true)
-                              })
-                              .catch(err => {
-                                console.log(err)
-                              })
-                          }}
-                          disabled={added}
-                        >
-                          Add
-                        </Button>
-                      </TableCell>
-                    </TableRow>
+                    <ResultListRow
+                      name={name}
+                      year={year}
+                      bgGeekID={bgGeekID}
+                      key={bgGeekID}
+                    />
                   )
                 })}
               {emptyRows > 0 && (
