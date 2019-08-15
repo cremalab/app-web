@@ -1,7 +1,7 @@
 import axios from "axios"
+import { PORT, HOST } from "./index"
 
-const HOST = process.env.REACT_APP_HOST
-const PORT = process.env.REACT_APP_APIPORT
+console.log("myApi:", HOST, PORT)
 
 export default axios.create({
   baseURL: `${HOST}:${PORT}`,

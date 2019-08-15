@@ -36,7 +36,6 @@ export class AddGame extends React.Component {
           type: "boardgame",
         },
       })
-      console.log(result)
       const data: ElementCompact = xml.xml2js(result.data, options)
 
       if (data.items.item) {

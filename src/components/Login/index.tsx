@@ -11,7 +11,7 @@ import { ErrorMessage, FormikProps, withFormik, FormikValues } from "formik"
 import * as yup from "yup"
 import { setAuthorization } from "../../utils/setAuthorization"
 import { withRouter, RouteComponentProps } from "react-router-dom"
-import { PORT } from "../AppRouter"
+import { PORT } from "../../api/index"
 import myAPI from "../../api/myAPI"
 
 const styles = createStyles({
