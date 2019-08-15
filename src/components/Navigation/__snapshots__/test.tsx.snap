@@ -24,6 +24,11 @@ exports[`Navigation renders 1`] = `
         label="Search Collection"
         value="/search"
       />
+      <withRouter(links)
+        href="/logout"
+        label="Log out"
+        value="/logout"
+      />
     </WithStyles(Tabs)>
   </WithStyles(AppBar)>
 </div>
