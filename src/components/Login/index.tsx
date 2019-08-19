@@ -67,6 +67,8 @@ const FormComp = (props: FormikProps<FormValues>) => {
       onClose={handleClose}
       aria-labelledby="form-dialog-title"
       style={styles.dialogBox}
+      disableBackdropClick
+      disableEscapeKeyDown
       fullWidth
       maxWidth="md"
     >
