@@ -1,20 +1,57 @@
 ---
 to: src/components/<%= name %>/test.tsx
 ---
-<% const nameBase = connected ? name + "Base" : name -%>
-import { <%= connected ? `${nameBase} as ${name}` : name %> } from "."
+<% if(useState) { -%>
+import { <%= name %> } from "."
 import React from "react"
-import { shallowRender } from "../../utils/shallowRender"
+import { render, fireEvent, cleanup } from "@testing-library/react"
 
 describe("<%= name %>", () => {
-  it("renders", () => {
+  beforeEach(cleanup)
+
+  it("has correct message before clicking", () => {
     // Arrange
-    const valA = "<%= name %>"
+    const name = "Click Me"
+    const message = "You clicked 0 times"
 
     // Act
-    const received = shallowRender(<<%= name %> name="<%= name %>" />)
+    const { getByText } = render(<<%= name %> name={name} />)
 
     // Assert
-    expect(received).toMatchSnapshot()
+    expect(getByText(message)).toBeDefined()
+  })
+
+  it("has correct message after clicking", () => {
+    // Arrange
+    const name = "Click Me"
+    const message = "You clicked 1 times"
+
+    // Act
+    const { getByText } = render(<<%= name %> name={name} />)
+    const button = getByText(name)
+    fireEvent.click(button)
+
+    // Assert
+    expect(getByText(message)).toBeDefined()
   })
 })
+<% } else { -%>
+import { <%= name %> } from "."
+import React from "react"
+import { render, cleanup } from "@testing-library/react"
+
+describe("<%= name %>", () => {
+  beforeEach(cleanup)
+
+  it("has expected structure", () => {
+    // Arrange
+    const name = "<%= name %>"
+
+    // Act
+    const { container } = render(<<%= name %> name={name} />)
+
+    // Assert
+    expect(container).toMatchSnapshot()
+  })
+})
+<% } -%>
