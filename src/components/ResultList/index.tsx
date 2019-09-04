@@ -38,7 +38,7 @@ export const ResultList = (props: Props) => {
   const length = items.length ? items.length : 1
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, length - page * rowsPerPage)
-  console.log("ResultList Comp Props =====>", items)
+
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
     newPage: number,

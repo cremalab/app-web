@@ -20,14 +20,12 @@ export function ResultListRow(props: Props) {
       <TableCell align="right">
         <Button
           onClick={() => {
-            console.log("Button was clicked!", bgGeekID)
             myAPI
               .post("/auth/addgame", {
                 userId: localStorage.userId,
                 bgGeekID,
               })
               .then(res => {
-                console.log(res)
                 setAdded(true)
               })
               .catch(err => {
