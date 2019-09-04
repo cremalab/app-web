@@ -1,105 +1,203 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BgCard If the board game dose not have an image it should return "NO Image"  1`] = `
-<WithStyles(Card)
-  style={
-    Object {
-      "marginButton": 10,
-      "marginLeft": 10,
-      "marginRight": 10,
-      "marginTop": 10,
-      "maxWidth": 345,
-    }
-  }
->
-  <WithStyles(CardActionArea)>
-    <WithStyles(CardMedia)
-      image="No Image"
-      style={
-        Object {
-          "flexGrow": 1,
-          "height": 230,
-          "width": 240,
-        }
+<div>
+  <WithStyles(Card)
+    style={
+      Object {
+        "marginButton": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+        "maxWidth": 345,
       }
-      title="Catan"
-    />
-    <WithStyles(CardContent)>
-      <WithStyles(Typography)
-        component="h2"
-        gutterBottom={true}
-        variant="display1"
-      >
-        Catan
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
-        color="textSecondary"
-        component="p"
-        variant="body2"
-      >
-        In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. ...
-      </WithStyles(Typography)>
-    </WithStyles(CardContent)>
-  </WithStyles(CardActionArea)>
-  <WithStyles(CardActions)>
-    <WithStyles(Button)
-      color="primary"
-      size="small"
+    }
+  >
+    <WithStyles(CardActionArea)
+      onClick={[Function]}
     >
-      More Details
-    </WithStyles(Button)>
-  </WithStyles(CardActions)>
-</WithStyles(Card)>
+      <WithStyles(CardMedia)
+        image="No Image"
+        style={
+          Object {
+            "flexGrow": 1,
+            "height": 230,
+            "width": 240,
+          }
+        }
+        title="Catan"
+      />
+      <WithStyles(CardContent)>
+        <WithStyles(Typography)
+          component="h2"
+          gutterBottom={true}
+          variant="display1"
+        >
+          Catan
+        </WithStyles(Typography)>
+        <WithStyles(Typography)
+          color="textSecondary"
+          component="p"
+          variant="body2"
+        >
+          In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. ...
+        </WithStyles(Typography)>
+      </WithStyles(CardContent)>
+    </WithStyles(CardActionArea)>
+    <WithStyles(CardActions)>
+      <WithStyles(Button)
+        color="primary"
+        onClick={[Function]}
+        size="small"
+      >
+        More Details
+      </WithStyles(Button)>
+    </WithStyles(CardActions)>
+  </WithStyles(Card)>
+  <WithStyles(Dialog)
+    aria-describedby="In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. "
+    aria-labelledby="Catan"
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogTitle)>
+      Catan
+    </WithStyles(DialogTitle)>
+    <WithStyles(DialogContent)>
+      <img
+        alt="Catan"
+        src="Klaus Teuber"
+      />
+      Description: 
+      In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. 
+      Max Category: 
+      Strat
+      Max Players: 
+      4
+      Min Players: 
+      3
+      Min Age: 
+      10
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        onClick={[Function]}
+      >
+        close
+      </WithStyles(Button)>
+      <WithStyles(Button)
+        onClick={[Function]}
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
+        }
+      >
+        Remove from collection
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
 `;
 
 exports[`BgCard If the object has all unformation the game should render just fine 1`] = `
-<WithStyles(Card)
-  style={
-    Object {
-      "marginButton": 10,
-      "marginLeft": 10,
-      "marginRight": 10,
-      "marginTop": 10,
-      "maxWidth": 345,
-    }
-  }
->
-  <WithStyles(CardActionArea)>
-    <WithStyles(CardMedia)
-      image="https://cf.geekdo-images.com/thumb/img/g8LvJsd2oLAub6AEKN_Xpdoi8Sw=/fit-in/200x150/pic2419375.jpg"
-      style={
-        Object {
-          "flexGrow": 1,
-          "height": 230,
-          "width": 240,
-        }
+<div>
+  <WithStyles(Card)
+    style={
+      Object {
+        "marginButton": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+        "maxWidth": 345,
       }
-      title="Catan"
-    />
-    <WithStyles(CardContent)>
-      <WithStyles(Typography)
-        component="h2"
-        gutterBottom={true}
-        variant="display1"
-      >
-        Catan
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
-        color="textSecondary"
-        component="p"
-        variant="body2"
-      >
-        In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. ...
-      </WithStyles(Typography)>
-    </WithStyles(CardContent)>
-  </WithStyles(CardActionArea)>
-  <WithStyles(CardActions)>
-    <WithStyles(Button)
-      color="primary"
-      size="small"
+    }
+  >
+    <WithStyles(CardActionArea)
+      onClick={[Function]}
     >
-      More Details
-    </WithStyles(Button)>
-  </WithStyles(CardActions)>
-</WithStyles(Card)>
+      <WithStyles(CardMedia)
+        image="https://cf.geekdo-images.com/thumb/img/g8LvJsd2oLAub6AEKN_Xpdoi8Sw=/fit-in/200x150/pic2419375.jpg"
+        style={
+          Object {
+            "flexGrow": 1,
+            "height": 230,
+            "width": 240,
+          }
+        }
+        title="Catan"
+      />
+      <WithStyles(CardContent)>
+        <WithStyles(Typography)
+          component="h2"
+          gutterBottom={true}
+          variant="display1"
+        >
+          Catan
+        </WithStyles(Typography)>
+        <WithStyles(Typography)
+          color="textSecondary"
+          component="p"
+          variant="body2"
+        >
+          In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. ...
+        </WithStyles(Typography)>
+      </WithStyles(CardContent)>
+    </WithStyles(CardActionArea)>
+    <WithStyles(CardActions)>
+      <WithStyles(Button)
+        color="primary"
+        onClick={[Function]}
+        size="small"
+      >
+        More Details
+      </WithStyles(Button)>
+    </WithStyles(CardActions)>
+  </WithStyles(Card)>
+  <WithStyles(Dialog)
+    aria-describedby="In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. "
+    aria-labelledby="Catan"
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(DialogTitle)>
+      Catan
+    </WithStyles(DialogTitle)>
+    <WithStyles(DialogContent)>
+      <img
+        alt="Catan"
+        src="Klaus Teuber"
+      />
+      Description: 
+      In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. 
+      Max Category: 
+      Strat
+      Max Players: 
+      4
+      Min Players: 
+      3
+      Min Age: 
+      10
+    </WithStyles(DialogContent)>
+    <WithStyles(DialogActions)>
+      <WithStyles(Button)
+        onClick={[Function]}
+      >
+        close
+      </WithStyles(Button)>
+      <WithStyles(Button)
+        onClick={[Function]}
+        size="small"
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
+        }
+      >
+        Remove from collection
+      </WithStyles(Button)>
+    </WithStyles(DialogActions)>
+  </WithStyles(Dialog)>
+</div>
 `;

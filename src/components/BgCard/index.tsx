@@ -100,7 +100,7 @@ export const BgCard = (props: Props) => {
           </Button>
         </CardActions>
       </Card>
-      {console.log("USR BG ID:", boardgames.UrsBrd[0].id)}
+
       <Dialog
         open={open}
         onClose={handleClose}
