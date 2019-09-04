@@ -29,8 +29,14 @@ const styles = createStyles({
   },
 })
 
+interface UrsBrd {
+  rating: number
+  isborrowed: boolean
+  id: number
+}
 interface Props {
   boardgames: {
+    UrsBrd: UrsBrd[]
     brdGameId: number
     name: string
     minPlayers: string
@@ -42,23 +48,32 @@ interface Props {
     img?: string
   }
   key: number
+  handleDelete?: (collectionID: number) => Promise<void>
 }
 
-export function BgCard(props: Props) {
+export const BgCard = (props: Props) => {
   const { boardgames } = props
   const img = new Image()
 
   const [open, setOpen] = React.useState(false)
-  function handleClickOpen() {
+
+  const handleClickOpen = () => {
     setOpen(true)
   }
 
-  function handleClose() {
+  const handleClose = () => {
     setOpen(false)
   }
 
   if (boardgames.img) {
     img.src = boardgames.img
+  }
+
+  const deleteBoardgame = async (collectionID: number) => {
+    if (props.handleDelete) {
+      props.handleDelete(collectionID)
+      handleClose()
+    }
   }
 
   return (
@@ -80,11 +95,12 @@ export function BgCard(props: Props) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={handleClickOpen}>
             More Details
           </Button>
         </CardActions>
       </Card>
+      {console.log("USR BG ID:", boardgames.UrsBrd[0].id)}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -102,8 +118,12 @@ export function BgCard(props: Props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>close</Button>
-          <Button size="small" color="primary">
-            More Details
+          <Button
+            size="small"
+            style={{ backgroundColor: "red" }}
+            onClick={() => deleteBoardgame(boardgames.UrsBrd[0].id)}
+          >
+            Remove from collection
           </Button>
         </DialogActions>
       </Dialog>

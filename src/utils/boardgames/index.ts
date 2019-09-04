@@ -3,8 +3,11 @@ import catan from "../../assets/testImgs/catan.jpg"
 import bohnanza from "../../assets/testImgs/bohnanza.jpg"
 import twilight from "../../assets/testImgs/twilight.jpg"
 
+const UrsBrdVar = [{ rating: 1, isborrowed: false, id: 1 }]
+
 export const boardgames = [
   {
+    UrsBrd: UrsBrdVar,
     brdGameId: 1,
     name: "Catan",
     minPlayers: "3",
@@ -21,6 +24,7 @@ export const boardgames = [
     updatedAt: "2019-07-15T16:27:40.000Z",
   },
   {
+    UrsBrd: UrsBrdVar,
     brdGameId: 2,
     name: "Basari",
     minPlayers: "3",
@@ -37,6 +41,7 @@ export const boardgames = [
     updatedAt: "2019-07-15T16:27:40.000Z",
   },
   {
+    UrsBrd: UrsBrdVar,
     brdGameId: 3,
     name: "Bohnanza",
     minPlayers: "2",
@@ -53,6 +58,7 @@ export const boardgames = [
     updatedAt: "2019-07-15T21:38:46.550Z",
   },
   {
+    UrsBrd: UrsBrdVar,
     brdGameId: 4,
     name: "Twilight Imperium",
     minPlayers: "2",
