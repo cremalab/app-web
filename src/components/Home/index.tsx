@@ -30,7 +30,13 @@ interface State {
   boardgames: Boardgames[]
 }
 
+interface UrsBrd {
+  rating: number
+  isborrowed: boolean
+  id: number
+}
 interface Boardgames {
+  UrsBrd: UrsBrd[]
   brdGameId: number
   name: string
   minPlayers: string
@@ -66,16 +72,31 @@ export class Home extends React.Component<Props, State> {
         .get<Data>(`/auth/home/${localStorage.userId}`)
         .then(res => {
           this.setState({ boardgames: res.data.result })
+          console.log("Users BG:", this.state.boardgames)
         })
         .catch(error => {
           console.log("Error ", error)
         })
     }
   }
+
+  public handleDelete = async (collectionID: number) => {
+    await myAPI.delete(`auth/delete/${collectionID}`)
+    const updatedTable = this.state.boardgames.filter(boardgame => {
+      return boardgame.UrsBrd[0].id !== collectionID
+    })
+    this.setState({ boardgames: updatedTable })
+  }
   public renderBgCards(boardgames: Boardgames[]) {
     if (boardgames.length > 0) {
       return boardgames.map(boardgame => {
-        return <BgCard boardgames={boardgame} key={boardgame.brdGameId} />
+        return (
+          <BgCard
+            boardgames={boardgame}
+            key={boardgame.brdGameId}
+            handleDelete={this.handleDelete}
+          />
+        )
       })
     } else {
       return (
