@@ -36,6 +36,7 @@ export class AddGame extends React.Component {
           type: "boardgame",
         },
       })
+
       const data: ElementCompact = xml.xml2js(result.data, options)
 
       if (data.items.item) {
@@ -57,7 +58,6 @@ export class AddGame extends React.Component {
   }
 
   public render() {
-
     return (
       <div>
         <SearchBar onsubmit={this.onSearchSubmit} />
