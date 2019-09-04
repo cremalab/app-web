@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultList renders 1`] = `
+<WithStyles(Paper)
+  style={
+    Object {
+      "marginTop": "3%",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "overflowX": "auto",
+      }
+    }
+  >
+    <form>
+      <WithStyles(Table)
+        style={
+          Object {
+            "minWidth": 500,
+          }
+        }
+      >
+        <WithStyles(TableBody)>
+          <ResultListRow
+            bgGeekID=" "
+            name=" "
+            year=" "
+          />
+          <WithStyles(TableRow)
+            style={
+              Object {
+                "height": 192,
+              }
+            }
+          >
+            <WithStyles(TableCell)
+              colSpan={6}
+            />
+          </WithStyles(TableRow)>
+        </WithStyles(TableBody)>
+        <WithStyles(TableFooter)>
+          <WithStyles(TableRow)>
+            <WithStyles(TablePagination)
+              ActionsComponent={[Function]}
+              SelectProps={
+                Object {
+                  "inputProps": Object {
+                    "aria-label": "rows per page",
+                  },
+                  "native": true,
+                }
+              }
+              colSpan={3}
+              count={1}
+              onChangePage={[Function]}
+              onChangeRowsPerPage={[Function]}
+              page={0}
+              rowsPerPage={5}
+              rowsPerPageOptions={
+                Array [
+                  5,
+                  10,
+                  25,
+                ]
+              }
+            />
+          </WithStyles(TableRow)>
+        </WithStyles(TableFooter)>
+      </WithStyles(Table)>
+    </form>
+  </div>
+</WithStyles(Paper)>
+`;

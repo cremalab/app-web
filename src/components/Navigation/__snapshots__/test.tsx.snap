@@ -15,14 +15,14 @@ exports[`Navigation renders 1`] = `
         value="home/:id"
       />
       <withRouter(links)
+        href="/addgame"
+        label="Add a game"
+        value="/addgame"
+      />
+      <withRouter(links)
         href="/search"
         label="Search Collection"
         value="/search"
-      />
-      <withRouter(links)
-        href="/login"
-        label="login"
-        value="/login"
       />
     </WithStyles(Tabs)>
   </WithStyles(AppBar)>
