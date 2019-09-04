@@ -25,7 +25,7 @@ export function ResultListRow(props: Props) {
                 userId: localStorage.userId,
                 bgGeekID,
               })
-              .then(res => {
+              .then(() => {
                 setAdded(true)
               })
               .catch(err => {
