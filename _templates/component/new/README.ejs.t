@@ -3,7 +3,7 @@ to: src/components/<%= name %>/README.md
 ---
 # `<<%= name %> />`
 
-OVERVIEW_HERE
+DESCRIPTION_HERE
 
 ## Example
 
