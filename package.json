@@ -84,9 +84,6 @@
       "src/**/*.{ts,tsx}"
     ]
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "loki": {
     "requireReference": true,
     "configurations": {
