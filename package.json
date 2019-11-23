@@ -50,7 +50,7 @@
     "static": "serve -s build",
     "test:ci": "CI=true npm-run-all test:lint \"test:unit -- -i\" test:visual:ci test:e2e:ci",
     "test:e2e": "cypress run",
-    "test:e2e:ci": "start-server-and-test start:ci http://localhost:5000 test:e2e",
+    "test:e2e:ci": "CYPRESS_baseUrl=http://localhost:5000 start-server-and-test start:ci http://localhost:5000 \"cypress run --port 5052\"",
     "test:lint": "eslint -c ./.eslintrc.js 'src/**/*.{ts,tsx}'",
     "test:lint:fix": "npm run test:lint -- --fix",
     "test:playground": "NODE_ENV=loki BABEL_ENV=development start-storybook -p 9009 -s public",
