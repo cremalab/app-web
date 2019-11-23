@@ -26,6 +26,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "husky": "^3.1.0",
+    "husky-add-issue-tracker": "0.0.9",
     "hygen": "^5.0.3",
     "loki": "^0.18.1",
     "npm-run-all": "^4.1.5",
@@ -69,7 +70,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run prepush"
+      "pre-push": "npm run prepush",
+      "prepare-commit-msg": "husky-add-issue-tracker"
     }
   },
   "jest": {
