@@ -1,10 +1,10 @@
 ---
 to: src/components/<%= name %>/stories.tsx
 ---
-import { storiesOf } from "@storybook/react"
 import React from "react"
-import { decoratorCentered } from "../../utils/decoratorCentered"
+import decoratorCentered from "@storybook/addon-centered"
 import { <%= name %> } from "."
+import { storiesOf } from "@storybook/react"
 
 storiesOf("<%= name %>", module)
   .addDecorator(decoratorCentered)
