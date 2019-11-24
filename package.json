@@ -57,7 +57,7 @@
     "test:playground:build": "build-storybook",
     "test:playground:ci": "start-storybook -p 5000 -s public --ci",
     "test:unit": "npm test -- --env=jsdom",
-    "test:unit:coverage": "npm run test:unit -- --coverage",
+    "test:unit:coverage": "npm run test:unit -- --coverage --watchAll=false",
     "test:unit:coverage:ci": "npm run test:unit:coverage && codecov",
     "test:unit:coverage:watch": "npm run test:unit:coverage -- --watch",
     "test:visual": "CI=true loki --port 9009 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
