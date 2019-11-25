@@ -1,5 +1,5 @@
 ---
-to: src/utils/<%= name %>/test.ts
+to: src/utils/<%= name %>/<%= name %>.test.ts
 ---
 import { <%= name %> } from "."
 
@@ -10,8 +10,9 @@ describe("<%= name %>", () => {
 
     // Act
     const received = <%= name %>(valA)
+    const expected = 1
 
     // Assert
-    expect(received).toEqual(1)
+    expect(received).toEqual(expected)
   })
 })

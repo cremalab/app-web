@@ -1,13 +1,10 @@
 ---
-to: src/types/<%= h.inflection.camelize(name, false) %>.ts
+to: src/types/<%= name %>.ts
 ---
-<%_ var nameCap = h.inflection.camelize(name, false);_%>
 /**
- * <%= nameCap %>
+ * <%= name %>
  * ------------------------------------------------
  * DESCRIPTION_HERE
  */
 
-export interface <%= nameCap %> {
-  // key: ValueType
-}
+export interface <%= name %> {}

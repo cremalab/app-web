@@ -1,10 +1,8 @@
 import React from "react"
 import logo from "../../assets/logo.svg"
-import "./index.css"
+import "./App.css"
 
-type Props = Readonly<{ children?: React.ReactNode }>
-
-export function App(_: Props) {
+export function App() {
   return (
     <div className="App">
       <header className="App-header">
