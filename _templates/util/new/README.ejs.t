@@ -1,8 +1,14 @@
 ---
 to: src/utils/<%= name %>/README.md
 ---
-# <%= name %>
+# `<%= name %>`
 
-## Overview
+DESCRIPTION_HERE
 
-OVERVIEW_HERE
+## Example
+
+```ts
+import { <%= name %> } from "./<%= name %>"
+
+<%= name %>(1) // 1
+```
