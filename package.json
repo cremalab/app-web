@@ -39,10 +39,10 @@
     "webpack": "^4.41.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:ci": "npm-run-all build static",
-    "build": "react-scripts build",
-    "test": "react-scripts test --testMatch \"**/?(*.)+(spec|test).[jt]s?(x)\"",
+    "start": "EXTEND_ESLINT=true react-scripts start",
+    "start:ci": "EXTEND_ESLINT=true npm-run-all build static",
+    "build": "EXTEND_ESLINT=true react-scripts build",
+    "test": "EXTEND_ESLINT=true react-scripts test --testMatch \"**/?(*.)+(spec|test).[jt]s?(x)\"",
     "new:component": "hygen component new",
     "new:type": "hygen type new",
     "new:util": "hygen util new",
