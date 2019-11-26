@@ -1,6 +1,6 @@
 # Crema App - Web 🌐
 
-[![Build Status](https://travis-ci.com/cremalab/crema-app-web.svg?branch=develop)](https://travis-ci.com/cremalab/crema-app-web)
+[![Build Status](https://github.com/cremalab/crema-app-web/workflows/CI/badge.svg)](https://github.com/cremalab/crema-app-web/actions)
 [![codecov](https://codecov.io/gh/cremalab/crema-app-web/branch/develop/graph/badge.svg)](https://codecov.io/gh/cremalab/crema-app-web)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
