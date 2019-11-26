@@ -57,9 +57,8 @@
     "test:playground:build": "build-storybook",
     "test:playground:ci": "start-storybook -p 5000 -s public --ci",
     "test:types": "tsc",
-    "test:unit": "npm test",
+    "test:unit": "npm run test --",
     "test:unit:coverage": "npm run test:unit -- --coverage --watchAll=false",
-    "test:unit:coverage:ci": "npm run test:unit:coverage && codecov",
     "test:unit:coverage:watch": "npm run test:unit:coverage -- --watch",
     "test:visual": "CI=true loki --port 9009 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
     "test:visual:ci:start": "CI=true loki --port 5000 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
@@ -78,10 +77,10 @@
   "jest": {
     "collectCoverageFrom": [
       "!node_modules",
-      "!src/**/(stories).{ts,tsx}",
+      "!src/**/*.stories.{ts,tsx}",
       "!src/index.tsx",
       "!src/serviceWorker.ts",
-      "!src/**/(test).{ts,tsx}",
+      "!src/**/*.test.{ts,tsx}",
       "!**/*.d.ts",
       "src/**/*.{ts,tsx}"
     ]
