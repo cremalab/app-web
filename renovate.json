@@ -1,5 +1,31 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":semanticCommitType(fix)"
+  ],
+  "branchPrefix": "develop-",
+  "pin": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
+  },
+  "prCreation": "not-pending",
+  "minor": {
+    "automerge": true
+  },
+  "labels": [
+    "maintenance"
+  ],
+  "reviewers": [
+    "roblafeve",
+    "kileybublitz",
+    "blaketarter"
+  ],
+  "packageRules": [
+    {
+      "package-names": ["webpack", "react-scripts"],
+      "groupName": "create-react-app"
+    }
   ]
 }
