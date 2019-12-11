@@ -24,7 +24,7 @@
   ],
   "packageRules": [
     {
-      "package-names": ["webpack", "react-scripts"],
+      "packageNames": ["webpack", "react-scripts"],
       "groupName": "create-react-app"
     }
   ]
