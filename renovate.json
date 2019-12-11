@@ -22,5 +22,10 @@
     "kileybublitz",
     "blaketarter"
   ],
-  "group": ["webpack", "react-scripts"]
+  "packageRules": [
+    {
+      "package-names": ["webpack", "react-scripts"],
+      "groupName": "create-react-app"
+    }
+  ]
 }
