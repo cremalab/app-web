@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/cremalab/crema-app-web/branch/develop/graph/badge.svg)](https://codecov.io/gh/cremalab/crema-app-web)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project includes configuration and tooling that conforms to Crema's baseline best-practices for a Web Application. 
+This project includes configuration and tooling that conforms to Crema's baseline best-practices for a Web Application.
 
 **🧰 Tools Used**
 
@@ -25,7 +25,8 @@ This project includes configuration and tooling that conforms to Crema's baselin
 3. `nvm install 'lts/*' && nvm use`
 4. `npm i` (install project dependencies)
 5. [Install the ESLint plugin for ~~your editor~~ VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-6. Enable "Auto-Fix on Save" in `settings.json`: 
+6. Enable "Auto-Fix on Save" in `settings.json`:
+
 ```
 {
   "eslint.autoFixOnSave": true,
@@ -36,6 +37,7 @@ This project includes configuration and tooling that conforms to Crema's baselin
     { "language": "typescriptreact", "autoFix": true }
   ]
 }
+7. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 ```
 
 ## 👟 Run
@@ -56,7 +58,7 @@ Run the following scripts with `npm run <SCRIPT_HERE>`:
 - `test:visual:update` - update or create visual references
 - `test:visual` - run visual tests (loki)
 
->These scripts are located in `package.json` and do not represent the entirety of available scripts, but are the most commonly used.
+> These scripts are located in `package.json` and do not represent the entirety of available scripts, but are the most commonly used.
 
 ## 🏛 Structure
 
