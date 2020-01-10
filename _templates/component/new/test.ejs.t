@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= name %>/<%= name %>.test.tsx
+to: src/components/<%= name %>/test.tsx
 ---
 <% if(useState) { -%>
 import { <%= name %> } from "."
