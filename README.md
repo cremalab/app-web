@@ -37,8 +37,8 @@ This project includes configuration and tooling that conforms to Crema's baselin
     { "language": "typescriptreact", "autoFix": true }
   ]
 }
-7. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 ```
+7. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 ## 👟 Run
 
