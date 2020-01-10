@@ -1,5 +1,5 @@
 ---
-to: src/utils/<%= name %>/<%= name %>.test.ts
+to: src/utils/<%= name %>/test.ts
 ---
 import { <%= name %> } from "."
 
