@@ -3,13 +3,13 @@ to: src/components/<%= name %>/README.md
 ---
 # `<<%= name %> />`
 
-<<%= name %> />_DESCRIPTION_HERE
+DESCRIPTION_HERE
 
 ## Directory Structure
 
-- `<%= name %>.stories.tsx`: Component playground (`npm run test:playground`)
-- `<%= name %>.test.tsx`: Component tests (`npm run test:unit`)
-- `<%= name %>.tsx`: Component code
+- `stories.tsx`: Component playground (`npm run test:playground`)
+- `test.tsx`: Component tests (`npm run test:unit`)
+- `index.tsx`: Component code
 - `README.md`: Component documentation (hey, that's me!)
 
 ## Example
