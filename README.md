@@ -28,13 +28,16 @@ This project includes configuration and tooling that conforms to Crema's baselin
 6. Enable "Auto-Fix on Save" in `settings.json`:
 
 ```
+// There will likely be other settings within this JSON object...
 {
-  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
+    "typescript",
+    "typescriptreact"
   ]
 }
 ```
