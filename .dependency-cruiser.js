@@ -1,5 +1,22 @@
 module.exports = {
   forbidden: [
+    /* custom rules */
+    {
+      name: 'not-to-component-implementation',
+      severity: 'error',
+      comment: `This module depends on the implementation details of a component.
+        Consider changing the importer to instead depend only on what is exposed by the top-level component.
+        Given more scrutiny, you may also consider extracting the desired functionality to a new top-level component.
+      `,
+      from: {
+        path: "^src/[^/]+/([^/]+)/.+"
+      },
+      to: {
+        path: "^src/components/[^/]+/[^index.tsx?]",
+        pathNot: "^src/components/$1/.+"
+      }
+    },
+
     /* rules from the 'recommended' preset: */
     {
       name: 'no-circular',
