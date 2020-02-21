@@ -12,7 +12,7 @@ module.exports = {
         path: "^src/[^/]+/([^/]+)/.+"
       },
       to: {
-        path: "^src/components/[^/]+/[^index.tsx?]",
+        path: "^src/components/[^/]+/(?!index.tsx?)",
         pathNot: "^src/components/$1/.+"
       }
     },
