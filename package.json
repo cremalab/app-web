@@ -15,7 +15,7 @@
     "@storybook/addons": "5.3.13",
     "@storybook/cli": "5.3.13",
     "@storybook/react": "5.3.13",
-    "@testing-library/react": "9.4.0",
+    "@testing-library/react": "9.4.1",
     "@types/jest": "24.9.1",
     "@types/node": "12.12.28",
     "@types/react": "16.9.21",
