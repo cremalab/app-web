@@ -3,26 +3,24 @@
     "config:base",
     ":semanticCommitType(fix)"
   ],
-  "branchPrefix": "develop-",
-  "pin": {
-    "automerge": true
-  },
-  "patch": {
-    "automerge": true
-  },
+  "branchPrefix": "develop-renovate-",
   "prCreation": "not-pending",
-  "minor": {
-    "automerge": true
-  },
   "labels": [
     "maintenance"
   ],
-  "reviewers": [
-    "roblafeve",
-    "kileybublitz",
-    "blaketarter"
-  ],
   "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "automerge": false,
+      "reviewers": [
+        "roblafeve",
+        "blaketarter"
+      ]
+    },
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
     {
       "packageNames": ["webpack", "react-scripts"],
       "groupName": "create-react-app"
