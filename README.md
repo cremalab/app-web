@@ -41,6 +41,7 @@ This project includes configuration and tooling that conforms to Crema's baselin
   ]
 }
 ```
+
 7. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 ## 👟 Run
@@ -110,6 +111,8 @@ src
 - Use the code generators:
   - `npm run new:component`
   - `npm run new:util`
+  - `npm run new:slice`
+  - `npm run new:store`
   - When prompted for a name, prefer `camelCase` for utils and `CamelCase` for components
 - Fill out the `README.md` to describe what your code does
 - Run your unit tests `npm run test:unit` while working to see immediate feedback
