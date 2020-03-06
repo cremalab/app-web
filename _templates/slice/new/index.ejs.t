@@ -1,7 +1,5 @@
 ---
 to: src/store/<%= name %>/index.ts
-message: |
-  - hygen {bold mailer} new --name [NAME]
 ---
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
