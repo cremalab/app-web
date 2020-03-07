@@ -5,7 +5,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 <% if(useExample) { -%>
 export type <%= h.capitalize(name) %>State = {
-  counter: number;
+  counter: number
 }
 <% } else { -%>
 export type <%= h.capitalize(name) %>State = {}

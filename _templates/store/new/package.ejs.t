@@ -1,3 +1,3 @@
 ---
-sh: npm install @reduxjs/toolkit <%= useThunk && "redux-thunk" %> --save 
+sh: npm install @reduxjs/toolkit <% if(useThunk) { %><%= "redux-thunk" %><% }%>
 ---
