@@ -1,72 +1,78 @@
-## Description for [TASK_ID](TASK_URL)
+## Description
 
 DESCRIPTION_HERE
 
-### 🖼 Demo Images
+### 🔗 Reference
 
-> Test images work nicely for this (table is optional)
+> _Relevant links (e.g. issue, design, etc.)_
 
-<table>
-<tr><th>Before</th><th>After</th></tr>
-<tr>
-<td>
-
-![](https://github.com/cremalab/<REPO_NAME>/blob/<BASE_BRANCH>/.loki/reference/chrome_<COMPONENT_NAME>_<STORY_NAME>.png?raw=true)
-
-</td>
-<td>
-
-![](https://github.com/cremalab/<REPO_NAME>/blob/<FULL_COMMIT_SHA>/.loki/reference/chrome_<COMPONENT_NAME>_<STORY_NAME>.png?raw=true)
-
-</td>
-</tr>
-</table>
+- [LINK_NAME](LINK_URL)
 
 ### 📋 Acceptance Criteria
 
-> Checked off by the PR **Assignee(s)**
+> _Checked off by PR **Assignees**_
 
 - [ ] CRITERION_HERE
 
+<!--
+### 🖼 Demo
+
+![](DEMO_IMAGE_LINK_HERE)
+-->
+
+<!-- If applicable, use "Before/After Table" located at end of file -->
 
 ### 👩‍🔬 Test Instructions
 
-1. How to test this PR
-2. Prefer bulleted description
-3. Start after checking out this branch
-4. Include any setup required, such as bundling scripts, restarting services, etc.
-5. Include test case, and expected output
+> _Provided by PR **Assignees**_
+
+1. TEST_STEP_HERE
 
 ## 🔎 Reviewer Checklist
 
-> Checked off by the PR **Reviewers**
-
-### Required
-
-> These always need to be checked
+> _Checked off by PR **Reviewers**_
 
 - [ ] Merge destination is correct
 - [ ] Code is correct as understood and conforms to quality standards
 - [ ] Tests have been added where appropriate (unit, visual, end-to-end)
 - [ ] Acceptance Criteria have been met
 
-### Additional
-
-> Delete if unneeded
-
+<!--
+Optional additions:
 - [ ] Code has been tested and confirmed locally
+-->
 
 ---
 
->### Roles & Responsibilities
+> ### Roles & Responsibilities
 >
->#### 👨‍💻 Assignee
+> #### 👨‍💻 Assignee
 >
->- Initiator of this PR (be sure to set in GitHub UI)
->- Addresses feedback and change requests
->- Merges PR once approved (usually deletes branch unless `develop` or `release`)
+> - Initiator of this PR (be sure to set in GitHub UI)
+> - Addresses feedback and change requests
+> - Merges PR once approved (usually deletes branch unless `develop` or `release`)
 >
->#### 👩‍💻 Reviewer
+> #### 👩‍💻 Reviewer
 >
->- Invited to review PR by **Assignee** (via GitHub UI)
->- Is expected to complete a review and address followup
+> - Invited to review PR by **Assignee** (via GitHub UI)
+> - Is expected to complete a review and address followup
+
+<!--
+## Before/After Table
+
+<table>
+<tr><th>Before</th><th>After</th></tr>
+<tr>
+<td>
+
+![](BEFORE_IMAGE_LINK_HERE)
+
+</td>
+<td>
+
+![](AFTER_IMAGE_LINK_HERE)
+
+</td>
+</tr>
+</table>
+-->
