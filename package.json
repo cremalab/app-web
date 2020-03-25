@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
     "@cremalab/app-config": "1.1.1",
@@ -26,7 +26,7 @@
     "start-server-and-test": "1.10.11",
     "typescript": "3.8.3",
     "wait-on": "4.0.1",
-    "webpack": "4.41.5"
+    "webpack": "4.42.1"
   },
   "scripts": {
     "start": "EXTEND_ESLINT=true react-scripts start",
