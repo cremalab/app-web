@@ -10,7 +10,7 @@ import "./index.css" // global styles
  * global imports can be added (e.g. `./index.css`)
  */
 
-const baseDecorator: DecoratorFn = story => {
+const baseDecorator: DecoratorFn = (story) => {
   return story()
 }
 
