@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.8.7",
-    "@cremalab/scripts-web": "file:../../packages/scripts-web",
+    "@cremalab/scripts-web": "0.1.6",
     "@storybook/addon-actions": "5.3.14",
     "@storybook/addon-centered": "5.3.14",
     "@storybook/addon-links": "5.3.14",
