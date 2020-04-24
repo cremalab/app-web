@@ -65,7 +65,7 @@
     "test:types": "tsc",
     "test:unit": "npm run test --",
     "test:unit:coverage": "npm run test:unit -- --coverage --watchAll=false",
-    "test:unit:coverage:watch": "npm run test:unit:coverage -- --watch",
+    "test:unit:coverage:watch": "npm run test:unit:coverage -- --watchAll=true",
     "test:visual": "CI=true loki --port 9009 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
     "test:visual:ci:start": "CI=true loki --port 5000 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
     "test:visual:ci": "start-server-and-test test:playground:ci http://localhost:5000 test:visual:ci:start",
