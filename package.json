@@ -21,7 +21,7 @@
     "@types/node": "12.12.41",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
-    "cypress": "4.5.0",
+    "cypress": "4.6.0",
     "dependency-cruiser": "9.3.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-react-app": "5.2.1",
