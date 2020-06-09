@@ -18,7 +18,7 @@
     "@storybook/react": "5.3.19",
     "@testing-library/react": "10.2.1",
     "@types/jest": "26.0.0",
-    "@types/node": "12.12.45",
+    "@types/node": "12.12.46",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "cypress": "4.8.0",
