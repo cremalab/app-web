@@ -19,7 +19,7 @@
     "@testing-library/react": "10.2.1",
     "@types/jest": "26.0.0",
     "@types/node": "12.12.47",
-    "@types/react": "16.9.35",
+    "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",
     "cypress": "4.8.0",
     "dependency-cruiser": "9.6.0",
