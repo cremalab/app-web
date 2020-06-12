@@ -14,7 +14,7 @@
     "@storybook/addon-links": "5.3.19",
     "@storybook/addons": "5.3.19",
     "@storybook/cli": "5.3.19",
-    "@storybook/preset-create-react-app": "3.0.0",
+    "@storybook/preset-create-react-app": "3.0.1",
     "@storybook/react": "5.3.19",
     "@testing-library/react": "10.2.1",
     "@types/jest": "26.0.0",
