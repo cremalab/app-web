@@ -37,7 +37,7 @@
     "serve": "11.3.2",
     "source-map-explorer": "2.4.2",
     "start-server-and-test": "1.11.0",
-    "typescript": "3.9.5",
+    "typescript": "3.9.6",
     "wait-on": "5.0.1",
     "webpack": "4.42.0"
   },
