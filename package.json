@@ -58,7 +58,7 @@
     "test:deps": "depcruise --validate -- src",
     "test:e2e": "cypress run",
     "test:e2e:ci": "cross-env CYPRESS_baseUrl=http://localhost:5000 start-server-and-test start:ci http://localhost:5000 \"cypress run --port 5052\"",
-    "test:lint": "eslint -c ./.eslintrc.js './src/**/*.{ts,tsx}'",
+    "test:lint": "eslint -c ./.eslintrc.js ./src --ext .ts,.tsx",
     "test:lint:fix": "npm run test:lint -- --fix",
     "test:playground": "cross-env NODE_ENV=loki BABEL_ENV=development start-storybook -p 9009 -s public",
     "test:playground:build": "build-storybook",
