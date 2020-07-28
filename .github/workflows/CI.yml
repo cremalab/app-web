@@ -4,13 +4,17 @@ on: [push]
 
 jobs:
   Test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     env:
       CI: true
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/cache@v1
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -21,13 +25,28 @@ jobs:
       - run: npm run test:deps
       - run: npm run test:types
       - run: npm run test:unit
+      - run: npm run test:e2e:ci
+
+  Visual:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
       - run: npm run test:visual:ci
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
           name: visual_tests
           path: ./loki
-      - run: npm run test:e2e:ci
 
   Coverage:
     runs-on: ubuntu-latest
@@ -35,8 +54,8 @@ jobs:
       CI: true
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/cache@v1
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -54,8 +73,8 @@ jobs:
       CI: true
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/cache@v1
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
