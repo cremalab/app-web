@@ -40,7 +40,7 @@
     "start-server-and-test": "1.11.2",
     "typescript": "3.9.7",
     "wait-on": "5.1.0",
-    "webpack": "4.42.0"
+    "webpack": "4.44.1"
   },
   "scripts": {
     "start": "cross-env EXTEND_ESLINT=true react-scripts start",
