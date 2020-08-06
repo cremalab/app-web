@@ -1,4 +1,9 @@
 {
   "extends": "@cremalab/scripts-web/configs/tsconfig.json",
-  "include": ["src"]
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "noFallthroughCasesInSwitch": true
+  }
 }
