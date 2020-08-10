@@ -20,7 +20,7 @@
     "@testing-library/react": "10.4.8",
     "@types/jest": "26.0.9",
     "@types/node": "12.12.54",
-    "@types/react": "16.9.45",
+    "@types/react": "16.9.46",
     "@types/react-dom": "16.9.8",
     "cross-env": "7.0.2",
     "cypress": "4.12.1",
