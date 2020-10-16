@@ -46,7 +46,7 @@ jobs:
         if: failure()
         with:
           name: visual_tests
-          path: ./loki
+          path: ./.loki
 
   Coverage:
     runs-on: ubuntu-latest
