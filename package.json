@@ -8,7 +8,7 @@
     "react-scripts": "3.4.3"
   },
   "devDependencies": {
-    "@babel/core": "7.12.1",
+    "@babel/core": "7.12.3",
     "@cremalab/scripts-web": "0.5.1",
     "@storybook/addon-actions": "6.0.26",
     "@storybook/addon-centered": "5.3.21",
