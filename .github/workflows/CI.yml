@@ -42,7 +42,7 @@ jobs:
             ${{ runner.os }}-node-
       - run: npm ci
       - run: npm run test:visual:ci
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: visual_tests
