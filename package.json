@@ -21,7 +21,7 @@
     "@types/jest": "26.0.15",
     "@types/node": "12.19.2",
     "@types/react": "16.9.53",
-    "@types/react-dom": "16.9.8",
+    "@types/react-dom": "16.9.9",
     "cross-env": "7.0.2",
     "cypress": "5.5.0",
     "dependency-cruiser": "9.15.1",
