@@ -1,14 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import logo from "../../assets/logo.svg"
 import "./styles.css"
 
 export function App() {
+  const [inputState, setInputState] = useState("")
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <code>src/components/App/index.tsx</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -18,6 +20,12 @@ export function App() {
         >
           Learn React
         </a>
+        <input
+          type="text"
+          className="App-input"
+          value={inputState}
+          onChange={(e) => setInputState(e.target.value)}
+        />
       </header>
     </div>
   )
