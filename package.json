@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-scripts": "3.4.4"
+    "react-scripts": "4.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.12.3",
@@ -26,7 +26,7 @@
     "cypress": "5.5.0",
     "dependency-cruiser": "9.15.1",
     "eslint-config-prettier": "6.15.0",
-    "eslint-config-react-app": "5.2.1",
+    "eslint-config-react-app": "6.0.0",
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.21.5",
@@ -40,13 +40,13 @@
     "start-server-and-test": "1.11.5",
     "typescript": "4.0.5",
     "wait-on": "5.2.0",
-    "webpack": "4.42.0"
+    "webpack": "4.44.2"
   },
   "scripts": {
-    "start": "cross-env EXTEND_ESLINT=true react-scripts start",
-    "start:ci": "cross-env EXTEND_ESLINT=true run-s build static",
-    "build": "cross-env EXTEND_ESLINT=true react-scripts build",
-    "test": "cross-env EXTEND_ESLINT=true react-scripts test --testMatch=[ \"**/?(*.)test.ts?(x)\" ]",
+    "start": "react-scripts start",
+    "start:ci": "run-s build static",
+    "build": "react-scripts build",
+    "test": "react-scripts test --testMatch=[ \"**/?(*.)test.ts?(x)\" ]",
     "new:component": "cremalab-scripts-web new component",
     "new:type": "cremalab-scripts-web new type",
     "new:util": "cremalab-scripts-web new util",
