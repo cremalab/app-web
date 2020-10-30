@@ -26,7 +26,7 @@
     "cypress": "5.5.0",
     "dependency-cruiser": "9.15.1",
     "eslint-config-prettier": "6.15.0",
-    "eslint-config-react-app": "5.2.1",
+    "eslint-config-react-app": "6.0.0",
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.21.5",
