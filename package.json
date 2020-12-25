@@ -27,7 +27,7 @@
     "@types/react-dom": "17.0.0",
     "cross-env": "7.0.3",
     "cypress": "6.2.0",
-    "dependency-cruiser": "9.21.0",
+    "dependency-cruiser": "9.21.1",
     "eslint-config-prettier": "7.1.0",
     "eslint-config-react-app": "6.0.0",
     "eslint-plugin-cypress": "2.11.2",
