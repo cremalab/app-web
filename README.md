@@ -11,10 +11,11 @@ This project includes configuration and tooling that conforms to Crema's baselin
 - [Create React App](https://facebook.github.io/create-react-app/) for simple configuration 😅
 - [Cypress](https://www.cypress.io) for end-to-end testing
 - [ESLint](https://eslint.org) for code linting
+- [Husky](https://github.com/typicode/husky/tree/master) for running tasks via git hooks (locked at v4 due to [v5 licensing](https://typicode.github.io/husky/#/?id=announcement))
 - [Hygen](http://www.hygen.io) for component and util generators
 - [Jest](https://jestjs.io) for unit tests
 - [Loki](https://loki.js.org) for visual testing
-- [Prettier](https://prettier.io) for code formatting (via ESLint plugin)
+- [Prettier](https://prettier.io) for code formatting (🚨 DO NOT enable the VS Code Prettier plugin—ESLint runs it for you under the hood. 🎉)
 - [Storybook](https://storybook.js.org) for component playground (and used by Loki)
 - [TypeScript](http://www.typescriptlang.org) for Static Typing in JavaScript ([Learn](http://www.typescriptlang.org/docs/handbook/basic-types.html))
 
@@ -37,8 +38,10 @@ This project includes configuration and tooling that conforms to Crema's baselin
    > Go to settings (`⌘ + ,`), search `codeActionsOnSave` and click "Edit in settings.json", then add `"editor.codeActionsOnSave": {...}` within the existing JSON object.
    >
    > "But I don't use VS Code." That's fine but you're on your own. 😅
-6. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
-   1. Used by [Loki](https://loki.js.org)
+   >
+   > 🚨 DO NOT enable the VS Code Prettier plugin for this project—ESLint runs it for you under the hood. 🎉
+6. [Install Docker Desktop](https://www.docker.com/products/docker-desktop
+   1. Used by [Loki](https://loki.js.org) which runs on git pre-push hook via [Husky](https://github.com/typicode/husky/tree/master)
 
 ## 👟 Run
 
