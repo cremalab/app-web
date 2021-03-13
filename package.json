@@ -90,13 +90,14 @@
   },
   "jest": {
     "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!**/*.d.ts",
       "!node_modules",
       "!src/**/?(*.)stories.{ts,tsx}",
-      "!src/index.tsx",
-      "!src/serviceWorker.ts",
       "!src/**/?(*.)test.{ts,tsx}",
-      "!**/*.d.ts",
-      "src/**/*.{ts,tsx}"
+      "!src/index.tsx",
+      "!src/reportWebVitals.ts",
+      "!src/serviceWorker.ts"
     ]
   },
   "loki": {
