@@ -1,10 +1,7 @@
-import { useState } from "react"
 import logo from "../../assets/logo.svg"
 import "./styles.css"
 
 export function App() {
-  const [inputState, setInputState] = useState("")
-
   return (
     <div className="App">
       <header className="App-header">
@@ -20,12 +17,6 @@ export function App() {
         >
           Learn React
         </a>
-        <input
-          type="text"
-          className="App-input"
-          value={inputState}
-          onChange={(e) => setInputState(e.target.value)}
-        />
       </header>
     </div>
   )
