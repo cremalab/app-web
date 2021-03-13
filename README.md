@@ -20,10 +20,13 @@ This project includes configuration and tooling that conforms to Crema's baselin
 
 ## 🏗 Setup
 
+> Run these commands from project root.
+
 1. [Install NVM](https://github.com/creationix/nvm#installation-and-update) (Node Version Manager)
-2. `nvm install 'lts/*' && nvm use`
-3. `npm i` (install project dependencies)
-4. [Install the ESLint plugin for ~~your editor~~ VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and enable "Fix on Save" in `settings.json`:
+2. `nvm install` (in new sessions run `nvm use` to load version specified in `.nvmrc` unless aliased to default)
+3. `npm i -g npm@latest` (npm@v7+ required)
+4. `npm i` (install project dependencies)
+5. [Install the ESLint plugin for ~~your editor~~ VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and enable "Fix on Save" in `settings.json`:
    ```json
    {
      "editor.codeActionsOnSave": {
@@ -34,7 +37,7 @@ This project includes configuration and tooling that conforms to Crema's baselin
    > Go to settings (`⌘ + ,`), search `codeActionsOnSave` and click "Edit in settings.json", then add `"editor.codeActionsOnSave": {...}` within the existing JSON object.
    >
    > "But I don't use VS Code." That's fine but you're on your own. 😅
-5. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
+6. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
    1. Used by [Loki](https://loki.js.org)
 
 ## 👟 Run
