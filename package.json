@@ -35,7 +35,7 @@
     "eslint-plugin-cypress": "2.11.2",
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-react": "7.23.2",
-    "husky": "6.0.0",
+    "husky": "^6.0.0",
     "husky-add-issue-tracker": "0.1.1",
     "loki": "0.28.1",
     "npm-run-all": "4.1.5",
@@ -80,13 +80,8 @@
     "test:analyze:build": "npm run build",
     "test:analyze:explore": "source-map-explorer build/static/js/main.*",
     "build-storybook": "build-storybook -s public",
-    "storybook": "start-storybook -p 6006 -s public"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run prepush",
-      "prepare-commit-msg": "husky-add-issue-tracker"
-    }
+    "storybook": "start-storybook -p 6006 -s public",
+    "prepare": "husky install"
   },
   "jest": {
     "collectCoverageFrom": [
