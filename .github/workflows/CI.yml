@@ -20,7 +20,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: sudo npm i -g npm@7
       - run: npm ci
       - run: npm run test:lint
       - run: npm run test:deps
@@ -41,7 +40,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: sudo npm i -g npm@7
       - run: npm ci
       - run: npm run test:visual:ci
       - uses: actions/upload-artifact@v2
@@ -63,7 +61,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: sudo npm i -g npm@7
       - run: npm ci
       - run: npm run test:unit:coverage
       - uses: codecov/codecov-action@v1
@@ -83,6 +80,5 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: sudo npm i -g npm@7
       - run: npm ci
       - run: npm run build
