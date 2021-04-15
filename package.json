@@ -46,6 +46,9 @@
     "typescript": "4.2.4",
     "wait-on": "5.3.0"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "scripts": {
     "start": "react-scripts start",
     "start:ci": "run-s build static",
