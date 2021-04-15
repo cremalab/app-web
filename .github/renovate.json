@@ -9,9 +9,6 @@
   "labels": [
     "maintenance"
   ],
-  "constraints": {
-    "npm": "^7.0.0"
-  },
   "packageRules": [
     {
       "updateTypes": ["major"],
