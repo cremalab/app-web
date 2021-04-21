@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "config:base",
+    ":pinAllExceptPeerDependencies",
+    ":semanticCommitType(fix)"
+  ],
+  "branchPrefix": "develop-renovate-",
+  "prCreation": "not-pending",
+  "labels": [
+    "maintenance"
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "packageNames": ["webpack", "react-scripts"],
+      "groupName": "create-react-app"
+    }
+  ]
+}
