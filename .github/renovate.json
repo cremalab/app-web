@@ -17,10 +17,6 @@
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
-    },
-    {
-      "packageNames": ["webpack", "react-scripts"],
-      "groupName": "create-react-app"
     }
   ]
 }
