@@ -40,7 +40,7 @@ This project includes configuration and tooling that conforms to Crema's baselin
    > "But I don't use VS Code." That's fine but you're on your own. 😅
    >
    > 🚨 DO NOT enable the VS Code Prettier plugin for this project—ESLint runs it for you under the hood. 🎉
-6. [Install Docker Desktop](https://www.docker.com/products/docker-desktop
+6. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
    1. Used by [Loki](https://loki.js.org) which runs on git pre-push hook via [Husky](https://github.com/typicode/husky/tree/master)
 
 ## 👟 Run
