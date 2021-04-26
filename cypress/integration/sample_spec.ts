@@ -1,7 +1,11 @@
-describe("App", function () {
-  it("Contains a link to learn about React", function () {
+describe("App", () => {
+  it("Contains a link to learn about React", () => {
     cy.visit("/")
-    cy.get(".App-link").contains("Learn React")
-    cy.get(".App-link").should("have.attr", "href", "https://reactjs.org")
+    cy.findByText("Learn React").should("exist")
+    cy.findByText("Learn React").should(
+      "have.attr",
+      "href",
+      "https://reactjs.org",
+    )
   })
 })
