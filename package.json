@@ -25,7 +25,7 @@
     "@testing-library/user-event": "13.1.5",
     "@types/jest": "26.0.22",
     "@types/node": "12.20.10",
-    "@types/react": "17.0.3",
+    "@types/react": "17.0.4",
     "@types/react-dom": "17.0.3",
     "cross-env": "7.0.3",
     "cypress": "7.1.0",
