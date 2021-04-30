@@ -15,38 +15,15 @@ This directory is intended to organize global application utilities—functions,
 3. The following directory and files will be generated:
    ```
    src/utils
-   ├── exampleUtil // Utility directory
-   │   ├── index.ts // Define and export the utility here
-   │   ├── README.md // Document the utility
-   │   └── test.ts // Test the utility
-   └── README.md // 👈 you are here!
+   ├── exampleUtil
+   │   ├── exampleUtil.test.ts 👈 Test utility
+   │   ├── exampleUtil.ts 👈 Define utility
+   │   └── index.ts 👈 Export utility
+   └── README.md 👈 You are here!
    ```
-4. `exampleUtil/index.ts` contains the utility definition:
+4. `exampleUtil.test.ts` contains the utility tests:
    ```ts
-   /**
-    * exampleUtil
-    * ------------------------------------------------
-    * DESCRIPTION_HERE
-    */
-
-   export const exampleUtil = <A>(x: A) => x
-   ```
-5. `exampleUtil/README.md` contains the utility documentation:
-      
-        # `exampleUtil`
-
-        DESCRIPTION_HERE
-
-        ## Example
-
-        ```ts
-        import { exampleUtil } from "./exampleUtil"
-
-        exampleUtil(1) // 1
-        ```
-6. `exampleUtil/test.ts` contains the utility tests:
-   ```ts      
-   import { exampleUtil } from "."
+   import { exampleUtil } from "./exampleUtil"
 
    describe("exampleUtil", () => {
      it("works", () => {
@@ -61,4 +38,18 @@ This directory is intended to organize global application utilities—functions,
        expect(received).toEqual(expected)
      })
    })
+   ```
+5. `exampleUtil.ts` contains the utility definition:
+   ```ts
+   /**
+    * exampleUtil
+    * ------------------------------------------------
+    * DESCRIPTION_HERE
+    */
+
+   export const exampleUtil = <A>(x: A) => x
+   ```
+6. `index.ts` contains the utility definition:
+   ```ts
+   export { exampleUtil } from "./exampleUtil"
    ```
