@@ -11,7 +11,7 @@ This project includes configuration and tooling that conforms to Crema's baselin
 - [Create React App](https://facebook.github.io/create-react-app/) for simple configuration 😅
 - [Cypress](https://www.cypress.io) for end-to-end testing
 - [ESLint](https://eslint.org) for code linting
-- [Husky](https://github.com/typicode/husky/tree/master) for running tasks via git hooks (locked at v4 due to [v5 licensing](https://typicode.github.io/husky/#/?id=announcement))
+- [Husky](https://github.com/typicode/husky/tree/master) for running tasks via git hooks
 - [Hygen](http://www.hygen.io) for component and util generators
 - [Jest](https://jestjs.io) for unit tests
 - [Loki](https://loki.js.org) for visual testing
