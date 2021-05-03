@@ -2,18 +2,19 @@ module.exports = {
   forbidden: [
     /* custom rules */
     {
-      name: 'not-to-component-implementation',
+      name: "not-to-private",
       severity: 'error',
-      comment: `This module depends on the implementation details of a component.
-        Consider changing the importer to instead depend only on what is exposed by the top-level component.
-        Given more scrutiny, you may also consider extracting the desired functionality to a new top-level component.
+      comment: `
+        This module is attempting to import something that is private to another module; 
+        something not explicitly exported by a module's "index.ts(x)" file.
+        This rule applies to all top-level directories within "./src".
       `,
       from: {
-        path: "^src/[^/]+/([^/]+)/.+"
+        path: "^src/([^/]+)/([^/]+)/?.+"
       },
       to: {
-        path: "^src/components/[^/]+/(?!index.tsx?)",
-        pathNot: "^src/components/$1/.+"
+        path: "^src/$1/[^/]+/(?!index.tsx?)",
+        pathNot: "^src/$1/$2/.+"
       }
     },
 
