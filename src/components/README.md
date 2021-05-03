@@ -2,62 +2,26 @@
 
 This directory is intended to organize React components.
 
-## Usage
+## Component Generator
 
-1. In terminal run `npm run new:component` to generate a new `component`
-2. Name your component, e.g. `ExampleComponent` (names will be transformed to **Pascal Case**, i.e. `ThisIsPascalCase`)
-3. Select whether or not your component will "useState"—selecting "yes" will add a hook.
+This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts) to generate component files. Give it a try!
+
+1. In terminal, run `npm run new:component` to generate a new React component.
+2. Name your component, e.g. `ExampleComponent`
+3. Choose between options regarding how much example code to generate. _The following examples are shown as if you answered `yes` to "example code" and `no` to "include useState"._
 4. The following directory and files will be generated:
    ```
-   src/components/ExampleComponent // component directory
-   ├── index.tsx // Define and export the component here
-   ├── README.md // Document the component
-   ├── stories.tsx // Show the component in various states
-   └── test.tsx // Test the component
+   src/components/ExampleComponent/
+   ├── ExampleComponent.stories.tsx 👈 Component stories (`npm run test:playground`)
+   ├── ExampleComponent.test.tsx 👈 Component tests (`npm run test:unit`)
+   ├── ExampleComponent.tsx 👈 Component code
+   ├── index.ts 👈 Component export
+   └── README.md 👈 Component documentation (hey, that's me!)
    ```
-5. `ExampleComponent/index.tsx` contains component definition:
+5. `ExampleComponent.stories.tsx` contains component stories:
    ```tsx
-   import React from "react"
-
-   type Props = Readonly<{ name: string }>
-
-   /**
-    * ExampleComponent
-    * ------------------------------------------------
-    * DESCRIPTION_HERE
-    */
-
-   export function ExampleComponent({ name }: Props) {
-     return <div className="ExampleComponent">{name}</div>
-   }
-   ```
-6. `ExampleComponent/README.md` contains component documentation:
-      
-        # `<ExampleComponent />`
-
-         DESCRIPTION_HERE
-
-         ## Directory Structure
-
-         - `stories.tsx`: Component playground (`npm run test:playground`)
-         - `test.tsx`: Component tests (`npm run test:unit`)
-         - `index.tsx`: Component code
-         - `README.md`: Component documentation (hey, that's me!)
-
-         ## Example
-
-         ![ExampleComponent](../../../.loki/reference/chrome_ExampleComponent_example.png)
-
-         > Image location: [`.loki/reference/chrome_ExampleComponent_example.png`](../../../.loki/reference/chrome_ExampleComponent_example.png)
-         > 
-         > To regenerate: 
-         > 1. `npm run test:playground` (skip if running)
-         > 1. `npm run test:visual:update -- --storiesFilter="^ExampleComponent example\$"`
-7. `ExampleComponent/stories.tsx` contains component stories:
-   ```tsx
-   import React from "react"
    import decoratorCentered from "@storybook/addon-centered"
-   import { ExampleComponent } from "."
+   import { ExampleComponent } from "./ExampleComponent"
 
    /**
     * See Storybook Docs: Writing Stories
@@ -70,25 +34,65 @@ This directory is intended to organize React components.
    }
 
    export const example = () => <ExampleComponent name="ExampleComponent" />
-
    ```
-8. `ExampleComponent/test.tsx` contains component tests:
-   ```tsx      
-   import { ExampleComponent } from "."
-   import React from "react"
+6. `ExampleComponent.test.tsx` contains component tests:
+   ```tsx
    import { render } from "@testing-library/react"
+   import { ExampleComponent } from "./ExampleComponent"
 
    describe("ExampleComponent", () => {
      it("name prop is rendered", () => {
        // Arrange
-       const name = "ExampleComponent"
+       const message = "Hi, my name is ExampleComponent!"
 
        // Act
-       const { getByText } = render(<ExampleComponent name={name} />)
-       const received = getByText(name)
+       const { getByText } = render(<ExampleComponent name="ExampleComponent" />)
+       const received = getByText(message)
 
        // Assert
        expect(received).toBeDefined()
      })
    })
+   ```
+7. `ExampleComponent.tsx` contains component code:
+   ```tsx
+   interface Props {
+     name: string
+   }
+
+   export function ExampleComponent({ name }: Props) {
+     return (
+       <div>
+         <p>Hi, my name is {name}!</p>
+       </div>
+     )
+   }
+   ```
+8. `index.ts` contains component export:
+   ```tsx
+   export { ExampleComponent } from "./ExampleComponent"
+   ```
+9. `README.md` contains component documentation:
+   ```md
+   # `<ExampleComponent />`
+
+   DESCRIPTION_HERE
+
+   ## Directory Structure
+
+   - `ExampleComponent.stories.tsx`: Component stories (`npm run test:playground`)
+   - `ExampleComponent.test.tsx`: Component tests (`npm run test:unit`)
+   - `ExampleComponent.tsx`: Component code
+   - `index.ts`: Component export
+   - `README.md`: Component documentation (hey, that's me!)
+
+   ## Example
+
+   ![ExampleComponent](../../../.loki/reference/chrome_ExampleComponent_example.png)
+
+   > Image location: [`.loki/reference/chrome_ExampleComponent_example.png`](../../../.loki/reference/chrome_ExampleComponent_example.png)
+   > 
+   > To regenerate: 
+   > 1. `npm run test:playground` (skip if running)
+   > 1. `npm run test:visual:update -- --storiesFilter="^ExampleComponent example\$"`
    ```
