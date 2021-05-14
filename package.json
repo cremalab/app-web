@@ -9,7 +9,7 @@
     "web-vitals": "1.1.2"
   },
   "devDependencies": {
-    "@babel/core": "7.14.0",
+    "@babel/core": "7.14.2",
     "@cremalab/scripts-web": "0.10.0",
     "@storybook/addon-actions": "6.2.9",
     "@storybook/addon-centered": "5.3.21",
