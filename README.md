@@ -50,6 +50,7 @@ Run the following scripts with `npm run <SCRIPT_HERE>`:
 - `start` - start app
 - `new:component` - generate a new component
 - `new:util` - generate a new util(ity)
+- `new:type` - generate a new type
 - `test:analyze` - run bundle analyzer
 - `test:deps` - run dependency validation tests
 - `test:e2e` - run end-to-end tests
