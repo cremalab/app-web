@@ -14,9 +14,8 @@ This project includes configuration and tooling that conforms to Crema's baselin
 - [Husky](https://github.com/typicode/husky/tree/master) for running tasks via git hooks
 - [Hygen](http://www.hygen.io) for component and util generators
 - [Jest](https://jestjs.io) for unit tests
-- [Loki](https://loki.js.org) for visual testing
 - [Prettier](https://prettier.io) for code formatting (🚨 DO NOT enable the VS Code Prettier plugin—ESLint runs it for you under the hood. 🎉)
-- [Storybook](https://storybook.js.org) for component playground (and used by Loki)
+- [Storybook](https://storybook.js.org) for component playground
 - [TypeScript](http://www.typescriptlang.org) for Static Typing in JavaScript ([Learn](http://www.typescriptlang.org/docs/handbook/basic-types.html))
 
 ## 🏗 Setup
@@ -40,8 +39,6 @@ This project includes configuration and tooling that conforms to Crema's baselin
    > "But I don't use VS Code." That's fine but you're on your own. 😅
    >
    > 🚨 DO NOT enable the VS Code Prettier plugin for this project—ESLint runs it for you under the hood. 🎉
-6. [Install Docker Desktop](https://www.docker.com/products/docker-desktop)
-   1. Used by [Loki](https://loki.js.org) which runs on git pre-push hook via [Husky](https://github.com/typicode/husky/tree/master)
 
 ## 👟 Run
 
@@ -59,9 +56,6 @@ Run the following scripts with `npm run <SCRIPT_HERE>`:
 - `test:playground` - run component playground (storybook)
 - `test:unit:coverage` - run unit tests with coverage
 - `test:unit` - run unit tests
-- `test:visual:approve` - approve visual changes
-- `test:visual:update` - update or create visual references
-- `test:visual` - run visual tests (loki)
 - `deps:graph` - run dependency validation and generate an SVG representing the dependency graph (requires [`graphviz`](https://graphviz.org/) to be installed on your device)
 - `deps:report` - run dependency validation and generate an HTML report
 
@@ -76,13 +70,6 @@ Below is the project's file-tree with notes added as inline comments.
 ```bash
 .
 ├── .github # 👈 PR/Issue Templates, workflows, and Renovate config
-├── .loki # 👈 Loki provides visual regression testing of Storybook files
-│   ├── current # 👈 Images from current test run
-│   │   └── chrome_App_Example.png
-│   ├── difference # 👈 Differences from current test run
-│   ├── reference # 👈 Approved reference images
-│   │   └── chrome_App_Example.png
-│   └── .gitignore # 👈 `./current` and `./difference` are not tracked
 ├── .storybook # 👈 Storybook config
 ├── cypress # 👈 Cypress integration testing
 │   ├── fixtures # 👈 Test data
