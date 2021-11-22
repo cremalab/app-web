@@ -38,7 +38,6 @@
     "eslint-plugin-react": "7.27.1",
     "husky": "7.0.4",
     "husky-add-issue-tracker": "0.1.1",
-    "loki": "0.28.1",
     "npm-run-all": "4.1.5",
     "prettier": "2.4.1",
     "serve": "12.0.1",
@@ -62,24 +61,19 @@
     "static": "serve -s build",
     "deps:graph": "depcruise --validate --output-type dot -- src | dot -T svg > dependency-graph.svg",
     "deps:report": "depcruise --validate --output-type err-html --output-to dependency-report.html -- src",
-    "test:ci": "cross-env CI=true run-s test:lint test:deps test:types \"test:unit -- -i\" test:visual:ci test:e2e:ci",
+    "test:ci": "cross-env CI=true run-s test:lint test:deps test:types \"test:unit -- -i\" test:e2e:ci",
     "test:deps": "depcruise --validate -- src",
     "test:e2e": "cypress run",
     "test:e2e:ci": "cross-env CYPRESS_baseUrl=http://localhost:5000 start-server-and-test start:ci http://localhost:5000 \"cypress run --port 5052\"",
     "test:lint": "eslint -c ./.eslintrc.js ./src --ext .ts,.tsx",
     "test:lint:fix": "npm run test:lint -- --fix",
-    "test:playground": "cross-env NODE_ENV=loki BABEL_ENV=development start-storybook --no-dll -p 9009 -s public",
+    "test:playground": "cross-env BABEL_ENV=development start-storybook --no-dll -p 9009 -s public",
     "test:playground:build": "build-storybook --no-dll",
     "test:playground:ci": "start-storybook --no-dll -p 5000 -s public --ci",
     "test:types": "tsc",
     "test:unit": "npm run test --",
     "test:unit:coverage": "npm run test:unit -- --coverage --watchAll=false",
     "test:unit:coverage:watch": "npm run test:unit:coverage -- --watchAll=true",
-    "test:visual": "cross-env CI=true loki --port 9009 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
-    "test:visual:ci:start": "cross-env CI=true loki --port 5000 --chromeDockerImage=yukinying/chrome-headless-browser-xl:74.0.3729.28",
-    "test:visual:ci": "start-server-and-test test:playground:ci http://localhost:5000 test:visual:ci:start",
-    "test:visual:approve": "npm run test:visual -- approve",
-    "test:visual:update": "npm run test:visual -- update",
     "test:analyze": "run-s test:analyze:*",
     "test:analyze:build": "npm run build",
     "test:analyze:explore": "source-map-explorer build/static/js/main.*",
@@ -99,19 +93,6 @@
       "!src/reportWebVitals.ts",
       "!src/serviceWorker.ts"
     ]
-  },
-  "loki": {
-    "requireReference": true,
-    "configurations": {
-      "chrome": {
-        "target": "chrome.docker",
-        "width": 800,
-        "height": 800,
-        "deviceScaleFactor": 1,
-        "mobile": false,
-        "fitWindow": false
-      }
-    }
   },
   "browserslist": {
     "production": [
