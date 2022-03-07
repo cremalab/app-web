@@ -16,7 +16,9 @@
     "@storybook/addon-essentials": "6.4.16",
     "@storybook/addon-links": "6.4.16",
     "@storybook/addons": "6.4.16",
+    "@storybook/builder-webpack5": "^6.4.16",
     "@storybook/cli": "6.4.16",
+    "@storybook/manager-webpack5": "^6.4.16",
     "@storybook/node-logger": "6.4.16",
     "@storybook/preset-create-react-app": "4.0.1",
     "@storybook/react": "6.4.16",
@@ -44,7 +46,8 @@
     "source-map-explorer": "2.5.2",
     "start-server-and-test": "1.14.0",
     "typescript": "4.5.5",
-    "wait-on": "6.0.0"
+    "wait-on": "6.0.0",
+    "webpack": "^5.70.0"
   },
   "optionalDependencies": {
     "fsevents": "*"
@@ -67,9 +70,9 @@
     "test:e2e:ci": "cross-env CYPRESS_baseUrl=http://localhost:5000 start-server-and-test start:ci http://localhost:5000 \"cypress run --port 5052\"",
     "test:lint": "eslint -c ./.eslintrc.js ./src --ext .ts,.tsx",
     "test:lint:fix": "npm run test:lint -- --fix",
-    "test:playground": "cross-env BABEL_ENV=development start-storybook --no-dll -p 9009 -s public",
-    "test:playground:build": "build-storybook --no-dll",
-    "test:playground:ci": "start-storybook --no-dll -p 5000 -s public --ci",
+    "test:playground": "cross-env BABEL_ENV=development start-storybook -p 9009",
+    "test:playground:build": "build-storybook",
+    "test:playground:ci": "start-storybook -p 5000 --ci",
     "test:types": "tsc",
     "test:unit": "npm run test --",
     "test:unit:coverage": "npm run test:unit -- --coverage --watchAll=false",
