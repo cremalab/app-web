@@ -1,0 +1,71 @@
+{
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    }
+  },
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "react-app", // Extends create-react-app eslint config
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+  },
+  "overrides": [
+    // Test files.
+    {
+      "files": ["./**/*.spec.*", "./**/*.test.*"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:cypress/recommended",
+        "plugin:testing-library/react"
+      ],
+      "env": {
+        "jest/globals": true,
+        "cypress/globals": true
+      }
+    },
+    // Stories.
+    {
+      "files": ["./**/*.story.*", "./**/*.stories.*"],
+      "extends": ["plugin:storybook/recommended"]
+    }
+  ]
+}
