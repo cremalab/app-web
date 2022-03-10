@@ -35,6 +35,7 @@
     "dependency-cruiser": "11.4.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-jest": "^26.1.1",
     "eslint-plugin-storybook": "^0.5.7",
     "husky": "7.0.4",
     "husky-add-issue-tracker": "0.1.1",
