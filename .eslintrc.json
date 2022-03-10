@@ -49,7 +49,11 @@
     // Test files.
     {
       "files": ["./**/*.spec.*", "./**/*.test.*"],
-      "extends": ["react-app/jest", "plugin:cypress/recommended"],
+      "extends": [
+        "plugin:cypress/recommended",
+        "plugin:jest/recommended",
+        "plugin:testing-library/react"
+      ],
       "env": {
         "cypress/globals": true
       }
