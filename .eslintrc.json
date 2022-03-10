@@ -10,19 +10,19 @@
   },
   "root": true,
   "parserOptions": {
-    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "ecmaVersion": "latest", // Allows for the parsing of modern ECMAScript features
     "sourceType": "module" // Allows for the use of imports
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "react-app", // Extends create-react-app eslint config
+    "react-app",
     "prettier"
   ],
   "rules": {
@@ -39,10 +39,7 @@
     "import/order": [
       "error",
       {
-        "newlines-between": "never",
-        "alphabetize": {
-          "order": "asc"
-        }
+        "newlines-between": "never"
       }
     ],
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
@@ -52,13 +49,8 @@
     // Test files.
     {
       "files": ["./**/*.spec.*", "./**/*.test.*"],
-      "extends": [
-        "plugin:jest/recommended",
-        "plugin:cypress/recommended",
-        "plugin:testing-library/react"
-      ],
+      "extends": ["react-app/jest", "plugin:cypress/recommended"],
       "env": {
-        "jest/globals": true,
         "cypress/globals": true
       }
     },
