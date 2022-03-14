@@ -78,7 +78,7 @@ Below is the project's file-tree with notes added as inline comments.
 │   │   └── sample_spec.ts
 │   └── ...
 ├── public # 👈 Static files
-├── src 
+├── src
 │   ├── assets # 👈 fonts, images, etc.
 │   │   └── logo.svg
 │   ├── components # 👈  Use `npm run new:component` to generate
