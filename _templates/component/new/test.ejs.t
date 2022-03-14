@@ -1,6 +1,6 @@
 ---
 to: src/components/<%= name %>/<%= name %>.test.tsx
-sh: npx eslint ./src/components/<%= name %> --ext .ts,.tsx --fix --quiet
+sh: npx eslint ./src/components/<%= name %> --ext .ts,.tsx --fix --quiet && npx prettier --write "./src/components/<%= name %>/**/*"
 ---
 import { <%= name %> } from "./<%= name %>"
 <% if(!withExample) { -%>
@@ -11,7 +11,7 @@ describe("<%= name %>", () => {
   it.todo(`add meaningful tests 👍`)
 })
 <% } else if(useState) { -%>
-import { render, fireEvent } from "@testing-library/react"
+import { render, fireEvent, screen } from "@testing-library/react"
 
 describe("<%= name %>", () => {
   it("name prop is rendered", () => {
@@ -19,8 +19,8 @@ describe("<%= name %>", () => {
     const message = "Hi, my name is <%= name %>!"
 
     // Act
-    const { getByText } = render(<<%= name %> name="<%= name %>" />)
-    const received = getByText(message)
+    render(<<%= name %> name="<%= name %>" />)
+    const received = screen.getByText(message)
 
     // Assert
     expect(received).toBeDefined()
@@ -31,8 +31,8 @@ describe("<%= name %>", () => {
     const message = "You clicked 0 times"
 
     // Act
-    const { getByText } = render(<<%= name %> name="<%= name %>" />)
-    const received = getByText(message)
+    render(<<%= name %> name="<%= name %>" />)
+    const received = screen.getByText(message)
 
     // Assert
     expect(received).toBeDefined()
@@ -44,17 +44,17 @@ describe("<%= name %>", () => {
     const message = "You clicked 1 times"
 
     // Act
-    const { getByText } = render(<<%= name %> name="<%= name %>" />)
-    const button = getByText(buttonText)
+    render(<<%= name %> name="<%= name %>" />)
+    const button = screen.getByText(buttonText)
     fireEvent.click(button)
-    const received = getByText(message)
+    const received = screen.getByText(message)
 
     // Assert
     expect(received).toBeDefined()
   })
 })
 <% } else { -%>
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 
 describe("<%= name %>", () => {
   it("name prop is rendered", () => {
@@ -62,8 +62,8 @@ describe("<%= name %>", () => {
     const message = "Hi, my name is <%= name %>!"
 
     // Act
-    const { getByText } = render(<<%= name %> name="<%= name %>" />)
-    const received = getByText(message)
+    const render(<<%= name %> name="<%= name %>" />)
+    const received = screen.getByText(message)
 
     // Assert
     expect(received).toBeDefined()
