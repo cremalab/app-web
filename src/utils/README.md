@@ -13,6 +13,7 @@ This directory is intended to organize global application utilities—functions,
 1. In terminal run `npm run new:util` to generate a new `utility`
 2. Name your utility, e.g. `exampleUtil` (names will be transformed to **Camel Case**, i.e. `thisIsCamelCase`)
 3. The following directory and files will be generated:
+
    ```
    src/utils
    ├── exampleUtil
@@ -21,7 +22,9 @@ This directory is intended to organize global application utilities—functions,
    │   └── index.ts 👈 Export utility
    └── README.md 👈 You are here!
    ```
+
 4. `exampleUtil.test.ts` contains the utility tests:
+
    ```ts
    import { exampleUtil } from "./exampleUtil"
 
@@ -39,7 +42,9 @@ This directory is intended to organize global application utilities—functions,
      })
    })
    ```
+
 5. `exampleUtil.ts` contains the utility definition:
+
    ```ts
    /**
     * exampleUtil
@@ -49,7 +54,9 @@ This directory is intended to organize global application utilities—functions,
 
    export const exampleUtil = <A>(x: A) => x
    ```
+
 6. `index.ts` contains the utility definition:
+
    ```ts
    export { exampleUtil } from "./exampleUtil"
    ```

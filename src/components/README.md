@@ -10,6 +10,7 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
 2. Name your component, e.g. `ExampleComponent`
 3. Choose between options regarding how much example code to generate. _The following examples are shown as if you answered `yes` to "example code" and `no` to "include useState"._
 4. The following directory and files will be generated:
+
    ```
    src/components/ExampleComponent/
    ├── ExampleComponent.stories.tsx 👈 Component stories (`npm run test:playground`)
@@ -18,7 +19,9 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
    ├── index.ts 👈 Component export
    └── README.md 👈 Component documentation (hey, that's me!)
    ```
+
 5. `ExampleComponent.stories.tsx` contains component stories:
+
    ```tsx
    import decoratorCentered from "@storybook/addon-centered"
    import { ExampleComponent } from "./ExampleComponent"
@@ -35,7 +38,9 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
 
    export const example = () => <ExampleComponent name="ExampleComponent" />
    ```
+
 6. `ExampleComponent.test.tsx` contains component tests:
+
    ```tsx
    import { render } from "@testing-library/react"
    import { ExampleComponent } from "./ExampleComponent"
@@ -46,7 +51,9 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
        const message = "Hi, my name is ExampleComponent!"
 
        // Act
-       const { getByText } = render(<ExampleComponent name="ExampleComponent" />)
+       const { getByText } = render(
+         <ExampleComponent name="ExampleComponent" />,
+       )
        const received = getByText(message)
 
        // Assert
@@ -54,7 +61,9 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
      })
    })
    ```
+
 7. `ExampleComponent.tsx` contains component code:
+
    ```tsx
    interface Props {
      name: string
@@ -68,11 +77,15 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
      )
    }
    ```
+
 8. `index.ts` contains component export:
+
    ```tsx
    export { ExampleComponent } from "./ExampleComponent"
    ```
+
 9. `README.md` contains component documentation:
+
    ```md
    # `<ExampleComponent />`
 
@@ -85,3 +98,4 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
    - `ExampleComponent.tsx`: Component code
    - `index.ts`: Component export
    - `README.md`: Component documentation (hey, that's me!)
+   ```
