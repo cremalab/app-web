@@ -15,7 +15,7 @@ export default {
 }
 
 <% if(withExample) { -%>
-export const example = () => <<%= name %> name="<%= name %>" />
+export const Example = () => <<%= name %> name="<%= name %>" />
 <% } else { -%>
-export const example = () => <<%= name %> />
+export const Example = () => <<%= name %> />
 <% } -%>

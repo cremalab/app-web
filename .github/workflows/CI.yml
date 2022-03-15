@@ -30,7 +30,7 @@ jobs:
       - run: npm run test:types
       - run: npm run test:unit
       - run: npm run test:e2e:ci
-  
+
   Test:
     if: ${{ github.repository != 'cremalab/app-web' }}
     runs-on: ubuntu-latest

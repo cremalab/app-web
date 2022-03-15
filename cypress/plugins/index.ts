@@ -11,6 +11,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (_on: Cypress.PluginEvents, _config: Cypress.ConfigOptions) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config

@@ -9,4 +9,4 @@ export default {
   title: "App",
 }
 
-export const example = () => <App />
+export const Example = () => <App />

@@ -60,5 +60,6 @@
       "files": ["./**/*.story.*", "./**/*.stories.*"],
       "extends": ["plugin:storybook/recommended"]
     }
-  ]
+  ],
+  "ignorePatterns": ["**/build/**", "**/coverage/**"]
 }
