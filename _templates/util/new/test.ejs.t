@@ -1,6 +1,6 @@
 ---
 to: src/utils/<%= name %>/<%= name %>.test.ts
-sh: npx eslint ./src/utils/<%= name %> --ext .ts,.tsx --fix --quiet
+sh: npx eslint ./src/utils/<%= name %> --ext .ts,.tsx --fix --quiet && npx prettier --write "./src/utils/<%= name %>/**/*"
 ---
 import { <%= name %> } from "./<%= name %>"
 

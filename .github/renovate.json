@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "config:base",
-    ":semanticCommitType(fix)"
-  ],
+  "extends": ["config:base", ":semanticCommitType(fix)"],
   "branchPrefix": "develop-renovate-",
   "prCreation": "not-pending",
-  "labels": [
-    "maintenance"
-  ],
+  "labels": ["maintenance"],
   "packageRules": [
     {
       "updateTypes": ["major"],
