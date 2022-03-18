@@ -60,7 +60,6 @@
     "new:component": "hygen component new",
     "new:type": "hygen type new",
     "new:util": "hygen util new",
-    "prepush": "npm run test:ci",
     "static": "serve -s build -p 5000",
     "deps:graph": "depcruise --validate --output-type dot -- src | dot -T svg > dependency-graph.svg",
     "deps:report": "depcruise --validate --output-type err-html --output-to dependency-report.html -- src",
