@@ -28,7 +28,7 @@
     "@types/jest": "27.4.1",
     "@types/node": "16.11.27",
     "@types/react": "17.0.44",
-    "@types/react-dom": "17.0.15",
+    "@types/react-dom": "17.0.16",
     "change-case": "4.1.2",
     "cross-env": "7.0.3",
     "cypress": "9.5.4",
