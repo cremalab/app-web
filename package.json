@@ -24,7 +24,7 @@
     "@testing-library/cypress": "8.0.2",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.5",
-    "@testing-library/user-event": "14.1.1",
+    "@testing-library/user-event": "14.2.0",
     "@types/jest": "27.5.1",
     "@types/node": "16.11.35",
     "@types/react": "17.0.45",
