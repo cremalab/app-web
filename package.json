@@ -27,7 +27,7 @@
     "@testing-library/user-event": "14.2.1",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.41",
-    "@types/react": "18.0.12",
+    "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
     "change-case": "4.1.2",
     "cross-env": "7.0.3",
