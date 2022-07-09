@@ -3,6 +3,10 @@ to: src/components/<%= name %>/<%= name %>.stories.tsx
 ---
 import decoratorCentered from "@storybook/addon-centered"
 import { <%= name %> } from "./<%= name %>"
+<% if(withExample) { -%>
+import { Story } from "@storybook/react"
+import { ComponentProps } from "react"
+<% } -%>
 
 /**
  * See Storybook Docs: Writing Stories
@@ -15,7 +19,13 @@ export default {
 }
 
 <% if(withExample) { -%>
-export const Example = () => <<%= name %> name="<%= name %>" />
+const Template: Story<ComponentProps<typeof <%= name %>>> = (args) => <<%= name %> {...args} />
+
+export const Example = Template.bind({})
+
+Example.args = {
+  name: "<%= name %>",
+}
 <% } else { -%>
 export const Example = () => <<%= name %> />
 <% } -%>
