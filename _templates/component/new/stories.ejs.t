@@ -4,8 +4,7 @@ to: src/components/<%= name %>/<%= name %>.stories.tsx
 import decoratorCentered from "@storybook/addon-centered"
 import { <%= name %> } from "./<%= name %>"
 <% if(withExample) { -%>
-import { Story } from "@storybook/react"
-import { ComponentProps } from "react"
+import { ComponentStory } from "@storybook/react"
 <% } -%>
 
 /**
@@ -19,7 +18,7 @@ export default {
 }
 
 <% if(withExample) { -%>
-const Template: Story<ComponentProps<typeof <%= name %>>> = (args) => <<%= name %> {...args} />
+const Template: ComponentStory<typeof <%= name %>> = (args) => <<%= name %> {...args} />
 
 export const Example = Template.bind({})
 
