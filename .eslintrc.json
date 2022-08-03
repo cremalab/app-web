@@ -46,17 +46,8 @@
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
     "padding-line-between-statements": [
       "error",
-      {
-        "blankLine": "always",
-        "prev": ["multiline-expression", "block-like", "export"],
-        "next": ["*"]
-      },
-      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
-      {
-        "blankLine": "never",
-        "prev": ["singleline-const", "singleline-let", "singleline-var"],
-        "next": ["singleline-const", "singleline-let", "singleline-var"]
-      }
+      { "blankLine": "always", "prev": "multiline-expression", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "multiline-expression" }
     ]
   },
   "overrides": [
