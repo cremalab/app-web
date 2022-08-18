@@ -23,7 +23,6 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
 5. `ExampleComponent.stories.tsx` contains component stories:
 
    ```tsx
-   import decoratorCentered from "@storybook/addon-centered"
    import { ExampleComponent } from "./ExampleComponent"
 
    /**
@@ -33,7 +32,9 @@ This project uses [`@cremalab/scripts-web`](https://github.com/cremalab/scripts)
 
    export default {
      title: "ExampleComponent",
-     decorators: [decoratorCentered],
+     parameters: {
+       layout: "centered",
+     },
    }
 
    export const example = () => <ExampleComponent name="ExampleComponent" />
