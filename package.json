@@ -35,7 +35,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-jest": "27.1.6",
-    "eslint-plugin-storybook": "0.6.7",
+    "eslint-plugin-storybook": "0.6.8",
     "husky": "8.0.2",
     "husky-add-issue-tracker": "0.1.1",
     "hygen": "6.2.11",
