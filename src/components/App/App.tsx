@@ -1,7 +1,11 @@
 import logo from "../../assets/logo.svg"
 import "./App.styles.css"
 
-export function App() {
+interface Props {
+  test?: boolean
+}
+
+export function App(props: Props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +19,7 @@ export function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {props.test ? "WHAAt" : "Learn React"}
         </a>
       </header>
     </div>
