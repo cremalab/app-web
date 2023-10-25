@@ -40,7 +40,7 @@
     "husky-add-issue-tracker": "0.1.1",
     "hygen": "6.2.11",
     "npm-run-all": "4.1.5",
-    "prettier": "2.8.4",
+    "prettier": "2.8.8",
     "serve": "14.2.0",
     "source-map-explorer": "2.5.3",
     "start-server-and-test": "1.15.4",
